@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title><![CDATA[git入门]]></title>
+    <url>%2F2018%2F09%2F10%2Fgit%2F</url>
+    <content type="text"><![CDATA[几个命令的常见使用方法 ls 罗列ls 路径 显示所有文件ls -a 路径 显示所有目录和文件（文件或目录名称为“.”的视为隐藏，不会列出）；ls -l 路径 以长格式显示目录下的内容列表。输出的信息从左到右依次包括文件名，文件类型、权限模式、硬连接数、所有者、 组、文件大小和文件的最后修改时间等； cat 显示文件内容cat m1 在屏幕上显示文件ml的内容cat m1 m2 同时显示文件ml和m2的内容cat m1 m2 &gt; file 将文件ml和m2合并后放入文件file中 mv 移动 / 重命名mv 源路径 目标路径 移动文件mv 1.txt 2.txt 把 1.txt 移到 2.txt ，也就是重命名 touch 触摸touch 1.txt 创建1.txt文件 或 改变该文件的更新时间]]></content>
+      <categories>
+        <category>git入门</category>
+      </categories>
+      <tags>
+        <tag>git</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Hello World]]></title>
+    <url>%2F2018%2F09%2F10%2Fhello-world%2F</url>
+    <content type="text"><![CDATA[Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick StartCreate a new post1$ hexo new "My New Post" More info: Writing Run server1$ hexo server More info: Server Generate static files1$ hexo generate More info: Generating Deploy to remote sites1$ hexo deploy More info: Deployment]]></content>
+  </entry>
+</search>
