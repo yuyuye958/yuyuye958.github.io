@@ -1,36 +1,70 @@
 <?xml version="1.0" encoding="utf-8"?>
-<search>
-  <entry>
-    <title><![CDATA[搭建Hexo博客（Next主题）过程中碰到的问题]]></title>
-    <url>%2F2018%2F09%2F11%2FHexo%2F</url>
-    <content type="text"><![CDATA[github主页：https://github.com/iissnan/hexo-theme-next 侧边菜单修改却无法访问在next的_config.yml文件中修改menu配置，添加tag和categories选项，但点击会出现404页面。 解决办法：在根目录执行以下命令：12hexo new page "tags" hexo new page "categories" 打开它们并相应添加type: “tags”和type: “categories”，保存 安装搜索功能 Local Search在next的_config.yml文件中修改Local Search的enable: true后，搜索功能仍无效 解决办法：安装 hexo-generator-search和 hexo-generator-searchdb 在根目录下执行以下命令：12$ npm install hexo-generator-search --save$ npm install hexo-generator-searchdb --save 在根目录的_config.yml文件中添加12345search: path: search.xml field: post format: html limit: 10000]]></content>
+<search> 
+  
+    
+    <entry>
+      <title>搭建Hexo博客（Next主题）过程中碰到的问题</title>
+      <link href="/2018/09/11/Hexo/"/>
+      <url>/2018/09/11/Hexo/</url>
+      <content type="html"><![CDATA[<p>github主页：<a href="https://github.com/iissnan/hexo-theme-next" target="_blank" rel="noopener">https://github.com/iissnan/hexo-theme-next</a> </p><h2 id="侧边菜单修改却无法访问"><a href="#侧边菜单修改却无法访问" class="headerlink" title="侧边菜单修改却无法访问"></a>侧边菜单修改却无法访问</h2><p>在next的_config.yml文件中修改menu配置，添加tag和categories选项，但点击会出现404页面。</p><h3 id="解决办法："><a href="#解决办法：" class="headerlink" title="解决办法："></a>解决办法：</h3><p>在根目录执行以下命令：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo new page <span class="string">"tags"</span> </span><br><span class="line">hexo new page <span class="string">"categories"</span></span><br></pre></td></tr></table></figure></p><p>打开它们并相应添加type: “tags”和type: “categories”，保存</p><hr><h2 id="安装搜索功能-Local-Search"><a href="#安装搜索功能-Local-Search" class="headerlink" title="安装搜索功能 Local Search"></a>安装搜索功能 Local Search</h2><p>在next的_config.yml文件中修改Local Search的enable: true后，搜索功能仍无效</p><h3 id="解决办法：-1"><a href="#解决办法：-1" class="headerlink" title="解决办法："></a>解决办法：</h3><p>安装 hexo-generator-search和 hexo-generator-searchdb</p><p>在根目录下执行以下命令：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ npm install hexo-generator-search --save</span><br><span class="line">$ npm install hexo-generator-searchdb --save</span><br></pre></td></tr></table></figure></p><p>在根目录的_config.yml文件中添加<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">search:</span><br><span class="line">  path: search.xml</span><br><span class="line">  field: post</span><br><span class="line">  format: html</span><br><span class="line">  <span class="built_in">limit</span>: 10000</span><br></pre></td></tr></table></figure></p>]]></content>
+      
       <categories>
-        <category>Hexo</category>
+          
+          <category> Hexo </category>
+          
       </categories>
-      <tags>
-        <tag>Hexo</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[git入门]]></title>
-    <url>%2F2018%2F09%2F10%2Fgit%E5%85%A5%E9%97%A8%2F</url>
-    <content type="text"><![CDATA[git版本控制中几个重要概念1234561.git init 初始化本地仓库 .git2.git add 文件路径，用来将变动加到暂存区3.git commit -v 提交时显示所有diff信息 使用git前配置12345git config --global user.name 你的英文名git config --global user.email 你的邮箱git config --global push.default matchinggit config --global core.quotepath falsegit config --global core.editor "vim" 常用命令123456789101112git init //不要在已经初始化好的仓库使用，否则会将已经初始化完成的仓库覆盖git status //查看状态git add //提交文件放入暂存区git commit //将暂存区的更新提交到本地仓库git push origin master //把当前本地仓库里的改动推送到远程仓库（origin）的master分支。之后可以直接git push。git pull //当远程仓库有变动但是本地仓库没有更新，会拒绝git push， 使用git pull将远程仓库拉到本地仓库，合并变动。git push -f origin master //强制推送，会覆盖别人的代码git remote add xxx git@xxx.git //再次添加一个远程仓库的标签git push xxx master //推送到xxx标签的地址git remote remove xxx //删除xxx标签git remote set-url origin url //修改origin标签对应的地址git remote rename xxx coding //把xxx标签名修改为coding 实例打开 git bash，进入某目录后输入以下命令：12345cd blog -- 进入blog文件夹git init -- 初始化本地仓库，创建.git目录touch index.html -- 添加index.html文件git add index.html -- 将文件添加到暂存区 (也可以使用git add . 表示将当前目录内所有改动都加入暂存区)git commit index.html -m '添加index.html' 告诉 git，这些文件我要加到仓库里(也可以一次性git commit -m "添加所有改动文件")]]></content>
+      
+      
+        <tags>
+            
+            <tag> Hexo </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
+      <title>git入门</title>
+      <link href="/2018/09/10/git%E5%85%A5%E9%97%A8/"/>
+      <url>/2018/09/10/git%E5%85%A5%E9%97%A8/</url>
+      <content type="html"><![CDATA[<h3 id="git版本控制中几个重要概念"><a href="#git版本控制中几个重要概念" class="headerlink" title="git版本控制中几个重要概念"></a>git版本控制中几个重要概念</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">1.git init</span><br><span class="line">    初始化本地仓库 .git</span><br><span class="line">2.git add</span><br><span class="line">    文件路径，用来将变动加到暂存区</span><br><span class="line">3.git commit -v</span><br><span class="line">    提交时显示所有diff信息</span><br></pre></td></tr></table></figure><h3 id="使用git前配置"><a href="#使用git前配置" class="headerlink" title="使用git前配置"></a>使用git前配置</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name 你的英文名</span><br><span class="line">git config --global user.email 你的邮箱</span><br><span class="line">git config --global push.default matching</span><br><span class="line">git config --global core.quotepath <span class="literal">false</span></span><br><span class="line">git config --global core.editor <span class="string">"vim"</span></span><br></pre></td></tr></table></figure><h3 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">git init //不要在已经初始化好的仓库使用，否则会将已经初始化完成的仓库覆盖</span><br><span class="line">git status //查看状态</span><br><span class="line">git add //提交文件放入暂存区</span><br><span class="line">git commit  //将暂存区的更新提交到本地仓库</span><br><span class="line">git push origin master //把当前本地仓库里的改动推送到远程仓库（origin）的master分支。之后可以直接git push。</span><br><span class="line">git pull //当远程仓库有变动但是本地仓库没有更新，会拒绝git push， 使用git pull将远程仓库拉到本地仓库，合并变动。</span><br><span class="line">git push -f origin master //强制推送，会覆盖别人的代码</span><br><span class="line">git remote add xxx git@xxx.git //再次添加一个远程仓库的标签</span><br><span class="line">git push xxx master //推送到xxx标签的地址</span><br><span class="line">git remote remove xxx //删除xxx标签</span><br><span class="line">git remote <span class="built_in">set</span>-url origin url //修改origin标签对应的地址</span><br><span class="line">git remote rename xxx coding //把xxx标签名修改为coding</span><br></pre></td></tr></table></figure><h3 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h3><p>打开 git bash，进入某目录后输入以下命令：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> blog -- 进入blog文件夹</span><br><span class="line">git init -- 初始化本地仓库，创建.git目录</span><br><span class="line">touch index.html -- 添加index.html文件</span><br><span class="line">git add index.html -- 将文件添加到暂存区 (也可以使用git add . 表示将当前目录内所有改动都加入暂存区)</span><br><span class="line">git commit index.html -m <span class="string">'添加index.html'</span> 告诉 git，这些文件我要加到仓库里(也可以一次性git commit -m <span class="string">"添加所有改动文件"</span>)</span><br></pre></td></tr></table></figure></p>]]></content>
+      
       <categories>
-        <category>git</category>
+          
+          <category> git </category>
+          
       </categories>
-      <tags>
-        <tag>git</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[git几个常用命令的用法]]></title>
-    <url>%2F2018%2F09%2F10%2Fgit%E5%91%BD%E4%BB%A4%2F</url>
-    <content type="text"><![CDATA[几个常用命令的使用方法ls 罗列* ls 路径 显示所有文件 * ls -a 路径 显示所有目录和文件（文件或目录名称为“.”的视为隐藏，不会列出）； * ls -l 路径 以长格式显示目录下的内容列表。输出的信息从左到右依次包括文件名，文件类型、权限模式、硬连接数、所有者、组、文件大小和文件的最后修改时间等； cat 显示文件内容* cat m1 在屏幕上显示文件ml的内容 * cat m1 m2 同时显示文件ml和m2的内容 * cat m1 m2 &gt; file 将文件ml和m2合并后放入文件file中 mv 移动 / 重命名* mv 源路径 目标路径 将某文件从源路径移动至目标路径 * mv 1.txt 2.txt 把 1.txt 移到 2.txt ，也就是重命名 touch 触摸* touch 1.txt 创建1.txt文件 或 改变该文件的更新时间 explainshell.com 的使用 想知道某个命令的用法，搜索该命令就能展示其所有的用法。 在输入框内输入一段命令，这个网站就能帮助你解析该命令是如何工作的，简洁易懂。]]></content>
+      
+      
+        <tags>
+            
+            <tag> git </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
+      <title>git几个常用命令和一个命令查询工具</title>
+      <link href="/2018/09/10/git%E5%91%BD%E4%BB%A4/"/>
+      <url>/2018/09/10/git%E5%91%BD%E4%BB%A4/</url>
+      <content type="html"><![CDATA[<h2 id="几个常用命令的使用方法"><a href="#几个常用命令的使用方法" class="headerlink" title="几个常用命令的使用方法"></a>几个常用命令的使用方法</h2><h3 id="ls-罗列"><a href="#ls-罗列" class="headerlink" title="ls  罗列"></a>ls  罗列</h3><pre><code>* ls 路径显示所有文件* ls -a 路径显示所有目录和文件（文件或目录名称为“.”的视为隐藏，不会列出）；* ls -l 路径以长格式显示目录下的内容列表。输出的信息从左到右依次包括文件名，文件类型、权限模式、硬连接数、所有者、组、文件大小和文件的最后修改时间等；* ls -al 路径在ls -l的基础上多显示以“.“开头的隐藏文件；</code></pre><hr><h3 id="cat-显示文件内容"><a href="#cat-显示文件内容" class="headerlink" title="cat  显示文件内容"></a>cat  显示文件内容</h3><pre><code>* cat m1在屏幕上显示文件ml的内容* cat m1 m2同时显示文件ml和m2的内容* cat m1 m2 &gt; file将文件ml和m2合并后放入文件file中</code></pre><hr><h3 id="mv-移动-重命名"><a href="#mv-移动-重命名" class="headerlink" title="mv  移动 / 重命名"></a>mv  移动 / 重命名</h3><pre><code>* mv 源路径 目标路径将某文件从源路径移动至目标路径* mv 1.txt 2.txt把 1.txt 移到 2.txt ，也就是重命名</code></pre><hr><h3 id="touch-触摸"><a href="#touch-触摸" class="headerlink" title="touch  触摸"></a>touch  触摸</h3><pre><code>* touch 1.txt创建1.txt文件 或 改变该文件的更新时间</code></pre><h2 id="explainshell-com-的使用"><a href="#explainshell-com-的使用" class="headerlink" title="explainshell.com 的使用"></a>explainshell.com 的使用</h2><ol><li>想知道某个命令的用法，搜索该命令就能展示其所有的用法。</li><li>在输入框内输入一段命令，这个网站就能帮助你解析该命令是如何工作的，简洁易懂。<br><img src="/2018/09/10/git命令/explainshell.jpg" alt="explainshell.com"></li></ol>]]></content>
+      
       <categories>
-        <category>git</category>
+          
+          <category> git </category>
+          
       </categories>
-      <tags>
-        <tag>git</tag>
-      </tags>
-  </entry>
+      
+      
+        <tags>
+            
+            <tag> git </tag>
+            
+        </tags>
+      
+    </entry>
+    
+  
+  
 </search>
