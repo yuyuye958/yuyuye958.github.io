@@ -376,113 +376,21 @@
       
         
           
-            <h2 id="Server-Client-HTTP"><a href="#Server-Client-HTTP" class="headerlink" title="Server + Client + HTTP"></a>Server + Client + HTTP</h2><pre><code>* 浏览器负责发起请求
+          Server + Client + HTTP* 浏览器负责发起请求
 * 服务器在 80 端口接收请求
 * 服务器负责返回内容（响应）
 * 浏览器负责下载响应内容
 HTTP 的作用就是指导浏览器和服务器如何进行沟通。
-</code></pre><h2 id="请求"><a href="#请求" class="headerlink" title="请求"></a>请求</h2><h3 id="请求示例"><a href="#请求示例" class="headerlink" title="请求示例"></a>请求示例</h3><p>输入以下命令：</p>
-<pre><code class="bash">curl -s -v -H <span class="string">"Allen: xxx"</span> -- <span class="string">"https://www.baidu.com"</span>
-</code></pre>
-<p>请求的内容为：</p>
-<pre><code class="bash">GET / HTTP/1.1
-Host: www.baidu.com
-User-Agent: curl/7.54.0
-Accept: */*
-Allen: xxx
-</code></pre>
-<h3 id="请求的格式"><a href="#请求的格式" class="headerlink" title="请求的格式"></a>请求的格式</h3><pre><code class="bash">1 动词 路径 协议/版本
-2 Key1: value1
-2 Key2: value2
-2 Key3: value3
-2 Content-Type: application/x-www-form-urlencoded
-2 Host: www.baidu.com
-2 User-Agent: curl/7.54.0
-3 
-4 要上传的数据
-</code></pre>
-<pre><code>1. 请求最多包含四部分，最少包含三部分。（也就是说第四部分可以为空）
-2. 第三部分永远都是一个回车（\n）
-3. 动词有 GET POST PUT PATCH DELETE HEAD OPTIONS 等
-4. 这里的路径包括「查询参数」，但不包括「锚点」
-5. 如果你没有写路径，那么路径默认为 /
-6. 第 2 部分中的 Content-Type 标注了第 4 部分的格式
-</code></pre><h3 id="如何用-Chrome-查看响应"><a href="#如何用-Chrome-查看响应" class="headerlink" title="如何用 Chrome 查看响应"></a>如何用 Chrome 查看响应</h3><pre><code>1. 打开 Network
-2. 地址栏输入网址
-3. 在 Network 点击，查看 request，点击「view source」
-4. 点击「view source」后可以看到请求的前三部分
-5. 如果有请求的第四部分，那么在 FormData 或 Payload 里面可以看到
-</code></pre><hr>
-<h2 id="响应"><a href="#响应" class="headerlink" title="响应"></a>响应</h2><h3 id="请求示例-1"><a href="#请求示例-1" class="headerlink" title="请求示例"></a>请求示例</h3><p>对应上面请求的响应如下：</p>
-<pre><code class="bash">HTTP/1.1 200 OK
-Accept-Ranges: bytes
-Cache-Control: private, no-cache, no-store, proxy-revalidate, no-transform
-Connection: Keep-Alive
-Content-Length: 2443
-Content-Type: text/html
-Date: Tue, 10 Oct 2017 09:14:05 GMT
-Etag: <span class="string">"5886041d-98b"</span>
-Last-Modified: Mon, 23 Jan 2017 13:24:45 GMT
-Pragma: no-cache
-Server: bfe/1.0.8.18
-Set-Cookie: BDORZ=27315; max-age=86400; domain=.baidu.com; path=/
-
-&lt;!DOCTYPE html&gt;
-&lt;!--STATUS OK--&gt;&lt;html&gt; &lt;head&gt; 后面太长，省略……
-</code></pre>
-<h3 id="响应的格式"><a href="#响应的格式" class="headerlink" title="响应的格式"></a>响应的格式</h3><pre><code class="bash">1 协议/版本号 状态码 状态解释
-2 Key1: value1
-2 Key2: value2
-2 Content-Length: 17931
-2 Content-Type: text/html
-3
-4 要下载的内容
-</code></pre>
-<pre><code>* 状态码大概记一下，是服务器对浏览器说的话
-    * 1xx 不常用
-    * 2xx 表示成功
-    * 3xx 表示滚吧
-    * 4xx 表示你丫错了
-    * 5xx 表示好吧，我错了
-* 状态解释没什么用
-* 第 2 部分中的 Content-Type 标注了第 4 部分的格式
-* 第 2 部分中的 Content-Type 遵循 MIME 规范
-</code></pre><h3 id="如何用-Chrome-查看响应-1"><a href="#如何用-Chrome-查看响应-1" class="headerlink" title="如何用 Chrome 查看响应"></a>如何用 Chrome 查看响应</h3><pre><code>1. 打开 Network
-2. 输入网址
-3. 选中第一个响应
-4. 查看 Response Headers，点击「view source」
-5. 点击「view source」后你会看到响应的前两部分
-6. 查看 Response 或者 Preview，你会看到响应的第 4 部分
-</code></pre><hr>
-<ul>
-<li>Chrome开发者工具查看 HTTP 请求与响应可详见：<a href="https://www.jianshu.com/p/a08134dbee23" target="_blank" rel="noopener">https://www.jianshu.com/p/a08134dbee23</a></li>
-</ul>
-<hr>
-<h2 id="如何使用-curl-命令？"><a href="#如何使用-curl-命令？" class="headerlink" title="如何使用 curl 命令？"></a>如何使用 curl 命令？</h2><p>在Linux中curl是一个利用URL规则在命令行下工作的文件传输工具，可以说是一款很强大的http命令行工具。它支持文件的上传和下载，是综合传输工具，但按传统，习惯称url为下载工具。</p>
-<h3 id="语法："><a href="#语法：" class="headerlink" title="语法："></a>语法：</h3><pre><code class="bash"><span class="comment"># curl [option] [url]</span>
-</code></pre>
-<h3 id="常见参数："><a href="#常见参数：" class="headerlink" title="常见参数："></a>常见参数：</h3><pre><code class="bash">-A/--user-agent &lt;string&gt;              设置用户代理发送给服务器
--b/--cookie &lt;name=string/file&gt;    cookie字符串或文件读取位置
--c/--cookie-jar &lt;file&gt;                    操作结束后把cookie写入到这个文件中
--C/--<span class="built_in">continue</span>-at &lt;offset&gt;            断点续转
--D/--dump-header &lt;file&gt;              把header信息写入到该文件中
--e/--referer                                  来源网址
--f/--fail                                          连接失败时不显示http错误
--o/--output                                  把输出写到该文件中
--O/--remote-name                      把输出写到该文件中，保留远程文件的文件名
--r/--range &lt;range&gt;                      检索来自HTTP/1.1或FTP服务器字节范围
--s/--silent                                    静音模式。不输出任何东西
--T/--upload-file &lt;file&gt;                  上传文件
--u/--user &lt;user[:password]&gt;      设置服务器的用户和密码
--w/--write-out [format]                什么输出完成后
--x/--proxy &lt;host[:port]&gt;              在给定的端口上使用HTTP代理
--<span class="comment">#/--progress-bar                        进度条显示当前的传送状态</span>
-</code></pre>
-<ul>
-<li>curl命令的更多用法可详见：<a href="http://man.linuxde.net/curl" target="_blank" rel="noopener">http://man.linuxde.net/curl</a></li>
-</ul>
-
-          
+请求请求示例输入以下命令：
+curl -s -v -H "Allen: xxx" -
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/09/11/HTTP-intro/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -622,17 +530,17 @@ Set-Cookie: BDORZ=27315; max-age=86400; domain=.baidu.com; path=/
       
         
           
-            <p>github主页：<a href="https://github.com/iissnan/hexo-theme-next" target="_blank" rel="noopener">https://github.com/iissnan/hexo-theme-next</a> </p>
-<h2 id="侧边菜单修改却无法访问"><a href="#侧边菜单修改却无法访问" class="headerlink" title="侧边菜单修改却无法访问"></a>侧边菜单修改却无法访问</h2><p>在next的_config.yml文件中修改menu配置，添加tag和categories选项，但点击会出现404页面。</p>
-<h3 id="解决办法："><a href="#解决办法：" class="headerlink" title="解决办法："></a>解决办法：</h3><p>在根目录执行以下命令：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo new page <span class="string">"tags"</span> </span><br><span class="line">hexo new page <span class="string">"categories"</span></span><br></pre></td></tr></table></figure></p>
-<p>打开它们并相应添加type: “tags”和type: “categories”，保存</p>
-<hr>
-<h2 id="安装搜索功能-Local-Search"><a href="#安装搜索功能-Local-Search" class="headerlink" title="安装搜索功能 Local Search"></a>安装搜索功能 Local Search</h2><p>在next的_config.yml文件中修改Local Search的enable: true后，搜索功能仍无效</p>
-<h3 id="解决办法：-1"><a href="#解决办法：-1" class="headerlink" title="解决办法："></a>解决办法：</h3><p>安装 hexo-generator-search和 hexo-generator-searchdb</p>
-<p>在根目录下执行以下命令：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ npm install hexo-generator-search --save</span><br><span class="line">$ npm install hexo-generator-searchdb --save</span><br></pre></td></tr></table></figure></p>
-<p>在根目录的_config.yml文件中添加<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">search:</span><br><span class="line">  path: search.xml</span><br><span class="line">  field: post</span><br><span class="line">  format: html</span><br><span class="line">  <span class="built_in">limit</span>: 10000</span><br></pre></td></tr></table></figure></p>
-
-          
+          github主页：https://github.com/iissnan/hexo-theme-next 
+侧边菜单修改却无法访问在next的_config.yml文件中修改menu配置，添加tag和categories选项，但点击会出现404页面。
+解决办法：在根目录执行以下命令：12hexo ne
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/09/11/Hexo/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -772,12 +680,16 @@ Set-Cookie: BDORZ=27315; max-age=86400; domain=.baidu.com; path=/
       
         
           
-            <h3 id="git版本控制中几个重要概念"><a href="#git版本控制中几个重要概念" class="headerlink" title="git版本控制中几个重要概念"></a>git版本控制中几个重要概念</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">1.git init</span><br><span class="line">    初始化本地仓库 .git</span><br><span class="line">2.git add</span><br><span class="line">    文件路径，用来将变动加到暂存区</span><br><span class="line">3.git commit -v</span><br><span class="line">    提交时显示所有diff信息</span><br></pre></td></tr></table></figure>
-<h3 id="使用git前配置"><a href="#使用git前配置" class="headerlink" title="使用git前配置"></a>使用git前配置</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name 你的英文名</span><br><span class="line">git config --global user.email 你的邮箱</span><br><span class="line">git config --global push.default matching</span><br><span class="line">git config --global core.quotepath <span class="literal">false</span></span><br><span class="line">git config --global core.editor <span class="string">"vim"</span></span><br></pre></td></tr></table></figure>
-<h3 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">git init //不要在已经初始化好的仓库使用，否则会将已经初始化完成的仓库覆盖</span><br><span class="line">git status //查看状态</span><br><span class="line">git add //提交文件放入暂存区</span><br><span class="line">git commit  //将暂存区的更新提交到本地仓库</span><br><span class="line">git push origin master //把当前本地仓库里的改动推送到远程仓库（origin）的master分支。之后可以直接git push。</span><br><span class="line">git pull //当远程仓库有变动但是本地仓库没有更新，会拒绝git push， 使用git pull将远程仓库拉到本地仓库，合并变动。</span><br><span class="line">git push -f origin master //强制推送，会覆盖别人的代码</span><br><span class="line">git remote add xxx git@xxx.git //再次添加一个远程仓库的标签</span><br><span class="line">git push xxx master //推送到xxx标签的地址</span><br><span class="line">git remote remove xxx //删除xxx标签</span><br><span class="line">git remote <span class="built_in">set</span>-url origin url //修改origin标签对应的地址</span><br><span class="line">git remote rename xxx coding //把xxx标签名修改为coding</span><br></pre></td></tr></table></figure>
-<h3 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h3><p>打开 git bash，进入某目录后输入以下命令：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> blog -- 进入blog文件夹</span><br><span class="line">git init -- 初始化本地仓库，创建.git目录</span><br><span class="line">touch index.html -- 添加index.html文件</span><br><span class="line">git add index.html -- 将文件添加到暂存区 (也可以使用git add . 表示将当前目录内所有改动都加入暂存区)</span><br><span class="line">git commit index.html -m <span class="string">'添加index.html'</span> 告诉 git，这些文件我要加到仓库里(也可以一次性git commit -m <span class="string">"添加所有改动文件"</span>)</span><br></pre></td></tr></table></figure></p>
-
-          
+          git版本控制中几个重要概念1234561.git init    初始化本地仓库 .git2.git add    文件路径，用来将变动加到暂存区3.git commit -v    提交时显示所有diff信息
+使用git前配置12345git config --global user.name 
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/09/10/git入门/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -917,35 +829,20 @@ Set-Cookie: BDORZ=27315; max-age=86400; domain=.baidu.com; path=/
       
         
           
-            <h2 id="几个常用命令的使用方法"><a href="#几个常用命令的使用方法" class="headerlink" title="几个常用命令的使用方法"></a>几个常用命令的使用方法</h2><h3 id="ls-罗列"><a href="#ls-罗列" class="headerlink" title="ls  罗列"></a>ls  罗列</h3><pre><code>* ls 路径
+          几个常用命令的使用方法ls  罗列* ls 路径
 显示所有文件
 * ls -a 路径
 显示所有目录和文件（文件或目录名称为“.”的视为隐藏，不会列出）；
 * ls -l 路径
-以长格式显示目录下的内容列表。输出的信息从左到右依次包括文件名，文件类型、权限模式、硬连接数、所有者、组、文件大小和文件的最后修改时间等；
-* ls -al 路径
-在ls -l的基础上多显示以“.“开头的隐藏文件；
-</code></pre><hr>
-<h3 id="cat-显示文件内容"><a href="#cat-显示文件内容" class="headerlink" title="cat  显示文件内容"></a>cat  显示文件内容</h3><pre><code>* cat m1
-在屏幕上显示文件ml的内容
-* cat m1 m2
-同时显示文件ml和m2的内容
-* cat m1 m2 &gt; file
-将文件ml和m2合并后放入文件file中
-</code></pre><hr>
-<h3 id="mv-移动-重命名"><a href="#mv-移动-重命名" class="headerlink" title="mv  移动 / 重命名"></a>mv  移动 / 重命名</h3><pre><code>* mv 源路径 目标路径
-将某文件从源路径移动至目标路径
-* mv 1.txt 2.txt
-把 1.txt 移到 2.txt ，也就是重命名
-</code></pre><hr>
-<h3 id="touch-触摸"><a href="#touch-触摸" class="headerlink" title="touch  触摸"></a>touch  触摸</h3><pre><code>* touch 1.txt
-创建1.txt文件 或 改变该文件的更新时间
-</code></pre><h2 id="explainshell-com-的使用"><a href="#explainshell-com-的使用" class="headerlink" title="explainshell.com 的使用"></a>explainshell.com 的使用</h2><ol>
-<li>想知道某个命令的用法，搜索该命令就能展示其所有的用法。</li>
-<li>在输入框内输入一段命令，这个网站就能帮助你解析该命令是如何工作的，简洁易懂。<br><img src="/2018/09/10/git命令/explainshell.jpg" alt="explainshell.com"></li>
-</ol>
-
-          
+以长格式显示目录下的内容列表。输出的信息从左到右依次包括文件名，文件类型、权限模式、硬连接数、所有者、组、文件大小和文件的最
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/09/10/git命令/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
