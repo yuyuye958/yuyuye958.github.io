@@ -375,15 +375,12 @@
 
       
         
-          
-          Server + Client + HTTP* 浏览器负责发起请求
+          <h2 id="Server-Client-HTTP"><a href="#Server-Client-HTTP" class="headerlink" title="Server + Client + HTTP"></a>Server + Client + HTTP</h2><pre><code>* 浏览器负责发起请求
 * 服务器在 80 端口接收请求
 * 服务器负责返回内容（响应）
 * 浏览器负责下载响应内容
 HTTP 的作用就是指导浏览器和服务器如何进行沟通。
-请求请求示例输入以下命令：
-curl -s -v -H "Allen: xxx" -
-          ...
+</code></pre>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2018/09/11/HTTP-intro/#more" rel="contents">
@@ -529,11 +526,10 @@ curl -s -v -H "Allen: xxx" -
 
       
         
-          
-          github主页：https://github.com/iissnan/hexo-theme-next 
-侧边菜单修改却无法访问在next的_config.yml文件中修改menu配置，添加tag和categories选项，但点击会出现404页面。
-解决办法：在根目录执行以下命令：12hexo ne
-          ...
+          <p>该主题的github主页：<a href="https://github.com/iissnan/hexo-theme-next" target="_blank" rel="noopener">https://github.com/iissnan/hexo-theme-next</a> </p>
+<h2 id="侧边菜单修改却无法访问"><a href="#侧边菜单修改却无法访问" class="headerlink" title="侧边菜单修改却无法访问"></a>侧边菜单修改却无法访问</h2><p>在next的_config.yml文件中修改menu配置，添加tag和categories选项，但点击会出现404页面。</p>
+<h3 id="解决办法："><a href="#解决办法：" class="headerlink" title="解决办法："></a>解决办法：</h3><p>在根目录执行以下命令：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo new page <span class="string">"tags"</span> </span><br><span class="line">hexo new page <span class="string">"categories"</span></span><br></pre></td></tr></table></figure></p>
+<p>打开它们并相应添加type: “tags”和type: “categories”，保存</p>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2018/09/11/Hexo/#more" rel="contents">
@@ -679,10 +675,7 @@ curl -s -v -H "Allen: xxx" -
 
       
         
-          
-          git版本控制中几个重要概念1234561.git init    初始化本地仓库 .git2.git add    文件路径，用来将变动加到暂存区3.git commit -v    提交时显示所有diff信息
-使用git前配置12345git config --global user.name 
-          ...
+          <h3 id="git版本控制中几个重要概念"><a href="#git版本控制中几个重要概念" class="headerlink" title="git版本控制中几个重要概念"></a>git版本控制中几个重要概念</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">1.git init</span><br><span class="line">    初始化本地仓库 .git</span><br><span class="line">2.git add</span><br><span class="line">    文件路径，用来将变动加到暂存区</span><br><span class="line">3.git commit -v</span><br><span class="line">    提交时显示所有diff信息</span><br></pre></td></tr></table></figure>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2018/09/10/git入门/#more" rel="contents">
@@ -828,14 +821,15 @@ curl -s -v -H "Allen: xxx" -
 
       
         
-          
-          几个常用命令的使用方法ls  罗列* ls 路径
+          <h2 id="几个常用命令的使用方法"><a href="#几个常用命令的使用方法" class="headerlink" title="几个常用命令的使用方法"></a>几个常用命令的使用方法</h2><h3 id="ls-罗列"><a href="#ls-罗列" class="headerlink" title="ls  罗列"></a>ls  罗列</h3><pre><code>* ls 路径
 显示所有文件
 * ls -a 路径
 显示所有目录和文件（文件或目录名称为“.”的视为隐藏，不会列出）；
 * ls -l 路径
-以长格式显示目录下的内容列表。输出的信息从左到右依次包括文件名，文件类型、权限模式、硬连接数、所有者、组、文件大小和文件的最
-          ...
+以长格式显示目录下的内容列表。输出的信息从左到右依次包括文件名，文件类型、权限模式、硬连接数、所有者、组、文件大小和文件的最后修改时间等；
+* ls -al 路径
+在ls -l的基础上多显示以“.“开头的隐藏文件；
+</code></pre>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2018/09/10/git命令/#more" rel="contents">
