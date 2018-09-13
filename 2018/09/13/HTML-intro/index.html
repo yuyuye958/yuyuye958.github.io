@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="HTML 元素类别 块级元素（block） 行内元素（inline） 行内块元素（inline-block）。  display：blockblock元素会独占一行，多个block元素会各自新起一行。默认情况下，block元素宽度自动填满其父元素的宽度。block元素可以设置width、height属性。块级元素及时设置了宽度，仍然会独占一行。block元素可以设置margin、padding属性">
+<meta name="description" content="HTML标签的一些重要知识（本文重点）a 标签 超链接 跳转页面（HTTP GET 请求）  属性见 MDN：  https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/a   href：指定链接地址 target：规定“href”属性中指定的网页或文件以何种方式行进跳转或打开，其值包括：_blank、_self、_parent、_top">
 <meta name="keywords" content="HTML">
 <meta property="og:type" content="article">
 <meta property="og:title" content="HTML的常用标签和一些重要知识点">
 <meta property="og:url" content="http://yoursite.com/2018/09/13/HTML-intro/index.html">
 <meta property="og:site_name" content="Allen&#39;s Blog">
-<meta property="og:description" content="HTML 元素类别 块级元素（block） 行内元素（inline） 行内块元素（inline-block）。  display：blockblock元素会独占一行，多个block元素会各自新起一行。默认情况下，block元素宽度自动填满其父元素的宽度。block元素可以设置width、height属性。块级元素及时设置了宽度，仍然会独占一行。block元素可以设置margin、padding属性">
+<meta property="og:description" content="HTML标签的一些重要知识（本文重点）a 标签 超链接 跳转页面（HTTP GET 请求）  属性见 MDN：  https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/a   href：指定链接地址 target：规定“href”属性中指定的网页或文件以何种方式行进跳转或打开，其值包括：_blank、_self、_parent、_top">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-09-13T07:16:18.677Z">
+<meta property="og:updated_time" content="2018-09-13T07:23:32.421Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="HTML的常用标签和一些重要知识点">
-<meta name="twitter:description" content="HTML 元素类别 块级元素（block） 行内元素（inline） 行内块元素（inline-block）。  display：blockblock元素会独占一行，多个block元素会各自新起一行。默认情况下，block元素宽度自动填满其父元素的宽度。block元素可以设置width、height属性。块级元素及时设置了宽度，仍然会独占一行。block元素可以设置margin、padding属性">
+<meta name="twitter:description" content="HTML标签的一些重要知识（本文重点）a 标签 超链接 跳转页面（HTTP GET 请求）  属性见 MDN：  https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/a   href：指定链接地址 target：规定“href”属性中指定的网页或文件以何种方式行进跳转或打开，其值包括：_blank、_self、_parent、_top">
 
 
 
@@ -376,61 +376,14 @@
       
 
       
-        <h2 id="HTML-元素类别"><a href="#HTML-元素类别" class="headerlink" title="HTML 元素类别"></a>HTML 元素类别</h2><ul>
-<li>块级元素（block）</li>
-<li>行内元素（inline）</li>
-<li>行内块元素（inline-block）。</li>
-</ul>
-<h3 id="display：block"><a href="#display：block" class="headerlink" title="display：block"></a>display：block</h3><p>block元素会独占一行，多个block元素会各自新起一行。默认情况下，block元素宽度自动填满其父元素的宽度。block元素可以设置width、height属性。块级元素及时设置了宽度，仍然会独占一行。block元素可以设置margin、padding属性。</p>
-<h3 id="display：inline"><a href="#display：inline" class="headerlink" title="display：inline"></a>display：inline</h3><p>inline元素不会独占一行，多个相邻的行内元素会排在同一行里，直到一行排列不下，才会新换行，其宽度随元素的内容而变化。inline元素设置width、height属性无效。inline元素的margin和padding属性，水平方向的padding-left、padding-right、margin-left、margin-right都产生边距效果，但竖直方向的padidng-top、padding-bottom、margin-top以及margin-bottom不会产生边距效果。</p>
-<h3 id="display：inline-block"><a href="#display：inline-block" class="headerlink" title="display：inline-block"></a>display：inline-block</h3><p>简单来说就是将对象呈现为inline对象，但是对象的内容作为block对象呈现。之后的内联对象会被排列在同一行内。比如我们可以给一个link（a元素）inline-block属性值，使其具有block的宽度高度特性又具有inline的同行特性。</p>
-<a id="more"></a>
-<hr>
-<h2 id="HTML-常用标签"><a href="#HTML-常用标签" class="headerlink" title="HTML 常用标签"></a>HTML 常用标签</h2><h3 id="文本标签"><a href="#文本标签" class="headerlink" title="文本标签"></a>文本标签</h3><ul>
-<li>标题：h1~h6</li>
-<li>文本：span</li>
-<li>段落：p</li>
-<li>强调：em</li>
-<li>粗体：b</li>
-<li>斜体：i</li>
-<li>删除线：s</li>
-<li>上标：sup</li>
-<li>下标：sub</li>
-</ul>
-<h3 id="语义化标签"><a href="#语义化标签" class="headerlink" title="语义化标签"></a>语义化标签</h3><ul>
-<li>头部：header</li>
-<li>尾部：footer</li>
-<li>导航：nav</li>
-<li>文章：article</li>
-<li>章节：section</li>
-<li>侧栏：aside</li>
-<li>地址：address</li>
-<li>时间：time</li>
-<li>标记：mark</li>
-<li>布局：div</li>
-<li>引用：blockquote</li>
-<li>文档主要内容：main （块级标签）</li>
-<li>详细信息：details，一般与 summary 标签一起使用，summary 作为details的第一个子标签使用</li>
-</ul>
-<h3 id="格式化标签"><a href="#格式化标签" class="headerlink" title="格式化标签"></a>格式化标签</h3><ul>
-<li>换行：br</li>
-<li>水平分割线：hr</li>
-</ul>
-<hr>
-<h3 id="img-标签-图片"><a href="#img-标签-图片" class="headerlink" title="img 标签 图片"></a>img 标签 图片</h3><ul>
-<li>src：指定图片链接地址（必须）</li>
-<li>width/height：设置宽度/高度</li>
-<li>title：设置图片标题，鼠标悬浮在图片上时显示</li>
-<li>alt：设置提示，当图片加载失败时会显示</li>
-</ul>
-<hr>
-<h3 id="a-标签-超链接"><a href="#a-标签-超链接" class="headerlink" title="a 标签 超链接"></a>a 标签 超链接</h3><blockquote>
+        <h2 id="HTML标签的一些重要知识（本文重点）"><a href="#HTML标签的一些重要知识（本文重点）" class="headerlink" title="HTML标签的一些重要知识（本文重点）"></a>HTML标签的一些重要知识（本文重点）</h2><h3 id="a-标签-超链接"><a href="#a-标签-超链接" class="headerlink" title="a 标签 超链接"></a>a 标签 超链接</h3><blockquote>
 <p>跳转页面<strong><em>（HTTP GET 请求）</em></strong><br>  属性见 MDN：<br>  <a href="https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/a" target="_blank" rel="noopener">https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/a</a></p>
 </blockquote>
 <ul>
 <li>href：指定链接地址</li>
 <li>target：规定“href”属性中指定的网页或文件以何种方式行进跳转或打开，其值包括：_blank、_self、_parent、_top以及iframe的name属性的值</li>
 </ul>
+<a id="more"></a>
 <h4 id="特别的使用方法"><a href="#特别的使用方法" class="headerlink" title="特别的使用方法"></a>特别的使用方法</h4><ol>
 <li><p>锚点</p>
  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;a href=<span class="string">"#top"</span>&gt;link&lt;/a&gt;</span><br></pre></td></tr></table></figure>
@@ -499,6 +452,52 @@
 </blockquote>
 <h4 id="相关概念"><a href="#相关概念" class="headerlink" title="相关概念"></a>相关概念</h4><p>thead：表头（表格标题及头部信息不等）<br>tbody：表中（表格显示的内容部分）<br>tfoot：表尾（表格说明与备注部分）<br>tr：行<br>th：单元格，作为行或列的标题呈现<br>td：单元格，作为内容单元格呈现<br>caption：表格主标题，位于表格之外</p>
 <h4 id="表格常用属性"><a href="#表格常用属性" class="headerlink" title="表格常用属性"></a>表格常用属性</h4><p>width/height：设置宽度/高度<br>border：设置边框<br>align：设置表格对齐方式（left/center/right）<br>cellspacing：设置单元格与单元格之间的间距<br>cellpadding：设置单元格与内容之间的间距<br>bgcolor：设置表格背景颜色<br>background：设置背景图片<br>colspan：跨列 ‘<td colspan="2"></td>’<br>rowspan：跨行 ‘<td rowspan="2"></td>’</p>
+<hr>
+<h2 id="其他一些常见标签"><a href="#其他一些常见标签" class="headerlink" title="其他一些常见标签"></a>其他一些常见标签</h2><h3 id="文本标签"><a href="#文本标签" class="headerlink" title="文本标签"></a>文本标签</h3><ul>
+<li>标题：h1~h6</li>
+<li>文本：span</li>
+<li>段落：p</li>
+<li>强调：em</li>
+<li>粗体：b</li>
+<li>斜体：i</li>
+<li>删除线：s</li>
+<li>上标：sup</li>
+<li>下标：sub</li>
+</ul>
+<h3 id="语义化标签"><a href="#语义化标签" class="headerlink" title="语义化标签"></a>语义化标签</h3><ul>
+<li>头部：header</li>
+<li>尾部：footer</li>
+<li>导航：nav</li>
+<li>文章：article</li>
+<li>章节：section</li>
+<li>侧栏：aside</li>
+<li>地址：address</li>
+<li>时间：time</li>
+<li>标记：mark</li>
+<li>布局：div</li>
+<li>引用：blockquote</li>
+<li>文档主要内容：main （块级标签）</li>
+<li>详细信息：details，一般与 summary 标签一起使用，summary 作为details的第一个子标签使用</li>
+</ul>
+<h3 id="格式化标签"><a href="#格式化标签" class="headerlink" title="格式化标签"></a>格式化标签</h3><ul>
+<li>换行：br</li>
+<li>水平分割线：hr</li>
+</ul>
+<h3 id="img-标签-图片"><a href="#img-标签-图片" class="headerlink" title="img 标签 图片"></a>img 标签 图片</h3><ul>
+<li>src：指定图片链接地址（必须）</li>
+<li>width/height：设置宽度/高度</li>
+<li>title：设置图片标题，鼠标悬浮在图片上时显示</li>
+<li>alt：设置提示，当图片加载失败时会显示</li>
+</ul>
+<hr>
+<h2 id="HTML-元素类别"><a href="#HTML-元素类别" class="headerlink" title="HTML 元素类别"></a>HTML 元素类别</h2><ul>
+<li>块级元素（block）</li>
+<li>行内元素（inline）</li>
+<li>行内块元素（inline-block）。</li>
+</ul>
+<h3 id="display：block"><a href="#display：block" class="headerlink" title="display：block"></a>display：block</h3><p>block元素会独占一行，多个block元素会各自新起一行。默认情况下，block元素宽度自动填满其父元素的宽度。block元素可以设置width、height属性。块级元素及时设置了宽度，仍然会独占一行。block元素可以设置margin、padding属性。</p>
+<h3 id="display：inline"><a href="#display：inline" class="headerlink" title="display：inline"></a>display：inline</h3><p>inline元素不会独占一行，多个相邻的行内元素会排在同一行里，直到一行排列不下，才会新换行，其宽度随元素的内容而变化。inline元素设置width、height属性无效。inline元素的margin和padding属性，水平方向的padding-left、padding-right、margin-left、margin-right都产生边距效果，但竖直方向的padidng-top、padding-bottom、margin-top以及margin-bottom不会产生边距效果。</p>
+<h3 id="display：inline-block"><a href="#display：inline-block" class="headerlink" title="display：inline-block"></a>display：inline-block</h3><p>简单来说就是将对象呈现为inline对象，但是对象的内容作为block对象呈现。之后的内联对象会被排列在同一行内。比如我们可以给一个link（a元素）inline-block属性值，使其具有block的宽度高度特性又具有inline的同行特性。</p>
 <hr>
 <h2 id="一些特别的重要知识点"><a href="#一些特别的重要知识点" class="headerlink" title="一些特别的重要知识点"></a>一些特别的重要知识点</h2><ol>
 <li>a标签的一些特别用法，见上文。</li>
@@ -701,7 +700,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#HTML-元素类别"><span class="nav-number">1.</span> <span class="nav-text">HTML 元素类别</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#display：block"><span class="nav-number">1.1.</span> <span class="nav-text">display：block</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#display：inline"><span class="nav-number">1.2.</span> <span class="nav-text">display：inline</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#display：inline-block"><span class="nav-number">1.3.</span> <span class="nav-text">display：inline-block</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HTML-常用标签"><span class="nav-number">2.</span> <span class="nav-text">HTML 常用标签</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#文本标签"><span class="nav-number">2.1.</span> <span class="nav-text">文本标签</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#语义化标签"><span class="nav-number">2.2.</span> <span class="nav-text">语义化标签</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#格式化标签"><span class="nav-number">2.3.</span> <span class="nav-text">格式化标签</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#img-标签-图片"><span class="nav-number">2.4.</span> <span class="nav-text">img 标签 图片</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#a-标签-超链接"><span class="nav-number">2.5.</span> <span class="nav-text">a 标签 超链接</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#特别的使用方法"><span class="nav-number">2.5.1.</span> <span class="nav-text">特别的使用方法</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#form-标签-表单"><span class="nav-number">2.6.</span> <span class="nav-text">form 标签 表单</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#使用注意事项"><span class="nav-number">2.6.1.</span> <span class="nav-text">使用注意事项</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#input-button-输入-按钮"><span class="nav-number">2.7.</span> <span class="nav-text">input / button 输入 / 按钮</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#使用注意事项-1"><span class="nav-number">2.7.1.</span> <span class="nav-text">使用注意事项</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#table-标签-表格"><span class="nav-number">2.8.</span> <span class="nav-text">table 标签 表格</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#相关概念"><span class="nav-number">2.8.1.</span> <span class="nav-text">相关概念</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#表格常用属性"><span class="nav-number">2.8.2.</span> <span class="nav-text">表格常用属性</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#一些特别的重要知识点"><span class="nav-number">3.</span> <span class="nav-text">一些特别的重要知识点</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#HTML标签的一些重要知识（本文重点）"><span class="nav-number">1.</span> <span class="nav-text">HTML标签的一些重要知识（本文重点）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#a-标签-超链接"><span class="nav-number">1.1.</span> <span class="nav-text">a 标签 超链接</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#特别的使用方法"><span class="nav-number">1.1.1.</span> <span class="nav-text">特别的使用方法</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#form-标签-表单"><span class="nav-number">1.2.</span> <span class="nav-text">form 标签 表单</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#使用注意事项"><span class="nav-number">1.2.1.</span> <span class="nav-text">使用注意事项</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#input-button-输入-按钮"><span class="nav-number">1.3.</span> <span class="nav-text">input / button 输入 / 按钮</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#使用注意事项-1"><span class="nav-number">1.3.1.</span> <span class="nav-text">使用注意事项</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#table-标签-表格"><span class="nav-number">1.4.</span> <span class="nav-text">table 标签 表格</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#相关概念"><span class="nav-number">1.4.1.</span> <span class="nav-text">相关概念</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#表格常用属性"><span class="nav-number">1.4.2.</span> <span class="nav-text">表格常用属性</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#其他一些常见标签"><span class="nav-number">2.</span> <span class="nav-text">其他一些常见标签</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#文本标签"><span class="nav-number">2.1.</span> <span class="nav-text">文本标签</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#语义化标签"><span class="nav-number">2.2.</span> <span class="nav-text">语义化标签</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#格式化标签"><span class="nav-number">2.3.</span> <span class="nav-text">格式化标签</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#img-标签-图片"><span class="nav-number">2.4.</span> <span class="nav-text">img 标签 图片</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HTML-元素类别"><span class="nav-number">3.</span> <span class="nav-text">HTML 元素类别</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#display：block"><span class="nav-number">3.1.</span> <span class="nav-text">display：block</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#display：inline"><span class="nav-number">3.2.</span> <span class="nav-text">display：inline</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#display：inline-block"><span class="nav-number">3.3.</span> <span class="nav-text">display：inline-block</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#一些特别的重要知识点"><span class="nav-number">4.</span> <span class="nav-text">一些特别的重要知识点</span></a></li></ol></div>
             
 
           </div>
