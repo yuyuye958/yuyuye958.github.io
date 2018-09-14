@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="CSS," />
 
 
 
@@ -79,14 +79,18 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="标签">
-<meta property="og:url" content="http://yoursite.com/tags/index.html">
+<meta name="description" content="引用CSS的四种方式 内联style属性 style标签 引用外部css文件 link标签 @import url(./style.css);">
+<meta name="keywords" content="CSS">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CSS的一些知识点">
+<meta property="og:url" content="http://yoursite.com/2018/09/14/CSS/index.html">
 <meta property="og:site_name" content="Allen&#39;s Blog">
+<meta property="og:description" content="引用CSS的四种方式 内联style属性 style标签 引用外部css文件 link标签 @import url(./style.css);">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-09-10T18:56:34.019Z">
+<meta property="og:updated_time" content="2018-09-14T11:42:00.196Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="标签">
+<meta name="twitter:title" content="CSS的一些知识点">
+<meta name="twitter:description" content="引用CSS的四种方式 内联style属性 style标签 引用外部css文件 link标签 @import url(./style.css);">
 
 
 
@@ -116,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/tags/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/09/14/CSS/"/>
 
 
 
 
 
-  <title>标签 | Allen's Blog</title>
+  <title>CSS的一些知识点 | Allen's Blog</title>
   
 
 
@@ -271,40 +275,233 @@
 
   <div id="posts" class="posts-expand">
     
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/14/CSS/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Allen Ye">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Allen's Blog">
+    </span>
+
     
-    
-    <div class="post-block page">
       <header class="post-header">
 
-	<h1 class="post-title" itemprop="name headline">标签</h1>
-
-
-
-</header>
-
-      
-      
-      
-      <div class="post-body">
         
         
-          <div class="tag-cloud">
-            <div class="tag-cloud-title">
-                目前共计 5 个标签
-            </div>
-            <div class="tag-cloud-tags">
-              <a href="/tags/CSS/" style="font-size: 12px; color: #ccc">CSS</a> <a href="/tags/HTML/" style="font-size: 12px; color: #ccc">HTML</a> <a href="/tags/HTTP/" style="font-size: 12px; color: #ccc">HTTP</a> <a href="/tags/Hexo/" style="font-size: 12px; color: #ccc">Hexo</a> <a href="/tags/git/" style="font-size: 30px; color: #111">git</a>
-            </div>
-          </div>
+          <h1 class="post-title" itemprop="name headline">CSS的一些知识点</h1>
         
-      </div>
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-14T16:58:07+08:00">
+                2018-09-14
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/CSS/" itemprop="url" rel="index">
+                    <span itemprop="name">CSS</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
       
       
+
+      
+        <h3 id="引用CSS的四种方式"><a href="#引用CSS的四种方式" class="headerlink" title="引用CSS的四种方式"></a>引用CSS的四种方式</h3><ol>
+<li>内联style属性</li>
+<li>style标签</li>
+<li>引用外部css文件 link标签</li>
+<li>@import url(./style.css);</li>
+</ol>
+<a id="more"></a>
+<h3 id="清除float导致浮动的办法"><a href="#清除float导致浮动的办法" class="headerlink" title="清除float导致浮动的办法"></a>清除float导致浮动的办法</h3><pre><code class="bash">.clearfix::after{
+    content: <span class="string">''</span>;
+    display: block;
+    clear: both;
+} 
+</code></pre>
+<ul>
+<li>在float元素的父级元素上加上clearfix的class</li>
+</ul>
+<h3 id="元素的高度是由什么决定的？"><a href="#元素的高度是由什么决定的？" class="headerlink" title="元素的高度是由什么决定的？"></a>元素的高度是由什么决定的？</h3><ul>
+<li>元素的高度，由其内部文档流元素的高度总和决定</li>
+<li>文档流: 文档内元素的流动方向</li>
+<li>尽量不写高度宽度，用padding和line-height解决，否则可能造成bug</li>
+<li>字体较小的时候，可用line-height控制内联元素的高度 </li>
+</ul>
+<h3 id="中文会自动换行而英文不会"><a href="#中文会自动换行而英文不会" class="headerlink" title="中文会自动换行而英文不会"></a>中文会自动换行而英文不会</h3><p>可以用以下CSS属性解决</p>
+<pre><code class="bash">word-break: <span class="built_in">break</span>-all;  使得一串英文会被打断 分开
+word-break: <span class="built_in">break</span>-word;   不会打断 分开
+</code></pre>
+<h3 id="用CSS画三角形的方法"><a href="#用CSS画三角形的方法" class="headerlink" title="用CSS画三角形的方法"></a>用CSS画三角形的方法</h3><pre><code class="bash">.triangle{
+    border: 10px solid transparent;
+    width: 0px;
+    border-left-color: <span class="comment">#E6686A;</span>
+    border-top-width: 0px;
+}
+</code></pre>
+<h3 id="背景图铺满整个背景"><a href="#背景图铺满整个背景" class="headerlink" title="背景图铺满整个背景"></a>背景图铺满整个背景</h3><p>用以下属性实现</p>
+<pre><code class="bash">background-size:cover
+</code></pre>
+<h3 id="position属性"><a href="#position属性" class="headerlink" title="position属性"></a>position属性</h3><p>　　position的含义是指定位类型，取值类型可以有：static、relative、absolute、fixed、inherit和sticky。</p>
+<ol>
+<li>position: static</li>
+</ol>
+<p>　　static(没有定位)是position的默认值，元素处于正常的文档流中，会忽略left、top、right、bottom和z-index属性。</p>
+<ol start="2">
+<li>position: relative</li>
+</ol>
+<p>　　relative(相对定位)是指给元素设置相对于原本位置的定位，元素并不脱离文档流，因此元素原本的位置会被保留，其他的元素位置不会受到影响。</p>
+<ol start="3">
+<li>position: absolute</li>
+</ol>
+<p>　　absolute(绝对定位)是指给元素设置绝对的定位，相对定位的对象可以分为两种情况：</p>
+<p>　　1) 设置了absolute的元素如果存在有祖先元素设置了position属性为relative或者absolute，则这时元素的定位对象为此已设置position属性的祖先元素。</p>
+<p>　　2) 如果并没有设置了position属性的祖先元素，则此时相对于body进行定位。</p>
+<ol start="4">
+<li>position: fixed</li>
+</ol>
+<p>　　可以简单说fixed是特殊版的absolute，fixed元素总是相对于body定位的。</p>
+<ol start="5">
+<li>inherit</li>
+</ol>
+<p>　　继承父元素的position属性，但需要注意的是IE8以及往前的版本都不支持inherit属性。</p>
+<ol start="6">
+<li>sticky</li>
+</ol>
+<p>　　在屏幕范围（viewport）时该元素的位置并不受到定位影响（设置是top、left等属性无效），当该元素的位置将要移出偏移范围时，定位又会变成fixed，根据设置的left、top等属性成固定位置的效果。</p>
+<ul>
+<li>该部分可参考网站:<br>  <a href="http://www.cnblogs.com/s1nker/p/4835079.html" target="_blank" rel="noopener">http://www.cnblogs.com/s1nker/p/4835079.html</a></li>
+</ul>
+<h3 id="icon图标资源的网站"><a href="#icon图标资源的网站" class="headerlink" title="icon图标资源的网站"></a>icon图标资源的网站</h3><pre><code>* http://www.iconfont.cn
+阿里巴巴的矢量图标管理、交流平台。
+</code></pre>
       
     </div>
     
     
     
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/CSS/" rel="tag"># CSS</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/09/13/HTML-intro/" rel="next" title="HTML的常用标签和一些重要知识点">
+                <i class="fa fa-chevron-left"></i> HTML的常用标签和一些重要知识点
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
   </div>
 
 
@@ -337,8 +534,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -418,6 +624,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#引用CSS的四种方式"><span class="nav-number">1.</span> <span class="nav-text">引用CSS的四种方式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#清除float导致浮动的办法"><span class="nav-number">2.</span> <span class="nav-text">清除float导致浮动的办法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#元素的高度是由什么决定的？"><span class="nav-number">3.</span> <span class="nav-text">元素的高度是由什么决定的？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#中文会自动换行而英文不会"><span class="nav-number">4.</span> <span class="nav-text">中文会自动换行而英文不会</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#用CSS画三角形的方法"><span class="nav-number">5.</span> <span class="nav-text">用CSS画三角形的方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#背景图铺满整个背景"><span class="nav-number">6.</span> <span class="nav-text">背景图铺满整个背景</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#position属性"><span class="nav-number">7.</span> <span class="nav-text">position属性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#icon图标资源的网站"><span class="nav-number">8.</span> <span class="nav-text">icon图标资源的网站</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
