@@ -302,7 +302,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/09/14/CSS/" itemprop="url">CSS的一些知识点</a></h1>
+                <a class="post-title-link" href="/2018/09/14/CSS/" itemprop="url">CSS的一些技巧和知识</a></h1>
         
 
         <div class="post-meta">
@@ -375,12 +375,13 @@
 
       
         
-          <h3 id="引用CSS的四种方式"><a href="#引用CSS的四种方式" class="headerlink" title="引用CSS的四种方式"></a>引用CSS的四种方式</h3><ol>
-<li>内联style属性</li>
-<li>style标签</li>
-<li>引用外部css文件 link标签</li>
-<li>@import url(./style.css);</li>
-</ol>
+          <h2 id="CCS布局技巧"><a href="#CCS布局技巧" class="headerlink" title="CCS布局技巧"></a>CCS布局技巧</h2><h3 id="1-左右布局"><a href="#1-左右布局" class="headerlink" title="1. 左右布局"></a>1. 左右布局</h3><p>如果有以下html结构，设置左右两栏布局</p>
+<pre><code class="bash">&lt;div class=<span class="string">"parent clearfix"</span>&gt;
+    &lt;div class=<span class="string">"leftChild"</span>&gt;&lt;/div&gt;
+    &lt;div class=<span class="string">"rightChild"</span>&gt;&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+<h4 id="设置浮动"><a href="#设置浮动" class="headerlink" title="设置浮动"></a>设置浮动</h4><p>左右布局常用的方法就是为子元素设置浮动，然后在其父元素上使用clearfix类清除浮动。示例代码如下：<br></p>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2018/09/14/CSS/#more" rel="contents">
