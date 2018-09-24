@@ -88,9 +88,10 @@
 <meta property="og:description" content="全局函数 Number12var n1 = 1var n2 = new Number(1)  // 创建一个 Number 对象    两者的区别是什么？前者将数据直接存在 Stack 里，后者实际上是一个哈希对象，把 Heap 地址存在 Stack 里。  但是前者没有toString()属性，为什么n1.toString()的结果是&amp;#39;1&amp;#39;？JS引擎会建立一个临时的对象， 12t">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://yoursite.com/2018/09/24/原型与原型链/1.jpg">
+<meta property="og:image" content="http://yoursite.com/2018/09/24/原型与原型链/3.jpg">
 <meta property="og:image" content="http://yoursite.com/2018/09/24/原型与原型链/2.png">
 <meta property="og:image" content="http://yoursite.com/2018/09/24/原型与原型链/总结.jpg">
-<meta property="og:updated_time" content="2018-09-24T08:35:55.072Z">
+<meta property="og:updated_time" content="2018-09-24T08:43:29.833Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="原型与原型链">
 <meta name="twitter:description" content="全局函数 Number12var n1 = 1var n2 = new Number(1)  // 创建一个 Number 对象    两者的区别是什么？前者将数据直接存在 Stack 里，后者实际上是一个哈希对象，把 Heap 地址存在 Stack 里。  但是前者没有toString()属性，为什么n1.toString()的结果是&amp;#39;1&amp;#39;？JS引擎会建立一个临时的对象， 12t">
@@ -414,7 +415,8 @@
 <li>这个原型对象B 默认会有一个属性 constructor 指向了这个函数A ( 意思就是说：constructor属性的值是函数A )。</li>
 </ul>
 <h3 id="使用构造函数创建对象"><a href="#使用构造函数创建对象" class="headerlink" title="使用构造函数创建对象"></a>使用构造函数创建对象</h3><p> 当把一个函数作为构造函数 (理论上任何函数都可以作为构造函数) 使用new创建对象的时候，那么这个对象就会存在一个默认的不可见的属性，来指向构造函数的原型对象。<br> 这个隐藏的属性在浏览器中用<strong>&#95;&#95;proto&#95;&#95;</strong>来表示。</p>
-<p>举例：<br><img src="/2018/09/24/原型与原型链/1.jpg" alt="例子"></p>
+<p>举例：<br><img src="/2018/09/24/原型与原型链/1.jpg" alt="例子1"></p>
+<p><img src="/2018/09/24/原型与原型链/3.jpg" alt="例子2"></p>
 <hr>
 <h3 id="95-95-proto-95-95-和-prototype-的区别"><a href="#95-95-proto-95-95-和-prototype-的区别" class="headerlink" title="&#95;&#95;proto&#95;&#95; 和 prototype 的区别"></a>&#95;&#95;proto&#95;&#95; 和 prototype 的区别</h3><ol>
 <li>&#95;&#95;proto&#95;&#95; 和 prototype 只是两个 key 而已</li>
