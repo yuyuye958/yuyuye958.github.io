@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="Allen&#39;s Blog">
 <meta property="og:description" content="什么是函数函数是一段可以反复调用的代码块。函数还能接受输入的参数，不同的参数会返回不同的值。函数的本质就是对象，或者说可以执行代码的对象就是函数。 函数的五种声明方法函数体内部的return语句，表示返回。JavaScript 引擎遇到return语句，就直接返回return后面的那个表达式的值，后面即使还有语句，也不会得到执行。也就是说，return语句所带的那个表达式，就是函数的返回值。如果没">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-10-03T04:17:30.628Z">
+<meta property="og:updated_time" content="2018-10-03T04:19:12.342Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JS中的函数">
 <meta name="twitter:description" content="什么是函数函数是一段可以反复调用的代码块。函数还能接受输入的参数，不同的参数会返回不同的值。函数的本质就是对象，或者说可以执行代码的对象就是函数。 函数的五种声明方法函数体内部的return语句，表示返回。JavaScript 引擎遇到return语句，就直接返回return后面的那个表达式的值，后面即使还有语句，也不会得到执行。也就是说，return语句所带的那个表达式，就是函数的返回值。如果没">
@@ -379,9 +379,11 @@
         <h2 id="什么是函数"><a href="#什么是函数" class="headerlink" title="什么是函数"></a>什么是函数</h2><p>函数是一段可以反复调用的代码块。函数还能接受输入的参数，不同的参数会返回不同的值。<br>函数的本质就是对象，或者说可以执行代码的对象就是函数。</p>
 <h2 id="函数的五种声明方法"><a href="#函数的五种声明方法" class="headerlink" title="函数的五种声明方法"></a>函数的五种声明方法</h2><p>函数体内部的return语句，表示返回。JavaScript 引擎遇到return语句，就直接返回return后面的那个表达式的值，后面即使还有语句，也不会得到执行。也就是说，return语句所带的那个表达式，就是函数的返回值。如果没有return，该函数就返回undefined。</p>
 <ul>
-<li><p>具名函数</p>
-<figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn1</span><span class="params">()</span> </span>&#123;</span><br><span class="line">   <span class="keyword">return</span> <span class="literal">undefined</span>; <span class="comment">// 如果不写return ，浏览器默认自动添加</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<li>具名函数<figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn1</span><span class="params">()</span> </span>&#123;</span><br><span class="line">   <span class="keyword">return</span> <span class="literal">undefined</span>; <span class="comment">// 如果不写return ，浏览器默认返回undefined</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
+</ul>
+<a id="more"></a>
+<ul>
 <li><p>匿名函数</p>
 <figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> fn2 = <span class="function"><span class="keyword">function</span><span class="params">()</span> </span>&#123;&#125;</span><br></pre></td></tr></table></figure>
 </li>
