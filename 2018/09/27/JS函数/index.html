@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="数组是什么数组（array）是按次序排列的一组值。每个值的位置都有编号（从0开始），整个数组用方括号表示。其实本质上，数组属于一种特殊的对象。typeof运算符会返回数组的类型是object。 数组的length属性数组的length属性，返回数组的成员数量。只要是数组，就一定有length属性。 数组的构造方法123var x = new Array(3) ; // 3表示数组的长度，每一个元素">
+<meta name="description" content="什么是函数函数是一段可以反复调用的代码块。函数还能接受输入的参数，不同的参数会返回不同的值。函数的本质就是对象，或者说可以执行代码的对象就是函数。 函数的五种声明方法函数体内部的return语句，表示返回。JavaScript 引擎遇到return语句，就直接返回return后面的那个表达式的值，后面即使还有语句，也不会得到执行。也就是说，return语句所带的那个表达式，就是函数的返回值。如果没">
 <meta name="keywords" content="JavaScript">
 <meta property="og:type" content="article">
-<meta property="og:title" content="JS中的数组">
-<meta property="og:url" content="http://yoursite.com/2018/09/26/JS数组/index.html">
+<meta property="og:title" content="JS中的函数">
+<meta property="og:url" content="http://yoursite.com/2018/09/27/JS函数/index.html">
 <meta property="og:site_name" content="Allen&#39;s Blog">
-<meta property="og:description" content="数组是什么数组（array）是按次序排列的一组值。每个值的位置都有编号（从0开始），整个数组用方括号表示。其实本质上，数组属于一种特殊的对象。typeof运算符会返回数组的类型是object。 数组的length属性数组的length属性，返回数组的成员数量。只要是数组，就一定有length属性。 数组的构造方法123var x = new Array(3) ; // 3表示数组的长度，每一个元素">
+<meta property="og:description" content="什么是函数函数是一段可以反复调用的代码块。函数还能接受输入的参数，不同的参数会返回不同的值。函数的本质就是对象，或者说可以执行代码的对象就是函数。 函数的五种声明方法函数体内部的return语句，表示返回。JavaScript 引擎遇到return语句，就直接返回return后面的那个表达式的值，后面即使还有语句，也不会得到执行。也就是说，return语句所带的那个表达式，就是函数的返回值。如果没">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-10-02T16:29:25.061Z">
+<meta property="og:updated_time" content="2018-10-03T04:17:30.628Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="JS中的数组">
-<meta name="twitter:description" content="数组是什么数组（array）是按次序排列的一组值。每个值的位置都有编号（从0开始），整个数组用方括号表示。其实本质上，数组属于一种特殊的对象。typeof运算符会返回数组的类型是object。 数组的length属性数组的length属性，返回数组的成员数量。只要是数组，就一定有length属性。 数组的构造方法123var x = new Array(3) ; // 3表示数组的长度，每一个元素">
+<meta name="twitter:title" content="JS中的函数">
+<meta name="twitter:description" content="什么是函数函数是一段可以反复调用的代码块。函数还能接受输入的参数，不同的参数会返回不同的值。函数的本质就是对象，或者说可以执行代码的对象就是函数。 函数的五种声明方法函数体内部的return语句，表示返回。JavaScript 引擎遇到return语句，就直接返回return后面的那个表达式的值，后面即使还有语句，也不会得到执行。也就是说，return语句所带的那个表达式，就是函数的返回值。如果没">
 
 
 
@@ -120,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/09/26/JS数组/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/09/27/JS函数/"/>
 
 
 
 
 
-  <title>JS中的数组 | Allen's Blog</title>
+  <title>JS中的函数 | Allen's Blog</title>
   
 
 
@@ -287,7 +287,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/26/JS数组/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/27/JS函数/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Allen Ye">
@@ -304,7 +304,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">JS中的数组</h1>
+          <h1 class="post-title" itemprop="name headline">JS中的函数</h1>
         
 
         <div class="post-meta">
@@ -316,8 +316,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-26T22:42:25+08:00">
-                2018-09-26
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-27T23:04:05+08:00">
+                2018-09-27
               </time>
             
 
@@ -376,30 +376,53 @@
       
 
       
-        <h2 id="数组是什么"><a href="#数组是什么" class="headerlink" title="数组是什么"></a>数组是什么</h2><p>数组（array）是按次序排列的一组值。每个值的位置都有编号（从0开始），整个数组用方括号表示。<br>其实本质上，数组属于一种特殊的对象。typeof运算符会返回数组的类型是object。</p>
-<h2 id="数组的length属性"><a href="#数组的length属性" class="headerlink" title="数组的length属性"></a>数组的length属性</h2><p>数组的length属性，返回数组的成员数量。只要是数组，就一定有length属性。</p>
-<h2 id="数组的构造方法"><a href="#数组的构造方法" class="headerlink" title="数组的构造方法"></a>数组的构造方法</h2><figure class="highlight haxe"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> x = <span class="keyword">new</span> <span class="type">Array</span>(<span class="number">3</span>) ; <span class="comment">// 3表示数组的长度，每一个元素都为undefined</span></span><br><span class="line"><span class="keyword">var</span> y = <span class="keyword">new</span> <span class="type">Array</span>(<span class="number">3</span>,<span class="number">3</span>); <span class="comment">// 得到一个数组[3,3]，是仿自Java中的写法，不常用。</span></span><br><span class="line"><span class="keyword">var</span> a = [<span class="number">3</span>,<span class="number">3</span>] ; <span class="comment">// 得到了一个数组[3,3]，常用</span></span><br></pre></td></tr></table></figure>
-<a id="more"></a>
-<h2 id="in-运算符-amp-amp-for…in-循环"><a href="#in-运算符-amp-amp-for…in-循环" class="headerlink" title="in 运算符 &amp;&amp; for…in 循环"></a>in 运算符 &amp;&amp; for…in 循环</h2><p>for in循环不仅可以遍历对象，也可以遍历数组，因为数组是一种特殊对象。</p>
+        <h2 id="什么是函数"><a href="#什么是函数" class="headerlink" title="什么是函数"></a>什么是函数</h2><p>函数是一段可以反复调用的代码块。函数还能接受输入的参数，不同的参数会返回不同的值。<br>函数的本质就是对象，或者说可以执行代码的对象就是函数。</p>
+<h2 id="函数的五种声明方法"><a href="#函数的五种声明方法" class="headerlink" title="函数的五种声明方法"></a>函数的五种声明方法</h2><p>函数体内部的return语句，表示返回。JavaScript 引擎遇到return语句，就直接返回return后面的那个表达式的值，后面即使还有语句，也不会得到执行。也就是说，return语句所带的那个表达式，就是函数的返回值。如果没有return，该函数就返回undefined。</p>
 <ul>
-<li><strong>使用时需要注意，for…in不仅会遍历数组所有的数字键，还会遍历非数字键。</strong></li>
+<li><p>具名函数</p>
+<figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn1</span><span class="params">()</span> </span>&#123;</span><br><span class="line">   <span class="keyword">return</span> <span class="literal">undefined</span>; <span class="comment">// 如果不写return ，浏览器默认自动添加</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>匿名函数</p>
+<figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> fn2 = <span class="function"><span class="keyword">function</span><span class="params">()</span> </span>&#123;&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>结合上面两种方式(谨慎使用)</p>
+<figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> fn3 = <span class="function"><span class="keyword">function</span> <span class="title">fn4</span><span class="params">()</span> </span>&#123;&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>使用Function函数对象<br>new Function() 中，最后一个参数表示函数体，前面的参数表示传入函数的参数。</p>
+<figure class="highlight oxygene"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> fn5 = <span class="keyword">new</span> <span class="function"><span class="keyword">Function</span><span class="params">(</span></span></span><br><span class="line"><span class="function"><span class="params">  <span class="string">'x'</span>,</span></span></span><br><span class="line"><span class="function"><span class="params">  <span class="string">'y'</span>,</span></span></span><br><span class="line"><span class="function"><span class="params">  <span class="string">'return x + y'</span></span></span></span><br><span class="line"><span class="function"><span class="params">)</span>;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>箭头函数（详情可见本文第14条）</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> fn6 = <span class="function">(<span class="params">x,y</span>) =&gt;</span> &#123;<span class="keyword">return</span> x+y&#125;  <span class="comment">// 箭头前面表示传入函数的参数，箭头后面表示函数体。</span></span><br><span class="line"><span class="keyword">var</span> fn7 = <span class="function"><span class="params">x</span> =&gt;</span> &#123;<span class="keyword">return</span> x*<span class="number">2</span>&#125;  <span class="comment">// 如果只有一个参数，参数的圆括号可以省略</span></span><br><span class="line"><span class="keyword">var</span> fn8 = <span class="function"><span class="params">x</span> =&gt;</span> x*x  <span class="comment">// 如果函数体只有一句话，可以同时省略函数体的大括号及return</span></span><br></pre></td></tr></table></figure>
+</li>
 </ul>
-<p>例如：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>];</span><br><span class="line">a.foo = <span class="literal">true</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> key <span class="keyword">in</span> a) &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(key);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 0</span></span><br><span class="line"><span class="comment">// 1</span></span><br><span class="line"><span class="comment">// 2</span></span><br><span class="line"><span class="comment">// foo</span></span><br></pre></td></tr></table></figure></p>
-<h2 id="数组的遍历"><a href="#数组的遍历" class="headerlink" title="数组的遍历"></a>数组的遍历</h2><p>常用for循环，while循环<br>或forEach遍历<strong>(不支持break 和 continue ，不返回值)</strong>。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = [<span class="string">'a'</span>,<span class="string">'b'</span>,<span class="string">'c'</span>,<span class="string">'d'</span>];</span><br><span class="line"></span><br><span class="line"><span class="comment">// for循环</span></span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; a.length; i++) &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(a[i]);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// while循环</span></span><br><span class="line"><span class="keyword">var</span> i = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">while</span> (i &lt; a.length) &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(a[i]);</span><br><span class="line">  i++;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// forEach遍历</span></span><br><span class="line">a.forEach(<span class="function"><span class="keyword">function</span>(<span class="params">value,key</span>)</span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(key+<span class="string">':'</span>+value);</span><br><span class="line">&#125;)</span><br><span class="line"><span class="comment">// 0:a</span></span><br><span class="line"><span class="comment">// 1:b</span></span><br><span class="line"><span class="comment">// 2:c</span></span><br><span class="line"><span class="comment">// 3:d</span></span><br></pre></td></tr></table></figure></p>
-<h2 id="什么是伪数组"><a href="#什么是伪数组" class="headerlink" title="什么是伪数组"></a>什么是伪数组</h2><p>如果一个对象的所有键名都是正整数或零，并且有length属性，那么这个对象就很像数组，但实际并不是数组。</p>
+<h2 id="函数的调用"><a href="#函数的调用" class="headerlink" title="函数的调用"></a>函数的调用</h2><figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn</span><span class="params">()</span></span>&#123; <span class="keyword">return</span> <span class="literal">undefined</span>; &#125;</span><br><span class="line">fn()  <span class="comment">// 执行该函数。</span></span><br></pre></td></tr></table></figure>
+<p>作为初学者，更建议使用call()方法，call()的第一个参数是this，后面的参数是arguments(伪数组)<br>例如：<br><figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn</span><span class="params">(x,y)</span></span>&#123; <span class="keyword">return</span> x+y; &#125;</span><br><span class="line">fn.call(<span class="literal">undefined</span>,<span class="number">1</span>,<span class="number">2</span>) <span class="comment">// 结果为3 等价于fn(1,2)</span></span><br></pre></td></tr></table></figure></p>
+<h2 id="函数的常用属性和方法"><a href="#函数的常用属性和方法" class="headerlink" title="函数的常用属性和方法"></a>函数的常用属性和方法</h2><ul>
+<li><p>name 属性<br>每一个函数都有name属性，但其值可能因不同的函数声明方式而不同。举例：</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 具名函数的name属性，表示函数的名字</span></span><br><span class="line">function fn1() &#123;&#125; </span><br><span class="line">fn1<span class="selector-class">.name</span> <span class="comment">// "fn1"</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 匿名函数的name属性，指的是接收函数的变量名</span></span><br><span class="line"><span class="selector-tag">var</span> fn2 = function () &#123;&#125; </span><br><span class="line">fn2<span class="selector-class">.name</span> <span class="comment">// "fn2"</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// fn3.name返回函数表达式的名字。真正的函数名还是fn3，而fn4这个名字只在函数体内部可用。</span></span><br><span class="line"><span class="selector-tag">var</span> fn3 = function fn4()&#123;&#125; </span><br><span class="line">fn3<span class="selector-class">.name</span> <span class="comment">// "fn4"</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 使用Function()方法构造函数，函数的name属性值为"anonymous"</span></span><br><span class="line"><span class="selector-tag">var</span> fn5 = new Function()</span><br><span class="line">fn5<span class="selector-class">.name</span> <span class="comment">// "anonymous"</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 箭头函数的name属性，指的也是接收函数的变量名</span></span><br><span class="line"><span class="selector-tag">var</span> fn6 = () =&gt; &#123;&#125;</span><br><span class="line">fn6<span class="selector-class">.name</span> <span class="comment">// "fn6"</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>length 属性<br>函数的length属性返回函数预期传入的参数个数，即函数定义之中的参数个数。<br>常用来判断定义时和调用时参数的差异</p>
+<figure class="highlight scilab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn</span><span class="params">(a, b)</span> &#123;&#125;</span></span><br><span class="line">fn.<span class="built_in">length</span> <span class="comment">// 2  不管调用时输入了多少个参数，length属性始终等于2。</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>toString() 方法<br>函数的toString方法返回一个字符串，内容是函数的源码，包括函数中的注释也会被打印出来。</p>
+<figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn</span><span class="params">()</span> </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> a = <span class="number">1</span></span><br><span class="line"><span class="comment">/*  我是</span></span><br><span class="line"><span class="comment">  注释*/</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">fn.toString()</span><br><span class="line"><span class="comment">//   "function fn() &#123;</span></span><br><span class="line"><span class="comment">//     var a = 1</span></span><br><span class="line"><span class="comment">//   /*  我是</span></span><br><span class="line"><span class="comment">//     注释*/</span></span><br><span class="line"><span class="comment">//   &#125;"</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="call-apply-bind-的用法"><a href="#call-apply-bind-的用法" class="headerlink" title="call apply bind 的用法"></a>call apply bind 的用法</h2><p>call() 方法调用一个函数, 其具有一个指定的this值和分别地提供的参数(参数的列表)。<br>apply() 方法调用一个函数, 其具有一个指定的this值，以及作为一个数组（或类似数组的对象）提供的参数。</p>
 <ul>
-<li><strong>伪数组的原型链中没有Array.prototype</strong></li>
+<li>apply和call二者作用一样，只是接受参数的方式不一样，call需要把参数按顺序传递进去，而apply则是把参数放在数组里。</li>
 </ul>
-<figure class="highlight elm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">数组.__proto__ === <span class="type">Array</span>.pro<span class="keyword">type</span></span><br><span class="line">伪数组对象.__proto__ === <span class="type">Object</span>.proto<span class="keyword">type</span></span><br></pre></td></tr></table></figure>
-<h2 id="数组的一些API"><a href="#数组的一些API" class="headerlink" title="数组的一些API"></a>数组的一些API</h2><h3 id="sort-排序"><a href="#sort-排序" class="headerlink" title="sort() 排序"></a>sort() 排序</h3><p>该方法是JS封装的一个重排序方法，使用的算法是<strong>快速排序</strong>。不传参时默认为升序排列。<br><strong>注：sort()方法返回的是原数组，即使用该方法会改变原来的数组序列。</strong><br>=&gt;arr.sort(function(a,b){return a-b}) 升序<br>=&gt;arr.sort(function(a,b){return b-a}) 降序</p>
-<h3 id="join-分隔"><a href="#join-分隔" class="headerlink" title="join() 分隔"></a>join() 分隔</h3><p>该方法返回的是字符串，参数表示用什么分隔数组的每一项，不传参默认逗号分隔，参数为空数组时，数组每一项之间没有间隔。<br>代码示例：<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">array</span> = [<span class="string">"a"</span>, <span class="string">"b"</span>, <span class="string">"c"</span>, <span class="string">"d"</span>];</span><br><span class="line"><span class="built_in">array</span>.join(<span class="string">'-'</span>);</span><br><span class="line"><span class="comment">// "a-b-c-d"</span></span><br></pre></td></tr></table></figure></p>
-<h3 id="concat-连接"><a href="#concat-连接" class="headerlink" title="concat() 连接"></a>concat() 连接</h3><p>该方法返回的是新数组，原数组不会被改变。<br>示例：<br><figure class="highlight lsl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">a = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>];</span><br><span class="line">b = [<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>];</span><br><span class="line">a.concat(b);</span><br><span class="line"><span class="comment">// 新数组 [1, 2, 3, 4, 5, 6]</span></span><br></pre></td></tr></table></figure></p>
-<p>使用concat()方法还可以用于复制数组<br>例如：<br><figure class="highlight haxe"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">arr = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>];</span><br><span class="line"><span class="keyword">var</span> <span class="keyword">new</span><span class="type">Arr</span> = arr.concat([]);</span><br><span class="line"><span class="comment">// newArr 的值为 [1, 2, 3, 4, 5]</span></span><br><span class="line"><span class="keyword">new</span><span class="type">Arr</span> === arr; <span class="comment">// false</span></span><br><span class="line"><span class="comment">// 虽然值相同，但这是两个不同的对象，引用的地址不同</span></span><br></pre></td></tr></table></figure></p>
-<h3 id="map"><a href="#map" class="headerlink" title="map()"></a>map()</h3><p>功能与forEach相同，但map()有返回值。同样不会改变原数组的值，返回一个新数组。<br>示例：<br><figure class="highlight lsl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">arr = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>];</span><br><span class="line">arr.map(function(value,<span class="type">key</span>)&#123;</span><br><span class="line">    return value * <span class="number">2</span>;</span><br><span class="line">&#125;)</span><br><span class="line"><span class="comment">// [2, 4, 6, 8, 10]</span></span><br></pre></td></tr></table></figure></p>
-<h3 id="filter-过滤、筛选"><a href="#filter-过滤、筛选" class="headerlink" title="filter() 过滤、筛选"></a>filter() 过滤、筛选</h3><p>用法与map()一样。<br>示例：<br><figure class="highlight lsl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">arr = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>];</span><br><span class="line">arr.filter(function(value,<span class="type">key</span>)&#123;</span><br><span class="line">    return value &lt; <span class="number">3</span></span><br><span class="line">&#125;)</span><br><span class="line"><span class="comment">// [1, 2]</span></span><br></pre></td></tr></table></figure></p>
-<h3 id="reduce-可接收一个函数作为累加器"><a href="#reduce-可接收一个函数作为累加器" class="headerlink" title="reduce() 可接收一个函数作为累加器"></a>reduce() 可接收一个函数作为累加器</h3><p>第一个参数传一个函数作为累加器，第二个参数表示初始值。<br>示例：<br><figure class="highlight lsl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">arr = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>];</span><br><span class="line">arr.reduce(function(previous,current)&#123;</span><br><span class="line">    return previous + current;</span><br><span class="line">&#125;, <span class="number">0</span>)</span><br><span class="line"><span class="comment">// 15</span></span><br></pre></td></tr></table></figure></p>
-<p>可以用reduce()方法来写map()数组每一项×2：<br><figure class="highlight lsl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">a = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>];</span><br><span class="line">a.reduce(function(array,n)&#123;</span><br><span class="line">    array.push(n * <span class="number">2</span>);</span><br><span class="line">    return array;</span><br><span class="line">&#125;,[])</span><br><span class="line"><span class="comment">// [2, 4, 6, 8, 10]</span></span><br></pre></td></tr></table></figure></p>
-<p>可以用reduce()方法来写filter()筛选偶数：<br><figure class="highlight lsl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">a = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>];</span><br><span class="line">a.reduce(function(array,n)&#123;</span><br><span class="line">    if(n % <span class="number">2</span> === <span class="number">0</span>)&#123;</span><br><span class="line">            array.push(n);</span><br><span class="line">        &#125;</span><br><span class="line">    return array;</span><br><span class="line">&#125;,[])</span><br><span class="line"><span class="comment">// [2, 4]</span></span><br></pre></td></tr></table></figure></p>
+<p>bind() 方法创建一个新的函数，被调用时，将其this关键字设置为提供的值，在调用新函数时，在任何提供之前提供一个给定的参数序列。</p>
+<ul>
+<li>bind 是创建对应函数，非立即执行；apply 、call会立即执行函数 。</li>
+</ul>
+<h2 id="作用域"><a href="#作用域" class="headerlink" title="作用域"></a>作用域</h2><p>作用域（scope）指的是变量存在的范围。<br>在 ES5 的规范中，Javascript 只有两种作用域：<br>一种是全局作用域，变量在整个程序中一直存在，所有地方都可以读取；<br>另一种是函数作用域，变量只在函数内部存在。ES6又新增了块级作用域。</p>
+<ul>
+<li>在判断作用域时，还要注意函数作用域内部会产生<strong>变量提升</strong>现象。<br>var命令声明的变量，不管在什么位置，变量声明都会被提升到函数体的头部。</li>
+</ul>
+<h2 id="闭包"><a href="#闭包" class="headerlink" title="闭包"></a>闭包</h2><p><strong>如果一个函数使用了它范围外的变量，那么（这个函数和这个变量）就叫做闭包。</strong><br>具体介绍这里引用链接:<br><a href="https://zhuanlan.zhihu.com/p/22486908" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/22486908</a></p>
+<h2 id="回调（callback）"><a href="#回调（callback）" class="headerlink" title="回调（callback）"></a>回调（callback）</h2><p>名词解释：被当做参数的函数就是回调函数<br>动词解释：调用这个回调<br>举例：<br>fn(function(){}) ：函数fn中的参数是一个函数，在fn中调用了这个函数，那么这个函数就是回调函数，调用的过程就是回调。</p>
+<h2 id="构造函数"><a href="#构造函数" class="headerlink" title="构造函数"></a>构造函数</h2><p>返回对象的函数就是构造函数。<br>一般我们命名构造函数，首字母要大写。<br>内部使用的this对象，来指向即将要生成的实例对象。<br>使用New来生成实例对象。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params">name,age</span>)</span>&#123;</span><br><span class="line">     <span class="keyword">this</span>.name = name;    </span><br><span class="line">     <span class="keyword">this</span>.age = age;   </span><br><span class="line">     <span class="keyword">this</span>.sayHello = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;   </span><br><span class="line">         <span class="built_in">console</span>.log(<span class="keyword">this</span>.name +<span class="string">"say hello"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> boy = <span class="keyword">new</span> Person(<span class="string">"Allen"</span>,<span class="number">23</span>);    </span><br><span class="line">boy.sayHello(); <span class="comment">// Allen say hello</span></span><br></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -430,8 +453,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/09/24/原型与原型链/" rel="next" title="原型与原型链">
-                <i class="fa fa-chevron-left"></i> 原型与原型链
+              <a href="/2018/09/26/JS数组/" rel="next" title="JS中的数组">
+                <i class="fa fa-chevron-left"></i> JS中的数组
               </a>
             
           </div>
@@ -440,8 +463,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/09/27/JS函数/" rel="prev" title="JS中的函数">
-                JS中的函数 <i class="fa fa-chevron-right"></i>
+              <a href="/2018/09/29/aboutjQuery/" rel="prev" title="模仿jQuery实现一个API">
+                模仿jQuery实现一个API <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -594,7 +617,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#数组是什么"><span class="nav-number">1.</span> <span class="nav-text">数组是什么</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数组的length属性"><span class="nav-number">2.</span> <span class="nav-text">数组的length属性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数组的构造方法"><span class="nav-number">3.</span> <span class="nav-text">数组的构造方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#in-运算符-amp-amp-for…in-循环"><span class="nav-number">4.</span> <span class="nav-text">in 运算符 &amp;&amp; for…in 循环</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数组的遍历"><span class="nav-number">5.</span> <span class="nav-text">数组的遍历</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#什么是伪数组"><span class="nav-number">6.</span> <span class="nav-text">什么是伪数组</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数组的一些API"><span class="nav-number">7.</span> <span class="nav-text">数组的一些API</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#sort-排序"><span class="nav-number">7.1.</span> <span class="nav-text">sort() 排序</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#join-分隔"><span class="nav-number">7.2.</span> <span class="nav-text">join() 分隔</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#concat-连接"><span class="nav-number">7.3.</span> <span class="nav-text">concat() 连接</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#map"><span class="nav-number">7.4.</span> <span class="nav-text">map()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#filter-过滤、筛选"><span class="nav-number">7.5.</span> <span class="nav-text">filter() 过滤、筛选</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#reduce-可接收一个函数作为累加器"><span class="nav-number">7.6.</span> <span class="nav-text">reduce() 可接收一个函数作为累加器</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#什么是函数"><span class="nav-number">1.</span> <span class="nav-text">什么是函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#函数的五种声明方法"><span class="nav-number">2.</span> <span class="nav-text">函数的五种声明方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#函数的调用"><span class="nav-number">3.</span> <span class="nav-text">函数的调用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#函数的常用属性和方法"><span class="nav-number">4.</span> <span class="nav-text">函数的常用属性和方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#call-apply-bind-的用法"><span class="nav-number">5.</span> <span class="nav-text">call apply bind 的用法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#作用域"><span class="nav-number">6.</span> <span class="nav-text">作用域</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#闭包"><span class="nav-number">7.</span> <span class="nav-text">闭包</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#回调（callback）"><span class="nav-number">8.</span> <span class="nav-text">回调（callback）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#构造函数"><span class="nav-number">9.</span> <span class="nav-text">构造函数</span></a></li></ol></div>
             
 
           </div>
