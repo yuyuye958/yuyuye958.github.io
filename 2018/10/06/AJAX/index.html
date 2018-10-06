@@ -79,24 +79,18 @@
 
 
 
-<meta name="description" content="数据类型转换任意类型转字符串 String(x)  x.toString()  x + &amp;#39;&amp;#39; 加上空字符串">
+<meta name="description" content="AJAX的发展历史历史上发送请求的方式用 form 可以发请求，但是会刷新页面或新开页面用 a 可以发 get 请求，但是也会刷新页面或新开页面用 img 可以发 get 请求，但是只能以图片的形式展示用 link 可以发 get 请求，但是只能以 CSS、favicon 的形式展示用 script 可以发 get 请求，但是只能以脚本的形式运行以上都除了form都只能发get请求  所以需要一个">
 <meta name="keywords" content="JavaScript">
 <meta property="og:type" content="article">
-<meta property="og:title" content="JS类型转换和内存机制">
-<meta property="og:url" content="http://yoursite.com/2018/09/22/JS类型转换和内存机制/index.html">
+<meta property="og:title" content="AJAX是什么？">
+<meta property="og:url" content="http://yoursite.com/2018/10/06/AJAX/index.html">
 <meta property="og:site_name" content="Allen&#39;s Blog">
-<meta property="og:description" content="数据类型转换任意类型转字符串 String(x)  x.toString()  x + &amp;#39;&amp;#39; 加上空字符串">
+<meta property="og:description" content="AJAX的发展历史历史上发送请求的方式用 form 可以发请求，但是会刷新页面或新开页面用 a 可以发 get 请求，但是也会刷新页面或新开页面用 img 可以发 get 请求，但是只能以图片的形式展示用 link 可以发 get 请求，但是只能以 CSS、favicon 的形式展示用 script 可以发 get 请求，但是只能以脚本的形式运行以上都除了form都只能发get请求  所以需要一个">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://yoursite.com/2018/09/22/JS类型转换和内存机制/1.jpg">
-<meta property="og:image" content="http://yoursite.com/2018/09/22/JS类型转换和内存机制/2.jpg">
-<meta property="og:image" content="http://yoursite.com/2018/09/22/JS类型转换和内存机制/3.jpg">
-<meta property="og:image" content="http://yoursite.com/2018/09/22/JS类型转换和内存机制/4.jpg">
-<meta property="og:image" content="http://yoursite.com/2018/09/22/JS类型转换和内存机制/5.jpg">
-<meta property="og:updated_time" content="2018-09-22T17:01:51.753Z">
+<meta property="og:updated_time" content="2018-10-06T16:44:58.454Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="JS类型转换和内存机制">
-<meta name="twitter:description" content="数据类型转换任意类型转字符串 String(x)  x.toString()  x + &amp;#39;&amp;#39; 加上空字符串">
-<meta name="twitter:image" content="http://yoursite.com/2018/09/22/JS类型转换和内存机制/1.jpg">
+<meta name="twitter:title" content="AJAX是什么？">
+<meta name="twitter:description" content="AJAX的发展历史历史上发送请求的方式用 form 可以发请求，但是会刷新页面或新开页面用 a 可以发 get 请求，但是也会刷新页面或新开页面用 img 可以发 get 请求，但是只能以图片的形式展示用 link 可以发 get 请求，但是只能以 CSS、favicon 的形式展示用 script 可以发 get 请求，但是只能以脚本的形式运行以上都除了form都只能发get请求  所以需要一个">
 
 
 
@@ -126,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/09/22/JS类型转换和内存机制/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/10/06/AJAX/"/>
 
 
 
 
 
-  <title>JS类型转换和内存机制 | Allen's Blog</title>
+  <title>AJAX是什么？ | Allen's Blog</title>
   
 
 
@@ -293,7 +287,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/22/JS类型转换和内存机制/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/10/06/AJAX/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Allen Ye">
@@ -310,7 +304,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">JS类型转换和内存机制</h1>
+          <h1 class="post-title" itemprop="name headline">AJAX是什么？</h1>
         
 
         <div class="post-meta">
@@ -322,8 +316,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-22T22:34:39+08:00">
-                2018-09-22
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-10-06T23:07:04+08:00">
+                2018-10-06
               </time>
             
 
@@ -382,72 +376,80 @@
       
 
       
-        <h2 id="数据类型转换"><a href="#数据类型转换" class="headerlink" title="数据类型转换"></a>数据类型转换</h2><h3 id="任意类型转字符串"><a href="#任意类型转字符串" class="headerlink" title="任意类型转字符串"></a>任意类型转字符串</h3><ol>
-<li><p><code>String(x)</code><br><img src="/2018/09/22/JS类型转换和内存机制/1.jpg" alt="转字符串方法一"></p>
-</li>
-<li><p><code>x.toString()</code><br><img src="/2018/09/22/JS类型转换和内存机制/2.jpg" alt="转字符串方法二"></p>
-</li>
-<li><p><code>x + &#39;&#39;</code> 加上空字符串<br><img src="/2018/09/22/JS类型转换和内存机制/3.jpg" alt="转字符串方法三"></p>
-</li>
-</ol>
+        <h2 id="AJAX的发展历史"><a href="#AJAX的发展历史" class="headerlink" title="AJAX的发展历史"></a>AJAX的发展历史</h2><h3 id="历史上发送请求的方式"><a href="#历史上发送请求的方式" class="headerlink" title="历史上发送请求的方式"></a>历史上发送请求的方式</h3><p>用 form 可以发请求，但是会刷新页面或新开页面<br>用 a 可以发 get 请求，但是也会刷新页面或新开页面<br>用 img 可以发 get 请求，但是只能以图片的形式展示<br>用 link 可以发 get 请求，但是只能以 CSS、favicon 的形式展示<br>用 script 可以发 get 请求，但是只能以脚本的形式运行<br><strong>以上都除了form都只能发get请求</strong></p>
+<ul>
+<li>所以需要一个能发任何请求（GET,POST,PUT,DELETE）并且想以什么形式展现就以什么形式展示的方法。后来就有了AJAX。</li>
+</ul>
+<h3 id="XMLHttpRequest的发明"><a href="#XMLHttpRequest的发明" class="headerlink" title="XMLHttpRequest的发明"></a>XMLHttpRequest的发明</h3><p>微软当时取得了重大突破：<br>IE 5 率先在 JS 中引入 ActiveX 对象（API），使得 JS 可以直接发起 HTTP 请求。<br>随后 Mozilla、 Safari、 Opera 也跟进了，取名 XMLHttpRequest，并被纳入 W3C 规范</p>
 <a id="more"></a>
 <hr>
-<h3 id="任意类型转数字"><a href="#任意类型转数字" class="headerlink" title="任意类型转数字"></a>任意类型转数字</h3><ol>
-<li><p><code>Number(x)</code></p>
-<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="title">Number</span><span class="params">(<span class="string">'1'</span>)</span></span>   <span class="comment">// 1</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p><code>parseInt(x, 10)</code> 后面的数字表示几进制</p>
-<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="title">parseInt</span><span class="params">(<span class="string">'1'</span>,<span class="number">10</span>)</span></span>   <span class="comment">// 1</span></span><br><span class="line"><span class="function"><span class="title">parseInt</span><span class="params">(<span class="string">'011'</span>)</span></span>   <span class="comment">// 11</span></span><br><span class="line"><span class="function"><span class="title">parseInt</span><span class="params">(<span class="string">'011'</span>,<span class="number">8</span>)</span></span>   <span class="comment">// 9</span></span><br><span class="line"><span class="function"><span class="title">parseInt</span><span class="params">(<span class="string">'s'</span>)</span></span>   <span class="comment">// NaN</span></span><br><span class="line"><span class="function"><span class="title">parseInt</span><span class="params">(<span class="string">'1s'</span>)</span></span>   <span class="comment">// 1</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p><code>parseFloat(x)</code></p>
-<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="title">parseFloat</span><span class="params">(<span class="string">'1.23'</span>)</span></span>   <span class="comment">// 1.23</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p><code>x - 0</code></p>
-<figure class="highlight lsl"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">'<span class="number">1</span>' - <span class="number">0</span>   <span class="comment">// 1</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p><code>+ x</code></p>
-<figure class="highlight 1c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">+ '1'  <span class="comment">// 1</span></span><br><span class="line">+ '-1'  <span class="comment">// -1    加号表示取它原本的值</span></span><br></pre></td></tr></table></figure>
-</li>
+<h2 id="AJAX"><a href="#AJAX" class="headerlink" title="AJAX"></a>AJAX</h2><p>Jesse James Garrett 将下面的技术取名叫做 AJAX：异步的 JavaScript 和 XML (async JavaScript and XML)</p>
+<ol>
+<li>使用XMLHttpRequest发请求</li>
+<li>服务器返回XML格式的字符串</li>
+<li>JS解析XML，并局部更新页面</li>
 </ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> request = <span class="keyword">new</span> XMLHttpRequest()</span><br><span class="line">    request.onreadystatechange = <span class="function"><span class="params">()</span> =&gt;</span>&#123;  <span class="comment">//尽量放在最上面，这样就不会错过任何变化，</span></span><br><span class="line">       <span class="keyword">if</span>(request.readyState === <span class="number">4</span>)&#123;     <span class="comment">//如果放在request.send()之后，这时候readyState已经从0变为1，就只能捕获到2，3，4。</span></span><br><span class="line">           <span class="keyword">if</span>(request.status &gt;= <span class="number">200</span> &amp;&amp; request.status &lt;= <span class="number">300</span>)&#123;</span><br><span class="line">               <span class="built_in">console</span>.log(<span class="string">'请求成功'</span>)</span><br><span class="line">           &#125;<span class="keyword">else</span> <span class="keyword">if</span>(request.status &gt;= <span class="number">400</span>)&#123;</span><br><span class="line">               <span class="built_in">console</span>.log(<span class="string">'请求失败'</span>)</span><br><span class="line">           &#125;</span><br><span class="line">       &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    request.open(<span class="string">'GET'</span>, <span class="string">'/xxx'</span>)  <span class="comment">//初始化请求</span></span><br><span class="line">    request.send()  <span class="comment">//发送请求</span></span><br></pre></td></tr></table></figure>
+<p><strong>readyState：请求的五种状态</strong><br>0： 未打开 open()方法还未被调用<br>1： 未发送 send()方法还未被调用<br>2： 已经获取响应头 send()方法已经被调用，响应头和响应状态已经返回<br>3： 正在下载响应体 响应体下载中；responseText中已经获取了部分数据<br>4： 请求完成 整个请求过程完成</p>
 <hr>
-<h3 id="任意类型转布尔"><a href="#任意类型转布尔" class="headerlink" title="任意类型转布尔"></a>任意类型转布尔</h3><ol>
-<li><p>Boolean(x)</p>
-</li>
-<li><p>!!x</p>
-<figure class="highlight erlang-repl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">!! <span class="number">0</span>   false   </span><br><span class="line">!! <span class="number">1</span>   true</span><br></pre></td></tr></table></figure>
-</li>
+<h2 id="JSON"><a href="#JSON" class="headerlink" title="JSON"></a>JSON</h2><p>JSON是一门新的数据语言，抄袭了JavaScript。<br>区别：</p>
+<ol>
+<li>JSON没有抄袭 function、undefined和变量</li>
+<li>JSON的字符串首尾必须是双引号 “ “</li>
 </ol>
-<ul>
-<li>五个falsy值：<br><code>0</code>,  <code>NaN</code>,  <code>空字符串</code>,  <code>Null</code>,  <code>undefined</code></li>
-<li>所有的对象都是true</li>
-</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">JavaScript</th>
+<th style="text-align:center">JSON</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">undefined</td>
+<td style="text-align:center">无</td>
+</tr>
+<tr>
+<td style="text-align:center">null</td>
+<td style="text-align:center">null</td>
+</tr>
+<tr>
+<td style="text-align:center">[‘a’, ‘b’]</td>
+<td style="text-align:center">[“a’, ‘b”]</td>
+</tr>
+<tr>
+<td style="text-align:center">‘allen’</td>
+<td style="text-align:center">“allen”</td>
+</tr>
+<tr>
+<td style="text-align:center">{name: ‘allen’}</td>
+<td style="text-align:center">{“name”: “allen”}</td>
+</tr>
+<tr>
+<td style="text-align:center">function fn(){}</td>
+<td style="text-align:center">无</td>
+</tr>
+<tr>
+<td style="text-align:center">var a = {};a.self = a</td>
+<td style="text-align:center">无</td>
+</tr>
+<tr>
+<td style="text-align:center">&#95;&#95;proto&#95;&#95;</td>
+<td style="text-align:center">无</td>
+</tr>
+</tbody>
+</table>
 <hr>
-<h2 id="内存机制"><a href="#内存机制" class="headerlink" title="内存机制"></a>内存机制</h2><p>Chrome 给每个网页分配一定数量的内存<br>这些内存要分给页面渲染器、网络模块、浏览器外壳和 JS 引擎（V8引擎）<br>JS 引擎将内存分为代码区和数据区<br>我们只研究数据区<br>数据区分为 <strong>Stack（栈内存）</strong> 和 <strong>Heap（堆内存）</strong></p>
-<ul>
-<li>简单类型的数据直接存在 Stack 里</li>
-<li>复杂类型的数据是把 Heap 地址存在 Stack 里</li>
-</ul>
-<p>遇到问题就画图分析。</p>
-<p><img src="/2018/09/22/JS类型转换和内存机制/4.jpg" alt="内存图"></p>
-<p><img src="/2018/09/22/JS类型转换和内存机制/5.jpg" alt="问题"></p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="number">1</span></span><br><span class="line"><span class="keyword">var</span> b = a</span><br><span class="line">b = <span class="number">2</span></span><br><span class="line">请问 a 显示是几？</span><br><span class="line"><span class="number">1</span></span><br></pre></td></tr></table></figure>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = &#123;<span class="attr">name</span>: <span class="string">'a'</span>&#125;</span><br><span class="line"><span class="keyword">var</span> b = a</span><br><span class="line">b = &#123;<span class="attr">name</span>: <span class="string">'b'</span>&#125;</span><br><span class="line">请问现在 a.name 是多少？</span><br><span class="line"><span class="string">'a'</span></span><br></pre></td></tr></table></figure>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = &#123;<span class="attr">name</span>: <span class="string">'a'</span>&#125;</span><br><span class="line"><span class="keyword">var</span> b = a</span><br><span class="line">b.name = <span class="string">'b'</span></span><br><span class="line">请问现在 a.name 是多少？</span><br><span class="line"><span class="string">'b'</span></span><br></pre></td></tr></table></figure>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = &#123;<span class="attr">name</span>: <span class="string">'a'</span>&#125;</span><br><span class="line"><span class="keyword">var</span> b = a</span><br><span class="line">b = <span class="literal">null</span></span><br><span class="line">请问现在 a 是什么？</span><br><span class="line">&#123;<span class="attr">name</span>: <span class="string">'a'</span>&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="那么现在再结合前后端一起看一下代码"><a href="#那么现在再结合前后端一起看一下代码" class="headerlink" title="那么现在再结合前后端一起看一下代码"></a>那么现在再结合前后端一起看一下代码</h3><p>后端代码：<br><figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(<span class="built_in">path</span>===<span class="string">'/xxx'</span>)&#123;</span><br><span class="line">    response.statusCode = <span class="number">200</span></span><br><span class="line">    response.setHeader(<span class="string">'Content-Type'</span>, <span class="string">'text/json;charset=utf-8'</span>)</span><br><span class="line">    response.setHeader(<span class="string">'Access-Control-Allow-Origin'</span>, <span class="string">'http://frank.com:8001'</span>)</span><br><span class="line">    response.<span class="built_in">write</span>(`</span><br><span class="line">    &#123;</span><br><span class="line">      <span class="string">"note"</span>:&#123;</span><br><span class="line">        <span class="string">"to"</span>: <span class="string">"frank"</span>,</span><br><span class="line">        <span class="string">"from"</span>: <span class="string">"allens"</span>,</span><br><span class="line">        <span class="string">"heading"</span>: <span class="string">"打招呼"</span>,</span><br><span class="line">        <span class="string">"content"</span>: <span class="string">"hello"</span></span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    `)</span><br><span class="line">    response.<span class="keyword">end</span>()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>前端代码：<br><figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">myButton.addEventListener(<span class="string">'click'</span>, <span class="function">(<span class="params">e</span>)=&gt;</span>&#123;</span><br><span class="line">  <span class="keyword">let</span> request = <span class="keyword">new</span> XMLHttpRequest()</span><br><span class="line">  request.open(<span class="string">'get'</span>, <span class="string">'/xxx'</span>) <span class="comment">// 配置request</span></span><br><span class="line">  request.send()</span><br><span class="line">  request.onreadystatechange = <span class="function"><span class="params">()</span>=&gt;</span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(request.readyState === <span class="number">4</span>)&#123;</span><br><span class="line">      <span class="built_in">console</span>.log(<span class="string">'请求响应都完毕了'</span>)</span><br><span class="line">      <span class="keyword">if</span>(request.status &gt;= <span class="number">200</span> &amp;&amp; request.status &lt; <span class="number">300</span>)&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">'请求成功'</span>)</span><br><span class="line">        <span class="built_in">console</span>.log(request.responseText)</span><br><span class="line">        <span class="keyword">let</span> <span class="built_in">string</span> = request.responseText</span><br><span class="line">        <span class="comment">// 把符合 JSON 语法的字符串</span></span><br><span class="line">        <span class="comment">// 转换成 JS 对应的值</span></span><br><span class="line">        <span class="keyword">let</span> object = <span class="built_in">window</span>.JSON.parse(<span class="built_in">string</span>)   <span class="comment">//JSON.parse()浏览器提供   </span></span><br><span class="line">        <span class="built_in">console</span>.log(<span class="keyword">typeof</span> object)</span><br><span class="line">        <span class="built_in">console</span>.log(object)</span><br><span class="line">        <span class="built_in">console</span>.log(object.note)</span><br><span class="line">      &#125;<span class="keyword">else</span> <span class="keyword">if</span>(request.status &gt;= <span class="number">400</span>)&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">'请求失败'</span>) </span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
 <hr>
-<h3 id="垃圾回收"><a href="#垃圾回收" class="headerlink" title="垃圾回收"></a>垃圾回收</h3><ul>
-<li>如果一个对象没有被引用，它就是垃圾，将被回收。</li>
-<li>垃圾回收和数据结构有关系，即判断一个树的根有没有被引用</li>
-<li>IE6有bug：关闭页面不会垃圾回收，除非关掉整个浏览器<br>解决方法: <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">window</span>.onunload = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">document</span>.div.onclick = <span class="literal">null</span>   <span class="comment">// 把每个监听事件都null掉，否则会造成内存泄漏</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<hr>
-<h2 id="深复制和浅复制"><a href="#深复制和浅复制" class="headerlink" title="深复制和浅复制"></a>深复制和浅复制</h2><p>也可称为深拷贝和浅拷贝</p>
-<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">var</span> <span class="selector-tag">a</span> = <span class="number">1</span></span><br><span class="line"><span class="selector-tag">var</span> <span class="selector-tag">b</span> = a</span><br><span class="line"><span class="selector-tag">b</span> = <span class="number">2</span> <span class="comment">//这个时候改变 b</span></span><br><span class="line"><span class="selector-tag">a</span> 完全不受 <span class="selector-tag">b</span> 的影响</span><br><span class="line">那么我们就说这是一个深复制</span><br></pre></td></tr></table></figure>
-<p><strong>对于简单类型的数据来说，赋值就是深拷贝。<br>对于复杂类型的数据（对象）来说，才要区分浅拷贝和深拷贝。</strong></p>
-<p>这是一个浅拷贝的例子<br><figure class="highlight delphi"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="comment">&#123;name: 'Allen'&#125;</span></span><br><span class="line"><span class="keyword">var</span> b = a</span><br><span class="line">b.<span class="keyword">name</span> = <span class="string">'b'</span></span><br><span class="line">a.<span class="keyword">name</span> === <span class="string">'b'</span> <span class="comment">// true</span></span><br></pre></td></tr></table></figure></p>
-<p>因为我们对 b 操作后，a 也变了</p>
-<p>什么是深拷贝？就是对 Heap 内存进行完全的拷贝。<br><figure class="highlight delphi"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="comment">&#123;name: 'Allen'&#125;</span></span><br><span class="line"><span class="keyword">var</span> b = deepClone(a) <span class="comment">// deepClone 还不知道怎么实现</span></span><br><span class="line">b.<span class="keyword">name</span> = <span class="string">'b'</span></span><br><span class="line">a.<span class="keyword">name</span> === <span class="string">'a'</span> <span class="comment">// true</span></span><br></pre></td></tr></table></figure></p>
+<h2 id="同源策略和CORS跨域"><a href="#同源策略和CORS跨域" class="headerlink" title="同源策略和CORS跨域"></a>同源策略和CORS跨域</h2><p>同源策略的本质是：一个域名的JS，在未经允许的情况下，不能读取另一个域名的内容，但你可以向另一个域名发送请求。</p>
+<ol>
+<li>只有 协议+端口+域名 一模一样才允许发 AJAX 请求</li>
+<li>CORS 可以告诉浏览器，我俩一家的，别阻止他</li>
+<li>突破同源策略 === 跨域</li>
+</ol>
+<p>后端代码：<br><figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//加入响应头</span></span><br><span class="line"><span class="selector-tag">response</span><span class="selector-class">.setHeader</span>(<span class="string">'Access-Control-Allow-Origin'</span>, <span class="string">'http://allen.com:8001'</span>)   <span class="comment">//允许http://allen.com:8001向我发起请求</span></span><br><span class="line"><span class="selector-tag">response</span><span class="selector-class">.setHeader</span>(<span class="string">'Access-Control-Allow-Origin'</span>, <span class="string">'*'</span>)   <span class="comment">//允许所有域名向我发起请求</span></span><br></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -478,8 +480,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/09/21/JS数据类型/" rel="next" title="JS里的数据类型">
-                <i class="fa fa-chevron-left"></i> JS里的数据类型
+              <a href="/2018/10/06/JSONP/" rel="next" title="JSONP是什么？">
+                <i class="fa fa-chevron-left"></i> JSONP是什么？
               </a>
             
           </div>
@@ -487,10 +489,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/09/24/原型与原型链/" rel="prev" title="原型与原型链">
-                原型与原型链 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -642,7 +640,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#数据类型转换"><span class="nav-number">1.</span> <span class="nav-text">数据类型转换</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#任意类型转字符串"><span class="nav-number">1.1.</span> <span class="nav-text">任意类型转字符串</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#任意类型转数字"><span class="nav-number">1.2.</span> <span class="nav-text">任意类型转数字</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#任意类型转布尔"><span class="nav-number">1.3.</span> <span class="nav-text">任意类型转布尔</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#内存机制"><span class="nav-number">2.</span> <span class="nav-text">内存机制</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#垃圾回收"><span class="nav-number">2.1.</span> <span class="nav-text">垃圾回收</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#深复制和浅复制"><span class="nav-number">3.</span> <span class="nav-text">深复制和浅复制</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#AJAX的发展历史"><span class="nav-number">1.</span> <span class="nav-text">AJAX的发展历史</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#历史上发送请求的方式"><span class="nav-number">1.1.</span> <span class="nav-text">历史上发送请求的方式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#XMLHttpRequest的发明"><span class="nav-number">1.2.</span> <span class="nav-text">XMLHttpRequest的发明</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#AJAX"><span class="nav-number">2.</span> <span class="nav-text">AJAX</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JSON"><span class="nav-number">3.</span> <span class="nav-text">JSON</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#那么现在再结合前后端一起看一下代码"><span class="nav-number">3.1.</span> <span class="nav-text">那么现在再结合前后端一起看一下代码</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#同源策略和CORS跨域"><span class="nav-number">4.</span> <span class="nav-text">同源策略和CORS跨域</span></a></li></ol></div>
             
 
           </div>
