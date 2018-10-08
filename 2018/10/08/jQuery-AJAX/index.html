@@ -79,23 +79,18 @@
 
 
 
-<meta name="description" content="全局函数 Number12var n1 = 1var n2 = new Number(1)  // 创建一个 Number 对象    两者的区别是什么？前者将数据直接存在 Stack 里，后者实际上是一个哈希对象，把 Heap 地址存在 Stack 里。  但是前者没有toString()属性，为什么n1.toString()的结果是&amp;#39;1&amp;#39;？JS引擎会建立一个临时的对象， 12t">
+<meta name="description" content="基本功能设置请求request第一步 let request = new XMLHttpRequest()第一部分：request.open(&amp;#39;GET&amp;#39;, &amp;#39;/xxx&amp;#39;)第二部分：(不能设置User-Agent，会报错)request.setRequestHeader(&amp;#39;Content-Type&amp;#39;, &amp;#39;x-www-form-urlencode">
 <meta name="keywords" content="JavaScript">
 <meta property="og:type" content="article">
-<meta property="og:title" content="原型与原型链">
-<meta property="og:url" content="http://yoursite.com/2018/09/24/原型与原型链/index.html">
+<meta property="og:title" content="原生JS封装jQuery的AJAX">
+<meta property="og:url" content="http://yoursite.com/2018/10/08/jQuery-AJAX/index.html">
 <meta property="og:site_name" content="Allen&#39;s Blog">
-<meta property="og:description" content="全局函数 Number12var n1 = 1var n2 = new Number(1)  // 创建一个 Number 对象    两者的区别是什么？前者将数据直接存在 Stack 里，后者实际上是一个哈希对象，把 Heap 地址存在 Stack 里。  但是前者没有toString()属性，为什么n1.toString()的结果是&amp;#39;1&amp;#39;？JS引擎会建立一个临时的对象， 12t">
+<meta property="og:description" content="基本功能设置请求request第一步 let request = new XMLHttpRequest()第一部分：request.open(&amp;#39;GET&amp;#39;, &amp;#39;/xxx&amp;#39;)第二部分：(不能设置User-Agent，会报错)request.setRequestHeader(&amp;#39;Content-Type&amp;#39;, &amp;#39;x-www-form-urlencode">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://yoursite.com/2018/09/24/原型与原型链/1.jpg">
-<meta property="og:image" content="http://yoursite.com/2018/09/24/原型与原型链/3.jpg">
-<meta property="og:image" content="http://yoursite.com/2018/09/24/原型与原型链/2.png">
-<meta property="og:image" content="http://yoursite.com/2018/09/24/原型与原型链/总结.jpg">
-<meta property="og:updated_time" content="2018-09-24T08:43:29.833Z">
+<meta property="og:updated_time" content="2018-10-08T03:52:04.167Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="原型与原型链">
-<meta name="twitter:description" content="全局函数 Number12var n1 = 1var n2 = new Number(1)  // 创建一个 Number 对象    两者的区别是什么？前者将数据直接存在 Stack 里，后者实际上是一个哈希对象，把 Heap 地址存在 Stack 里。  但是前者没有toString()属性，为什么n1.toString()的结果是&amp;#39;1&amp;#39;？JS引擎会建立一个临时的对象， 12t">
-<meta name="twitter:image" content="http://yoursite.com/2018/09/24/原型与原型链/1.jpg">
+<meta name="twitter:title" content="原生JS封装jQuery的AJAX">
+<meta name="twitter:description" content="基本功能设置请求request第一步 let request = new XMLHttpRequest()第一部分：request.open(&amp;#39;GET&amp;#39;, &amp;#39;/xxx&amp;#39;)第二部分：(不能设置User-Agent，会报错)request.setRequestHeader(&amp;#39;Content-Type&amp;#39;, &amp;#39;x-www-form-urlencode">
 
 
 
@@ -125,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/09/24/原型与原型链/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/10/08/jQuery-AJAX/"/>
 
 
 
 
 
-  <title>原型与原型链 | Allen's Blog</title>
+  <title>原生JS封装jQuery的AJAX | Allen's Blog</title>
   
 
 
@@ -292,7 +287,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/24/原型与原型链/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/10/08/jQuery-AJAX/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Allen Ye">
@@ -309,7 +304,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">原型与原型链</h1>
+          <h1 class="post-title" itemprop="name headline">原生JS封装jQuery的AJAX</h1>
         
 
         <div class="post-meta">
@@ -321,8 +316,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-24T10:52:43+08:00">
-                2018-09-24
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-10-08T11:04:15+08:00">
+                2018-10-08
               </time>
             
 
@@ -381,63 +376,23 @@
       
 
       
-        <h2 id="全局函数"><a href="#全局函数" class="headerlink" title="全局函数"></a>全局函数</h2><ol>
-<li><strong>Number</strong><figure class="highlight haxe"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> n1 = <span class="number">1</span></span><br><span class="line"><span class="keyword">var</span> n2 = <span class="keyword">new</span> <span class="type">Number</span>(<span class="number">1</span>)  <span class="comment">// 创建一个 Number 对象</span></span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<ul>
-<li><p>两者的区别是什么？<br>前者将数据直接存在 Stack 里，后者实际上是一个哈希对象，把 Heap 地址存在 Stack 里。</p>
-</li>
-<li><p>但是前者没有toString()属性，为什么<code>n1.toString()</code>的结果是<code>&#39;1&#39;</code>？<br>JS引擎会建立一个临时的对象，</p>
-<figure class="highlight pony"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">temp = <span class="function"><span class="keyword">new</span> <span class="title">Number</span>(n1)</span></span><br><span class="line"><span class="function"><span class="title">temp</span>.<span class="title">toString</span>()</span></span><br></pre></td></tr></table></figure>
-<p>  然后再把temp回收掉，所以几乎没人用第二种写法。</p>
-</li>
-</ul>
+        <h2 id="基本功能"><a href="#基本功能" class="headerlink" title="基本功能"></a>基本功能</h2><h3 id="设置请求request"><a href="#设置请求request" class="headerlink" title="设置请求request"></a>设置请求request</h3><p><strong>第一步</strong> <code>let request = new XMLHttpRequest()</code><br>第一部分：<br><code>request.open(&#39;GET&#39;, &#39;/xxx&#39;)</code><br>第二部分：(不能设置User-Agent，会报错)<br><code>request.setRequestHeader(&#39;Content-Type&#39;, &#39;x-www-form-urlencoded&#39;)</code><br>第四部分：<br><code>request.send(&#39;a=0&amp;b=1&#39;)</code></p>
+<h3 id="获取响应response"><a href="#获取响应response" class="headerlink" title="获取响应response"></a>获取响应response</h3><p>第一部分：获取HTTP状态<br><code>request.status  //200</code><br><code>request.statusText  //OK</code></p>
+<p>第二部分：获取响应header<br><code>request.getAllResponseHeaders()  //获取第二部分所有内容</code><br><code>request.getResponseHeader(&#39;Content-Type&#39;)  //获取Content-Type 的内容</code></p>
+<p>第四部分：<br><code>request.responseText()</code></p>
 <a id="more"></a>
-<ol start="2">
-<li><p><strong>String</strong></p>
-<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> s1 = <span class="string">'hello'</span></span><br><span class="line"><span class="keyword">var</span> s2 = <span class="keyword">new</span> <span class="built_in">String</span>(<span class="string">'hello'</span>)  <span class="comment">// 创建一个 String 对象</span></span><br></pre></td></tr></table></figure>
-<p> 和Number同理。</p>
-</li>
-<li><p><strong>Boolean</strong></p>
-<figure class="highlight haxe"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> b1 = <span class="literal">true</span></span><br><span class="line"><span class="keyword">var</span> b2 = <span class="keyword">new</span> <span class="type">Boolean</span>(<span class="literal">true</span>)  <span class="comment">// 创建一个 Boolean 对象</span></span><br></pre></td></tr></table></figure>
-<p> 和Number同理。</p>
-</li>
-<li><p><strong>Object</strong></p>
-<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> o1 = &#123;&#125;</span><br><span class="line"><span class="keyword">var</span> o2 = <span class="keyword">new</span> <span class="built_in">Object</span>()</span><br></pre></td></tr></table></figure>
-<p> o1 和 o2 没区别，不过<code>ol === o2  // false</code>，这是两个对象</p>
-</li>
-</ol>
 <hr>
-<h2 id="原型"><a href="#原型" class="headerlink" title="原型"></a>原型</h2><h3 id="函数的原型对象"><a href="#函数的原型对象" class="headerlink" title="函数的原型对象"></a>函数的原型对象</h3><ul>
-<li>在JavaScript中，我们创建一个函数A(就是声明一个函数), 那么浏览器就会在内存中创建一个对象B，而且每个函数都默认会有一个属性 <strong>prototype</strong> 指向这个对象( 即：prototype的属性的值是这个对象 )。</li>
-<li>这个对象B就是函数A的<strong>原型对象</strong>，简称函数的原型。</li>
-<li>这个原型对象B 默认会有一个属性 constructor 指向了这个函数A ( 意思就是说：constructor属性的值是函数A )。</li>
-</ul>
-<h3 id="使用构造函数创建对象"><a href="#使用构造函数创建对象" class="headerlink" title="使用构造函数创建对象"></a>使用构造函数创建对象</h3><p> 当把一个函数作为构造函数 (理论上任何函数都可以作为构造函数) 使用new创建对象的时候，那么这个对象就会存在一个默认的不可见的属性，来指向构造函数的原型对象。<br> 这个隐藏的属性在浏览器中用<strong>&#95;&#95;proto&#95;&#95;</strong>来表示。</p>
-<p>举例：<br><img src="/2018/09/24/原型与原型链/1.jpg" alt="例子1"></p>
-<p><img src="/2018/09/24/原型与原型链/3.jpg" alt="例子2"></p>
+<h2 id="封装jQuery-ajax"><a href="#封装jQuery-ajax" class="headerlink" title="封装jQuery.ajax"></a>封装jQuery.ajax</h2><h3 id="初始版本"><a href="#初始版本" class="headerlink" title="初始版本"></a>初始版本</h3><p>封装：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">window</span>.jQuery.ajax = <span class="function"><span class="keyword">function</span>(<span class="params">options</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">let</span> url = options.url</span><br><span class="line">    <span class="keyword">let</span> method = options.method</span><br><span class="line">    <span class="keyword">let</span> body = options.body</span><br><span class="line">    <span class="keyword">let</span> successFn = options.successFn</span><br><span class="line">    <span class="keyword">let</span> failFn = options.failFn</span><br><span class="line">    <span class="keyword">let</span> headers = options.headers</span><br><span class="line"></span><br><span class="line">    <span class="keyword">let</span> request = <span class="keyword">new</span> XMLHttpRequest()</span><br><span class="line">    request.open(method, url)  <span class="comment">//初始化请求</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> key <span class="keyword">in</span> headers)&#123;</span><br><span class="line">        <span class="keyword">let</span> value = headers[key]</span><br><span class="line">        request.setRequestHeader(key, value)</span><br><span class="line">    &#125;</span><br><span class="line">    request.onreadystatechange = <span class="function"><span class="params">()</span> =&gt;</span>&#123;</span><br><span class="line">       <span class="keyword">if</span>(request.readyState === <span class="number">4</span>)&#123;</span><br><span class="line">           <span class="keyword">if</span>(request.status &gt;= <span class="number">200</span> &amp;&amp; request.status &lt;= <span class="number">300</span>)&#123;</span><br><span class="line">               successFn.call(<span class="literal">undefined</span>, request.responseText)</span><br><span class="line">           &#125;<span class="keyword">else</span> <span class="keyword">if</span>(request.status &gt;= <span class="number">400</span>)&#123;</span><br><span class="line">              failFn.call(<span class="literal">undefined</span>, request)</span><br><span class="line">           &#125;</span><br><span class="line">       &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    request.send(body)  <span class="comment">//发送请求</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">window</span>.$ = <span class="built_in">window</span>.jQuery</span><br></pre></td></tr></table></figure></p>
+<p>调用：<br><figure class="highlight coffeescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">myButton.addEventListener(<span class="string">'click'</span>, <span class="function"><span class="params">(e)</span> =&gt;</span>&#123;</span><br><span class="line">    <span class="built_in">window</span>.jQuery.ajax(&#123;</span><br><span class="line">        url: <span class="string">'/xxx'</span>, </span><br><span class="line">        method: <span class="string">'post'</span>,</span><br><span class="line">        headers: &#123;</span><br><span class="line">            <span class="string">'Content-Type'</span>: <span class="string">'application/x-www-form-urlencoded'</span>,</span><br><span class="line">            <span class="string">'allen'</span>: <span class="string">'23'</span></span><br><span class="line">        &#125; ,</span><br><span class="line">        body: <span class="string">'a=0&amp;b=1'</span>, </span><br><span class="line">        successFn: <span class="function"><span class="params">(x)</span> =&gt;</span> &#123;<span class="built_in">console</span>.log(x)&#125;, </span><br><span class="line">        failFn: <span class="function"><span class="params">(x)</span> =&gt;</span> &#123;</span><br><span class="line">            <span class="built_in">console</span>.log(x)</span><br><span class="line">            <span class="built_in">console</span>.log(x.statusText)</span><br><span class="line">            <span class="built_in">console</span>.log(x.responseText)  <span class="regexp">//</span>请求失败也可以获取第四部分</span><br><span class="line">        &#125;</span><br><span class="line">     &#125;)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
+<p>此时代码很傻，下面来优化一下。</p>
 <hr>
-<h3 id="95-95-proto-95-95-和-prototype-的区别"><a href="#95-95-proto-95-95-和-prototype-的区别" class="headerlink" title="&#95;&#95;proto&#95;&#95; 和 prototype 的区别"></a>&#95;&#95;proto&#95;&#95; 和 prototype 的区别</h3><ol>
-<li>&#95;&#95;proto&#95;&#95; 和 prototype 只是两个 key 而已</li>
-<li>我们一般研究对象的 &#95;&#95;proto&#95;&#95; 和函数的 prototype</li>
-<li><code>对象.__proto__ === 某函数.prototype  // true</code></li>
-<li>如果把函数看成对象，那么<code>函数.__proto__ === Function.prototype</code></li>
-<li>如果把 Function 看成对象，那么 <code>Function.__proto__ === Function.prototype</code></li>
-</ol>
+<h3 id="使用ES6语法解构赋值"><a href="#使用ES6语法解构赋值" class="headerlink" title="使用ES6语法解构赋值"></a>使用ES6语法解构赋值</h3><p>ES6新语法之解构赋值，见<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment" target="_blank" rel="noopener">MDN文档</a> 。<br>优化后的代码：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">window</span>.jQuery.ajax = <span class="function"><span class="keyword">function</span>(<span class="params">&#123;url, method, body, successFn, failFn, headers&#125;</span>)</span>&#123;  <span class="comment">//解构赋值语法</span></span><br><span class="line">    <span class="keyword">let</span> request = <span class="keyword">new</span> XMLHttpRequest()</span><br><span class="line">    request.open(method, url)  <span class="comment">//初始化请求</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> key <span class="keyword">in</span> headers)&#123;</span><br><span class="line">        <span class="keyword">let</span> value = headers[key]</span><br><span class="line">        request.setRequestHeader(key, value)</span><br><span class="line">    &#125;</span><br><span class="line">    request.onreadystatechange = <span class="function"><span class="params">()</span> =&gt;</span>&#123;</span><br><span class="line">       <span class="keyword">if</span>(request.readyState === <span class="number">4</span>)&#123;</span><br><span class="line">           <span class="keyword">if</span>(request.status &gt;= <span class="number">200</span> &amp;&amp; request.status &lt;= <span class="number">300</span>)&#123;</span><br><span class="line">               successFn.call(<span class="literal">undefined</span>, request.responseText)</span><br><span class="line">           &#125;<span class="keyword">else</span> <span class="keyword">if</span>(request.status &gt;= <span class="number">400</span>)&#123;</span><br><span class="line">              failFn.call(<span class="literal">undefined</span>, request)</span><br><span class="line">           &#125;</span><br><span class="line">       &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    request.send(body)  <span class="comment">//发送请求</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <hr>
-<h3 id="重要公式"><a href="#重要公式" class="headerlink" title="重要公式"></a>重要公式</h3><figure class="highlight fortran"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">var 对象 = new 函数()</span><br><span class="line">对象.__proto__ === 对象的构造函数.prototype</span><br><span class="line"></span><br><span class="line">// 推论</span><br><span class="line">var <span class="keyword">number</span> = new <span class="keyword">Number</span>()</span><br><span class="line"><span class="keyword">number</span>.__proto__ = <span class="keyword">Number</span>.prototype</span><br><span class="line"><span class="keyword">Number</span>.__proto__ = <span class="function"><span class="keyword">Function</span>.<span class="title">prototype</span></span> // 因为 <span class="keyword">Number</span> 是 <span class="function"><span class="keyword">Function</span></span> 的实例</span><br><span class="line"></span><br><span class="line">var object = new Object()</span><br><span class="line">object.__proto__ = Object.prototype</span><br><span class="line">Object.__proto__ = <span class="function"><span class="keyword">Function</span>.<span class="title">prototype</span></span> // 因为 Object 是 <span class="function"><span class="keyword">Function</span></span> 的实例</span><br><span class="line"></span><br><span class="line">var <span class="function"><span class="keyword">function</span></span> = new <span class="function"><span class="keyword">Function</span><span class="params">()</span></span></span><br><span class="line"><span class="function"><span class="keyword">function</span>.<span class="title">__proto__</span></span> = <span class="function"><span class="keyword">Function</span>.<span class="title">prototype</span></span></span><br><span class="line"><span class="function"><span class="keyword">Function</span>.<span class="title">__proto__</span></span> == <span class="function"><span class="keyword">Function</span>.<span class="title">prototye</span></span> // 因为 <span class="function"><span class="keyword">Function</span></span> 是 <span class="function"><span class="keyword">Function</span></span> 的实例！</span><br></pre></td></tr></table></figure>
-<hr>
-<h2 id="原型链"><a href="#原型链" class="headerlink" title="原型链"></a>原型链</h2><p>通过&#95;&#95;proto&#95;&#95;形成原型链而非protrotype<br><figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn</span><span class="params">()</span></span>&#123;&#125;;</span><br><span class="line"><span class="keyword">var</span> test = <span class="keyword">new</span> fn();</span><br></pre></td></tr></table></figure></p>
-<p><img src="/2018/09/24/原型与原型链/2.png" alt="原型链"></p>
-<p>把这个由&#95;&#95;proto&#95;&#95;串起来的直到Object.prototype.&#95;&#95;proto&#95;&#95;为null的链叫做原型链。</p>
-<hr>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><ul>
-<li>查找属性，如果本身没有，则会去&#95;&#95;proto&#95;&#95;中查找，也就是构造函数的原型中查找，如果构造函数中也没有该属性，因为构造函数也是对象，也有&#95;&#95;proto&#95;&#95;，那么会去它的原型中查找，一直到null，如果没有则返回undefined</li>
-</ul>
-<p>一图流：<br><img src="/2018/09/24/原型与原型链/总结.jpg" alt="总结"></p>
-<hr>
-<p>一些参考的博客：<br><a href="https://blog.csdn.net/u012468376/article/details/53121081" target="_blank" rel="noopener">https://blog.csdn.net/u012468376/article/details/53121081</a><br><a href="https://blog.csdn.net/yucihent/article/details/79424506" target="_blank" rel="noopener">https://blog.csdn.net/yucihent/article/details/79424506</a></p>
+<h3 id="使用promise优化"><a href="#使用promise优化" class="headerlink" title="使用promise优化"></a>使用promise优化</h3><p>因为每个程序员的回调名不一样，你不看文档根本不知道这个库的函数名是什么，所以我们可以使用该方法不设置successFn、failFn这两个函数的函数名。<br>返回一个promise对象，传入的两个参数resolve、reject，分别代表成功时执行的内容和失败时执行的内容。</p>
+<p>再次优化后的代码：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">window</span>.jQuery.ajax = <span class="function"><span class="keyword">function</span>(<span class="params">&#123;url, method, body, headers&#125;</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function"><span class="keyword">function</span>(<span class="params">resolve, reject</span>)</span>&#123;   <span class="comment">// 这行代码要记住</span></span><br><span class="line">        <span class="keyword">let</span> request = <span class="keyword">new</span> XMLHttpRequest()</span><br><span class="line">        request.open(method, url)  <span class="comment">//初始化请求</span></span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">let</span> key <span class="keyword">in</span> headers)&#123;</span><br><span class="line">            <span class="keyword">let</span> value = headers[key]</span><br><span class="line">            request.setRequestHeader(key, value)</span><br><span class="line">        &#125;</span><br><span class="line">        request.onreadystatechange = <span class="function"><span class="params">()</span> =&gt;</span>&#123;</span><br><span class="line">           <span class="keyword">if</span>(request.readyState === <span class="number">4</span>)&#123;</span><br><span class="line">               <span class="keyword">if</span>(request.status &gt;= <span class="number">200</span> &amp;&amp; request.status &lt;= <span class="number">300</span>)&#123;</span><br><span class="line">                  resolve.call(<span class="literal">undefined</span>, request.responseText)</span><br><span class="line">               &#125;<span class="keyword">else</span> <span class="keyword">if</span>(request.status &gt;= <span class="number">400</span>)&#123;</span><br><span class="line">                  reject.call(<span class="literal">undefined</span>, request)</span><br><span class="line">               &#125;</span><br><span class="line">           &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        request.send(body)  <span class="comment">//发送请求</span></span><br><span class="line">    &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>调用：<br><figure class="highlight coffeescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"> <span class="built_in">window</span>.jQuery.ajax(&#123;</span><br><span class="line">        url: <span class="string">'/xxx'</span>,</span><br><span class="line">        method: <span class="string">'post'</span>,</span><br><span class="line">        headers: &#123;</span><br><span class="line">            <span class="string">'Content-Type'</span>: <span class="string">'application/x-www-form-urlencoded'</span>,</span><br><span class="line">            <span class="string">'allen'</span>: <span class="string">'23'</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;).<span class="keyword">then</span>(</span><br><span class="line">        (responseText) =&gt; &#123;</span><br><span class="line">            <span class="built_in">console</span>.log(responseText);</span><br><span class="line">            <span class="keyword">return</span> responseText;</span><br><span class="line">        &#125;,</span><br><span class="line">        (request) =&gt; &#123;</span><br><span class="line">            <span class="built_in">console</span>.log(<span class="string">'error'</span>); <span class="keyword">return</span> <span class="string">'error'</span></span><br><span class="line">        &#125;</span><br><span class="line">)</span><br></pre></td></tr></table></figure></p>
+<p>then返回也是promise对象，于是就有了链式操作。</p>
+<h2 id="jQuery本身的ajax方法"><a href="#jQuery本身的ajax方法" class="headerlink" title="jQuery本身的ajax方法"></a>jQuery本身的ajax方法</h2><p>上面是我们模仿jQuery自己封装的ajax方法，下面来看看jQuery真正的ajax方法。<br>举例：<br><figure class="highlight coffeescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">$.ajax(&#123;</span><br><span class="line">    url:<span class="string">'/xxx'</span>,</span><br><span class="line">    method: <span class="string">'post'</span>,</span><br><span class="line">    dataType:<span class="string">'x-www-form-urlencoded'</span>,</span><br><span class="line">    data:<span class="string">'a=0&amp;b=1'</span>,</span><br><span class="line">    success:<span class="function"><span class="params">(responseText)</span>=&gt;</span>&#123;<span class="built_in">console</span>.log(responseText)&#125;,</span><br><span class="line">    error:<span class="function"><span class="params">(e)</span>=&gt;</span>&#123;<span class="built_in">console</span>.log(<span class="string">'error'</span>)&#125;</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">$.ajax(&#123;</span><br><span class="line">    url:<span class="string">'/xxx'</span>,</span><br><span class="line">    method: <span class="string">'post'</span>,</span><br><span class="line">    dataType:<span class="string">'json'</span>,</span><br><span class="line">    data:<span class="string">'a=0&amp;b=1'</span>,</span><br><span class="line">&#125;).<span class="keyword">then</span>(</span><br><span class="line">    (responseText)=&gt;&#123;<span class="built_in">console</span>.log(responseText)&#125;,</span><br><span class="line">    (e)=&gt;&#123;<span class="built_in">console</span>.log(<span class="string">'error'</span>)&#125;</span><br><span class="line">)</span><br></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -468,8 +423,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/09/22/JS类型转换和内存机制/" rel="next" title="JS类型转换和内存机制">
-                <i class="fa fa-chevron-left"></i> JS类型转换和内存机制
+              <a href="/2018/10/06/AJAX/" rel="next" title="AJAX是什么？">
+                <i class="fa fa-chevron-left"></i> AJAX是什么？
               </a>
             
           </div>
@@ -477,10 +432,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/09/26/JS数组/" rel="prev" title="JS中的数组">
-                JS中的数组 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -632,7 +583,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#全局函数"><span class="nav-number">1.</span> <span class="nav-text">全局函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#原型"><span class="nav-number">2.</span> <span class="nav-text">原型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#函数的原型对象"><span class="nav-number">2.1.</span> <span class="nav-text">函数的原型对象</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用构造函数创建对象"><span class="nav-number">2.2.</span> <span class="nav-text">使用构造函数创建对象</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#95-95-proto-95-95-和-prototype-的区别"><span class="nav-number">2.3.</span> <span class="nav-text">__proto__ 和 prototype 的区别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#重要公式"><span class="nav-number">2.4.</span> <span class="nav-text">重要公式</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#原型链"><span class="nav-number">3.</span> <span class="nav-text">原型链</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结"><span class="nav-number">4.</span> <span class="nav-text">总结</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#基本功能"><span class="nav-number">1.</span> <span class="nav-text">基本功能</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#设置请求request"><span class="nav-number">1.1.</span> <span class="nav-text">设置请求request</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#获取响应response"><span class="nav-number">1.2.</span> <span class="nav-text">获取响应response</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#封装jQuery-ajax"><span class="nav-number">2.</span> <span class="nav-text">封装jQuery.ajax</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#初始版本"><span class="nav-number">2.1.</span> <span class="nav-text">初始版本</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用ES6语法解构赋值"><span class="nav-number">2.2.</span> <span class="nav-text">使用ES6语法解构赋值</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用promise优化"><span class="nav-number">2.3.</span> <span class="nav-text">使用promise优化</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#jQuery本身的ajax方法"><span class="nav-number">3.</span> <span class="nav-text">jQuery本身的ajax方法</span></a></li></ol></div>
             
 
           </div>
