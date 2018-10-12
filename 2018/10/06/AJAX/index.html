@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="Allen&#39;s Blog">
 <meta property="og:description" content="AJAX的发展历史历史上发送请求的方式用 form 可以发请求，但是会刷新页面或新开页面用 a 可以发 get 请求，但是也会刷新页面或新开页面用 img 可以发 get 请求，但是只能以图片的形式展示用 link 可以发 get 请求，但是只能以 CSS、favicon 的形式展示用 script 可以发 get 请求，但是只能以脚本的形式运行以上都除了form都只能发get请求  所以需要一个">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-10-10T07:32:48.078Z">
+<meta property="og:updated_time" content="2018-10-10T12:24:59.784Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="AJAX是什么？">
 <meta name="twitter:description" content="AJAX的发展历史历史上发送请求的方式用 form 可以发请求，但是会刷新页面或新开页面用 a 可以发 get 请求，但是也会刷新页面或新开页面用 img 可以发 get 请求，但是只能以图片的形式展示用 link 可以发 get 请求，但是只能以 CSS、favicon 的形式展示用 script 可以发 get 请求，但是只能以脚本的形式运行以上都除了form都只能发get请求  所以需要一个">
@@ -392,11 +392,7 @@
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> request = <span class="keyword">new</span> XMLHttpRequest()</span><br><span class="line">    request.onreadystatechange = <span class="function"><span class="params">()</span> =&gt;</span>&#123;  <span class="comment">//尽量放在最上面，这样就不会错过任何变化，</span></span><br><span class="line">       <span class="keyword">if</span>(request.readyState === <span class="number">4</span>)&#123;     <span class="comment">//如果放在request.send()之后，这时候readyState已经从0变为1，就只能捕获到2，3，4。</span></span><br><span class="line">           <span class="keyword">if</span>(request.status &gt;= <span class="number">200</span> &amp;&amp; request.status &lt;= <span class="number">300</span>)&#123;</span><br><span class="line">               <span class="built_in">console</span>.log(<span class="string">'请求成功'</span>)</span><br><span class="line">           &#125;<span class="keyword">else</span> <span class="keyword">if</span>(request.status &gt;= <span class="number">400</span>)&#123;</span><br><span class="line">               <span class="built_in">console</span>.log(<span class="string">'请求失败'</span>)</span><br><span class="line">           &#125;</span><br><span class="line">       &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    request.open(<span class="string">'GET'</span>, <span class="string">'/xxx'</span>)  <span class="comment">//初始化请求</span></span><br><span class="line">    request.send()  <span class="comment">//发送请求</span></span><br></pre></td></tr></table></figure>
 <p><strong>readyState：请求的五种状态</strong><br>0： 未打开 open()方法还未被调用<br>1： 未发送 send()方法还未被调用<br>2： 已经获取响应头 send()方法已经被调用，响应头和响应状态已经返回<br>3： 正在下载响应体 响应体下载中；responseText中已经获取了部分数据<br>4： 请求完成 整个请求过程完成</p>
 <hr>
-<h2 id="JSON"><a href="#JSON" class="headerlink" title="JSON"></a>JSON</h2><p>JSON是一门新的数据语言，抄袭了JavaScript。<br>区别：</p>
-<ol>
-<li>JSON没有抄袭 function、undefined和变量</li>
-<li>JSON的字符串首尾必须是双引号 “ “</li>
-</ol>
+<h2 id="JSON"><a href="#JSON" class="headerlink" title="JSON"></a>JSON</h2><p>JSON 是一门抄袭/借鉴 JavaScript 的语言，同时也是一种数据交互格式，JSON 是 JavaScript 的子集（或者说 JSON 只抄袭了一部分 JavaScript 语法，而且没有新增任何原创的语法）<br>区别：<br>JSON 不支持函数、undefined、变量、引用、单引号字符串、对象的key不支持单引号也不支持不加引号、没有内置的 Date、Math、RegExp 等。<br>而 JavaScript 全都支持。</p>
 <table>
 <thead>
 <tr>
@@ -573,7 +569,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">16</span>
+                  <span class="site-state-item-count">17</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
