@@ -3,6 +3,27 @@
   
     
     <entry>
+      <title>encodeURI()和encodeURIComponent()的区别</title>
+      <link href="/2018/10/21/encodeURI/"/>
+      <url>/2018/10/21/encodeURI/</url>
+      <content type="html"><![CDATA[<h2 id="区别"><a href="#区别" class="headerlink" title="区别"></a>区别</h2><p>encodeURI()和encodeURIComponent()方法都可以对URI（通用资源标识符）进行编码，以便发送给浏览器。<br>但它们编码的<strong>范围</strong>有所不用。</p><ol><li>encodeURI()方法不会对下列字符编码：ASCII字母、数字、~!@#$&amp;*()=:/,;?+’</li><li>encodeURIComponent()方法不会对下列字符编码：ASCII字母、数字、~!*()’</li></ol><h2 id="使用场景"><a href="#使用场景" class="headerlink" title="使用场景"></a>使用场景</h2><ol><li>对 <strong>整个URL</strong> 进行编码就使用<strong>encodeURI()</strong></li><li>对 <strong>URL中的参数</strong> 或者 <strong>URL后面的一部分</strong> 进行编码就使用<strong>encodeURIComponent()</strong></li></ol><p><strong>举例说明：</strong><br><a id="more"></a></p><p>对一个URL进行编码<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="title">encodeURI</span><span class="params">(<span class="string">"http://x.com/你好?a=1"</span>)</span></span></span><br><span class="line"><span class="comment">// 正确</span></span><br></pre></td></tr></table></figure></p><p>假设我想在google中查询上面这个网址<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="title">encodeURI</span><span class="params">(<span class="string">"http://google.com/search?q=http://x.com/你好?a=1"</span>)</span></span></span><br><span class="line"><span class="comment">// 正确</span></span><br></pre></td></tr></table></figure></p><p>上面这样写没什么问题，但是如果把查询的网址更改成这样再encodeURI<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="title">encodeURI</span><span class="params">(<span class="string">"http://google.com/search?q=http://x.com/你好?a=1&amp;b=2"</span>)</span></span></span><br><span class="line"><span class="comment">// 错误，查询参数被&amp;分隔了，有歧义</span></span><br></pre></td></tr></table></figure></p><p>因为&amp;没有被编码，这部分就不能作为一个整体的查询参数，而是被分隔成了<code>http://x.com/%E4%BD%A0%E5%A5%BD?a=1</code>和<code>&amp;b=2</code>两部分，所以要用encodeURIComponent对&amp;进行编码<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="title">encodeURIComponent</span><span class="params">(<span class="string">"http://google.com/search?q=http://x.com/你好?a=1&amp;b=2"</span>)</span></span></span><br><span class="line"><span class="comment">// 正确</span></span><br></pre></td></tr></table></figure></p>]]></content>
+      
+      <categories>
+          
+          <category> JavaScript </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> JavaScript </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
       <title>let和const声明的区别</title>
       <link href="/2018/10/20/let%E5%92%8Cconst/"/>
       <url>/2018/10/20/let%E5%92%8Cconst/</url>
