@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[JavaScript模拟继承]]></title>
+    <url>%2F2018%2F11%2F01%2Finheritance%2F</url>
+    <content type="text"><![CDATA[前言 继承是面向对象思想中的重要概念， JavaScript 在ES 6 中正式引入了继承的概念。下面介绍一下继承的概念，以及在 ES5 和 ES6 中写继承的方法。 面向对象中的继承维基百科： 继承（ inheritance）是面向对象软件技术当中的一个概念。如果一个类别B“继承自”另一个类别A，就把这个B称为“A的子类”，而把A称为“B的父类别”也可以称“A是B的超类”。继承可以使得子类具有父类别的各种属性和方法，而不需要再次编写相同的代码。 所以继承是类和类之间的关系，然而JavaScript起初根本没有类的概念，那么为什么也有继承呢？ JavaScript中的继承JavaScript中的继承就是基于原型链要了解JS的继承，就得先了解原型链。该部分可见我的另一篇博客 简单来说，就是每一个对象都有一个__proto__属性，指向该对象的原型prototype，原型的层层指向就形成了一个类似链表的结构（实际上原型的指向是多对一的，所以说成“树”的结构其实更准确一点）称之为原型链。 JavaScript中的继承就是基于原型链实现的。]]></content>
+      <categories>
+        <category>JavaScript</category>
+      </categories>
+      <tags>
+        <tag>JavaScript</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[JavaScript的函数节流]]></title>
     <url>%2F2018%2F10%2F30%2F%E5%87%BD%E6%95%B0%E8%8A%82%E6%B5%81%2F</url>
     <content type="text"><![CDATA[前言我在我的网易云音乐项目中，因搜索歌曲的需求，需要监听输入框的oninput事件。但后来发现我的数据库接受请求次数有些异常，原来是用户每一次输入过程中都会向后端发送请求，非常浪费性能。之后搜索并了解到js的函数节流，有效解决了这一问题，便有了这篇博客。 函数节流的原理函数节流的原理就是定时器。当我触发一个时间时，先setTimout让这个事件延迟一会再执行，如果在这个时间间隔内又触发了事件，那我们就clear掉原来的定时器，再setTimeout一个新的定时器延迟一会执行，就是这样。 代码实现定义一个节流函数： 12345678910function throttle(fn, delay)&#123; var timer = null; return function()&#123; var context = this, args = arguments; clearTimeout(timer); timer = setTimeout(function()&#123; fn.apply(context, args); &#125;, delay); &#125;;&#125;; 调用： 1234567this.view.$el.on('input', '#search',(e)=&gt;&#123; event(e)&#125;) let event = this.throttle((e)=&gt;&#123; let val = $(e.currentTarget).val() //...发送AJAX请求&#125;, 800, 1500) 理论上这样写很完美了，但仍存在一种问题：如果输入框一直在输入文字，文字就一直不会显示出来。我们需要做一个处理：使得文字在超过某个时间间隔后要输出一次。优化代码： 1234567891011121314151617181920function throttle(fn, delay, mustRunDelay)&#123; var timer = null; var t_start; return function()&#123; var context = this, args = arguments, t_curr = +new Date(); clearTimeout(timer); if(!t_start)&#123; t_start = t_curr; &#125; if(t_curr - t_start &gt;= mustRunDelay)&#123; fn.apply(context, args); t_start = t_curr; &#125; else &#123; timer = setTimeout(function()&#123; fn.apply(context, args); &#125;, delay); &#125; &#125;; &#125;; 注：本文参考资料]]></content>

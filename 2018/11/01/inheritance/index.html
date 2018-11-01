@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="立即执行函数的作用和使用 我们不想要全局变量 我们要使用局部变量 ES 5 里面，只有函数有局部变量 于是我们声明一个 function xxx，然后 xxx.call() 这个时候 xxx 是全局变量（全局函数） 所以我们不能给这个函数名字 function(){}.call() 但是这样写 Chrome 会报错，语法错误 试出来一种方法可以不报错:  12345678!function()&amp;#">
+<meta name="description" content="前言 继承是面向对象思想中的重要概念， JavaScript 在ES 6 中正式引入了继承的概念。下面介绍一下继承的概念，以及在 ES5 和 ES6 中写继承的方法。  面向对象中的继承维基百科：  继承（ inheritance）是面向对象软件技术当中的一个概念。如果一个类别B“继承自”另一个类别A，就把这个B称为“A的子类”，而把A称为“B的父类别”也可以称“A是B的超类”。继承可以使得子类具">
 <meta name="keywords" content="JavaScript">
 <meta property="og:type" content="article">
-<meta property="og:title" content="立即执行函数和闭包的使用">
-<meta property="og:url" content="http://yoursite.com/2018/10/11/立即执行函数/index.html">
+<meta property="og:title" content="JavaScript模拟继承">
+<meta property="og:url" content="http://yoursite.com/2018/11/01/inheritance/index.html">
 <meta property="og:site_name" content="Allen&#39;s Blog">
-<meta property="og:description" content="立即执行函数的作用和使用 我们不想要全局变量 我们要使用局部变量 ES 5 里面，只有函数有局部变量 于是我们声明一个 function xxx，然后 xxx.call() 这个时候 xxx 是全局变量（全局函数） 所以我们不能给这个函数名字 function(){}.call() 但是这样写 Chrome 会报错，语法错误 试出来一种方法可以不报错:  12345678!function()&amp;#">
+<meta property="og:description" content="前言 继承是面向对象思想中的重要概念， JavaScript 在ES 6 中正式引入了继承的概念。下面介绍一下继承的概念，以及在 ES5 和 ES6 中写继承的方法。  面向对象中的继承维基百科：  继承（ inheritance）是面向对象软件技术当中的一个概念。如果一个类别B“继承自”另一个类别A，就把这个B称为“A的子类”，而把A称为“B的父类别”也可以称“A是B的超类”。继承可以使得子类具">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-10-14T12:59:30.319Z">
+<meta property="og:updated_time" content="2018-11-01T15:28:33.679Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="立即执行函数和闭包的使用">
-<meta name="twitter:description" content="立即执行函数的作用和使用 我们不想要全局变量 我们要使用局部变量 ES 5 里面，只有函数有局部变量 于是我们声明一个 function xxx，然后 xxx.call() 这个时候 xxx 是全局变量（全局函数） 所以我们不能给这个函数名字 function(){}.call() 但是这样写 Chrome 会报错，语法错误 试出来一种方法可以不报错:  12345678!function()&amp;#">
+<meta name="twitter:title" content="JavaScript模拟继承">
+<meta name="twitter:description" content="前言 继承是面向对象思想中的重要概念， JavaScript 在ES 6 中正式引入了继承的概念。下面介绍一下继承的概念，以及在 ES5 和 ES6 中写继承的方法。  面向对象中的继承维基百科：  继承（ inheritance）是面向对象软件技术当中的一个概念。如果一个类别B“继承自”另一个类别A，就把这个B称为“A的子类”，而把A称为“B的父类别”也可以称“A是B的超类”。继承可以使得子类具">
 
 
 
@@ -120,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/10/11/立即执行函数/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/11/01/inheritance/"/>
 
 
 
 
 
-  <title>立即执行函数和闭包的使用 | Allen's Blog</title>
+  <title>JavaScript模拟继承 | Allen's Blog</title>
   
 
 
@@ -287,7 +287,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/10/11/立即执行函数/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/01/inheritance/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Allen Ye">
@@ -304,7 +304,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">立即执行函数和闭包的使用</h1>
+          <h1 class="post-title" itemprop="name headline">JavaScript模拟继承</h1>
         
 
         <div class="post-meta">
@@ -316,8 +316,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-10-11T20:34:17+08:00">
-                2018-10-11
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-11-01T23:05:39+08:00">
+                2018-11-01
               </time>
             
 
@@ -376,34 +376,18 @@
       
 
       
-        <h2 id="立即执行函数的作用和使用"><a href="#立即执行函数的作用和使用" class="headerlink" title="立即执行函数的作用和使用"></a>立即执行函数的作用和使用</h2><ol>
-<li>我们不想要全局变量</li>
-<li>我们要使用局部变量</li>
-<li>ES 5 里面，只有函数有局部变量</li>
-<li>于是我们声明一个 function xxx，然后 xxx.call()</li>
-<li>这个时候 xxx 是全局变量（全局函数）</li>
-<li>所以我们不能给这个函数名字</li>
-<li>function(){}.call()</li>
-<li>但是这样写 Chrome 会报错，语法错误</li>
-<li>试出来一种方法可以不报错:</li>
-</ol>
-<figure class="highlight delphi"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">!<span class="function"><span class="keyword">function</span><span class="params">()</span><span class="comment">&#123;&#125;</span>.<span class="title">call</span><span class="params">()</span>  <span class="comment">//我们不在乎这个匿名函数的返回值，所以加个 ! 取反没关系</span></span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function"><span class="params">(<span class="keyword">function</span>()</span><span class="comment">&#123;&#125;</span>).<span class="title">call</span><span class="params">()</span> <span class="comment">//不推荐，原因如下</span></span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function"><span class="title">xxx</span>    </span></span><br><span class="line"><span class="function"><span class="params">(<span class="keyword">function</span>()</span><span class="comment">&#123;&#125;</span>).<span class="title">call</span><span class="params">()</span> <span class="comment">//报错</span></span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function"><span class="title">allen12415145141556</span>.<span class="title">call</span><span class="params">()</span> <span class="comment">//用随机数，不推荐</span></span></span><br></pre></td></tr></table></figure>
-<a id="more"></a>
-<h3 id="立即执行函数的好处"><a href="#立即执行函数的好处" class="headerlink" title="立即执行函数的好处"></a>立即执行函数的好处</h3><ol>
-<li><p>函数不必再另外命名，避免了污染全局，不会在复杂页面协作中造成错乱；</p>
-</li>
-<li><p>实现一个作用域隔离，封装外部无法读取的私有变量</p>
-</li>
-<li><p>避免命名冲突，符合js语法规则，并立刻执行。</p>
-</li>
-</ol>
-<h2 id="结合闭包的使用"><a href="#结合闭包的使用" class="headerlink" title="结合闭包的使用"></a>结合闭包的使用</h2><ol>
-<li>立即执行函数使得 变量person 无法被外部访问</li>
-<li>闭包使得匿名函数可以操作 变量person</li>
-<li>window.GrowUp 保存了匿名函数的地址</li>
-<li>任何地方都可以使用 window.GrowUp<br>=&gt; 任何地方都可以使用 window.GrowUp 操作 person，但是不能直接访问 person</li>
-</ol>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">!<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> person = xxx</span><br><span class="line">    <span class="built_in">window</span>.GrowUp()&#123;</span><br><span class="line">        xxxxx</span><br><span class="line">    &#125;</span><br><span class="line">&#125;.call()</span><br></pre></td></tr></table></figure>
+        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><blockquote>
+<p>继承是面向对象思想中的重要概念， JavaScript 在ES 6 中正式引入了继承的概念。<br>下面介绍一下继承的概念，以及在 ES5 和 ES6 中写继承的方法。</p>
+</blockquote>
+<h2 id="面向对象中的继承"><a href="#面向对象中的继承" class="headerlink" title="面向对象中的继承"></a>面向对象中的继承</h2><p>维基百科：</p>
+<blockquote>
+<p><strong>继承</strong>（ inheritance）是面向对象软件技术当中的一个概念。如果一个类别B“继承自”另一个类别A，就把这个B称为“A的子类”，而把A称为“B的父类别”也可以称“A是B的超类”。继承可以使得<strong>子类具有父类别的各种属性和方法</strong>，而不需要再次编写相同的代码。</p>
+</blockquote>
+<p>所以继承是类和类之间的关系，然而JavaScript起初根本没有类的概念，那么为什么也有继承呢？</p>
+<h2 id="JavaScript中的继承"><a href="#JavaScript中的继承" class="headerlink" title="JavaScript中的继承"></a>JavaScript中的继承</h2><h3 id="JavaScript中的继承就是基于原型链"><a href="#JavaScript中的继承就是基于原型链" class="headerlink" title="JavaScript中的继承就是基于原型链"></a>JavaScript中的继承就是基于原型链</h3><p>要了解JS的继承，就得先了解<strong>原型链</strong>。该部分可见我的另一篇<a href="https://yuyuye958.github.io/2018/09/24/%E5%8E%9F%E5%9E%8B%E4%B8%8E%E5%8E%9F%E5%9E%8B%E9%93%BE/" target="_blank" rel="noopener">博客</a></p>
+<p>简单来说，就是每一个对象都有一个<code>__proto__</code>属性，指向该对象的原型<code>prototype</code>，原型的层层指向就形成了一个类似链表的结构（实际上原型的指向是多对一的，所以说成“树”的结构其实更准确一点）称之为原型链。</p>
+<p><strong>JavaScript中的继承就是基于原型链实现的。</strong></p>
+
       
     </div>
     
@@ -433,8 +417,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/10/10/MVC/" rel="next" title="JavaScript中的MVC设计模式">
-                <i class="fa fa-chevron-left"></i> JavaScript中的MVC设计模式
+              <a href="/2018/10/30/函数节流/" rel="next" title="JavaScript的函数节流">
+                <i class="fa fa-chevron-left"></i> JavaScript的函数节流
               </a>
             
           </div>
@@ -442,10 +426,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/10/12/面向对象/" rel="prev" title="JavaScript面向对象编程（构造函数，new，this）">
-                JavaScript面向对象编程（构造函数，new，this） <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -597,7 +577,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#立即执行函数的作用和使用"><span class="nav-number">1.</span> <span class="nav-text">立即执行函数的作用和使用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#立即执行函数的好处"><span class="nav-number">1.1.</span> <span class="nav-text">立即执行函数的好处</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#结合闭包的使用"><span class="nav-number">2.</span> <span class="nav-text">结合闭包的使用</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#面向对象中的继承"><span class="nav-number">2.</span> <span class="nav-text">面向对象中的继承</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JavaScript中的继承"><span class="nav-number">3.</span> <span class="nav-text">JavaScript中的继承</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#JavaScript中的继承就是基于原型链"><span class="nav-number">3.1.</span> <span class="nav-text">JavaScript中的继承就是基于原型链</span></a></li></ol></li></ol></div>
             
 
           </div>
