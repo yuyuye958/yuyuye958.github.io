@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="Vue," />
 
 
 
@@ -79,13 +79,18 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="Allen&#39;s Blog">
-<meta property="og:url" content="http://yoursite.com/categories/CSS/index.html">
+<meta name="description" content="前言我在边学 Vue 边做 轱辘UI 的项目中，写 row 组件 的测试用例时碰到了一个问题。测试用例需要渲染两个组件，它们是父子关系，但测试下来子组件并没有拿到父组件的 gutter 属性，发现原来是因为 Vue 异步的渲染。之后通过 setTimeout 和 done() 解决了这一问题，之后便有了这篇博客。 分析Vue到底是怎样渲染组件到页面的？看例子来分析吧">
+<meta name="keywords" content="Vue">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Vue渲染父子组件时需要注意的点">
+<meta property="og:url" content="http://yoursite.com/2018/11/19/Vue渲染父子元素/index.html">
 <meta property="og:site_name" content="Allen&#39;s Blog">
+<meta property="og:description" content="前言我在边学 Vue 边做 轱辘UI 的项目中，写 row 组件 的测试用例时碰到了一个问题。测试用例需要渲染两个组件，它们是父子关系，但测试下来子组件并没有拿到父组件的 gutter 属性，发现原来是因为 Vue 异步的渲染。之后通过 setTimeout 和 done() 解决了这一问题，之后便有了这篇博客。 分析Vue到底是怎样渲染组件到页面的？看例子来分析吧">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-11-19T14:16:21.045Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Allen&#39;s Blog">
+<meta name="twitter:title" content="Vue渲染父子组件时需要注意的点">
+<meta name="twitter:description" content="前言我在边学 Vue 边做 轱辘UI 的项目中，写 row 组件 的测试用例时碰到了一个问题。测试用例需要渲染两个组件，它们是父子关系，但测试下来子组件并没有拿到父组件的 gutter 属性，发现原来是因为 Vue 异步的渲染。之后通过 setTimeout 和 done() 解决了这一问题，之后便有了这篇博客。 分析Vue到底是怎样渲染组件到页面的？看例子来分析吧">
 
 
 
@@ -115,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/categories/CSS/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/11/19/Vue渲染父子元素/"/>
 
 
 
 
 
-  <title>分类: CSS | Allen's Blog</title>
+  <title>Vue渲染父子组件时需要注意的点 | Allen's Blog</title>
   
 
 
@@ -140,7 +145,7 @@
     
   
 
-  <div class="container sidebar-position-left ">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -268,55 +273,180 @@
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block category">
+  <div id="posts" class="posts-expand">
+    
 
-    <div id="posts" class="posts-collapse">
-      <div class="collection-title">
-        <h1>CSS<small>分类</small>
-        </h1>
-      </div>
+  
 
-      
-        
+  
+  
+  
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/19/Vue渲染父子元素/">
 
-      <h2 class="post-title">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Allen Ye">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Allen's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
         
-            <a class="post-title-link" href="/2018/09/14/CSS/" itemprop="url">
-              
-                <span itemprop="name">CSS的一些技巧和知识</span>
-              
-            </a>
         
-      </h2>
+          <h1 class="post-title" itemprop="name headline">Vue渲染父子组件时需要注意的点</h1>
+        
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-09-14T16:58:07+08:00"
-              content="2018-09-14" >
-          09-14
-        </time>
-      </div>
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-11-19T18:55:58+08:00">
+                2018-11-19
+              </time>
+            
 
-    </header>
-  </article>
+            
 
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Vue/" itemprop="url" rel="index">
+                    <span itemprop="name">Vue</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>我在边学 Vue 边做 <a href="https://github.com/yuyuye958/GuLu-UI" target="_blank" rel="noopener"><strong>轱辘UI</strong></a> 的项目中，写 <a href="https://github.com/yuyuye958/GuLu-UI/blob/master/src/row.vue" target="_blank" rel="noopener"><strong>row 组件</strong></a> 的<a href="https://github.com/yuyuye958/GuLu-UI/blob/master/test/row.test.js" target="_blank" rel="noopener">测试用例</a>时碰到了一个问题。<br>测试用例需要渲染两个组件，它们是<strong>父子</strong>关系，但测试下来<strong>子组件并没有拿到父组件的 gutter 属性</strong>，发现原来是因为 Vue <strong>异步</strong>的渲染。<br>之后通过 <strong>setTimeout</strong> 和 <strong>done()</strong> 解决了这一问题，之后便有了这篇博客。</p>
+<h2 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h2><p>Vue到底是怎样渲染组件到页面的？看例子来分析吧</p>
+<a id="more"></a>
+<p>我们自己会怎么写：<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 这是个同步的过程</span></span><br><span class="line"><span class="selector-tag">var</span> <span class="selector-tag">div</span> = document.createElement(<span class="string">'div'</span>)</span><br><span class="line">document<span class="selector-class">.body</span><span class="selector-class">.appendChild</span>(div)</span><br></pre></td></tr></table></figure></p>
+<p>而 Vue 不是这么简单的：<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">var</span> <span class="selector-tag">div</span> = document.createElement(<span class="string">'div'</span>)</span><br><span class="line"><span class="selector-tag">var</span> child = document.createElement(<span class="string">'div'</span>)</span><br><span class="line"><span class="comment">// 步骤一，会触发child的mounted事件，这是异步的</span></span><br><span class="line"><span class="selector-tag">div</span>.appendChild(child)</span><br><span class="line"><span class="comment">// 步骤二，会触发div的mounted事件，这也是异步的</span></span><br><span class="line">document<span class="selector-class">.body</span><span class="selector-class">.appendChild</span>(div)</span><br><span class="line"><span class="comment">// 步骤三，这行代码会先于上面两行执行，因为这是同步的，而此时div里还没有child</span></span><br><span class="line">console.log(<span class="selector-tag">div</span>.outerHTML)</span><br></pre></td></tr></table></figure></p>
+<p>执行顺序：步骤三 → 步骤一 → 步骤二</p>
+<p><strong>Vue 钩子的调用并不是同步的。</strong></p>
+<p>假如是同步的，mounted你写了几百行代码，则需要大量的运算，那Vue岂不是要等你执行完再继续？<br>所以 Vue 不应该等，Vue 应该优先完成元素的渲染，这是一个异步的触发</p>
+<h2 id="解决"><a href="#解决" class="headerlink" title="解决"></a>解决</h2><p>我预想子组件会通过 mounted 钩子拿到父组件传来的 gutter 属性，但我的测试用例执行时，实际上还没有执行 mounted 钩子，所以子组件才没有拿到这个 gutter 属性的值。</p>
+<p>知道了原因，那么就好解决了，用 <strong>setTimeout(){}</strong> </p>
+<p>另外由于<strong>测试框架默认都是同步的代码</strong>（这是测试框架的一个约定），所以要在参数中加上 <strong>done</strong> ，在我的测试用例执行完时调用 <strong>done()</strong>。</p>
+<p>这样，就解决了。具体代码可在此<a href="https://github.com/yuyuye958/GuLu-UI/blob/master/test/row.test.js" target="_blank" rel="noopener">点击</a> 。</p>
 
       
     </div>
+    
+    
+    
 
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Vue/" rel="tag"># Vue</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/11/03/web性能优化/" rel="next" title="Web性能优化">
+                <i class="fa fa-chevron-left"></i> Web性能优化
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
 
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -324,6 +454,10 @@
 
 
           
+
+  
+
+
 
         </div>
         
@@ -344,8 +478,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -425,6 +568,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#分析"><span class="nav-number">2.</span> <span class="nav-text">分析</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#解决"><span class="nav-number">3.</span> <span class="nav-text">解决</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -565,6 +724,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
