@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="JavaScript," />
+  <meta name="keywords" content="Vue," />
 
 
 
@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="什么是面向对象面向对象程序设计（Object-oriented programming，简称OOP），概念如下：  把一组数据结构和处理它们的方法组成对象（object），把相同行为的对象归纳为类（class），通过类的封装（encapsulation）隐藏内部细节，通过继承（inheritance）实现类的特化（specialization）／泛化（generalization），通过多态（po">
-<meta name="keywords" content="JavaScript">
+<meta name="description" content="前言我在 轱辘UI 项目做 tabs 组件时，该组件有父子组件通讯的需求，然而多个子组件之间怎么通讯呢？我了解到可以用 EventBus 结合 依赖注入 来解决。 什么是EventBus即组件共用的事件中心，可以向该中心注册发送事件或接收事件，所以组件都可以上下平行地通知其他组件。 如何在父子组件中使用EventBus父组件：1234567891011121314151617export defa">
+<meta name="keywords" content="Vue">
 <meta property="og:type" content="article">
-<meta property="og:title" content="JavaScript面向对象编程（构造函数，new，this）">
-<meta property="og:url" content="http://yoursite.com/2018/10/12/面向对象/index.html">
+<meta property="og:title" content="Vue父子组件的EventBus">
+<meta property="og:url" content="http://yoursite.com/2018/11/23/Vue中的EventBus/index.html">
 <meta property="og:site_name" content="Allen&#39;s Blog">
-<meta property="og:description" content="什么是面向对象面向对象程序设计（Object-oriented programming，简称OOP），概念如下：  把一组数据结构和处理它们的方法组成对象（object），把相同行为的对象归纳为类（class），通过类的封装（encapsulation）隐藏内部细节，通过继承（inheritance）实现类的特化（specialization）／泛化（generalization），通过多态（po">
+<meta property="og:description" content="前言我在 轱辘UI 项目做 tabs 组件时，该组件有父子组件通讯的需求，然而多个子组件之间怎么通讯呢？我了解到可以用 EventBus 结合 依赖注入 来解决。 什么是EventBus即组件共用的事件中心，可以向该中心注册发送事件或接收事件，所以组件都可以上下平行地通知其他组件。 如何在父子组件中使用EventBus父组件：1234567891011121314151617export defa">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-10-14T13:04:07.574Z">
+<meta property="og:updated_time" content="2018-11-23T15:12:13.211Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="JavaScript面向对象编程（构造函数，new，this）">
-<meta name="twitter:description" content="什么是面向对象面向对象程序设计（Object-oriented programming，简称OOP），概念如下：  把一组数据结构和处理它们的方法组成对象（object），把相同行为的对象归纳为类（class），通过类的封装（encapsulation）隐藏内部细节，通过继承（inheritance）实现类的特化（specialization）／泛化（generalization），通过多态（po">
+<meta name="twitter:title" content="Vue父子组件的EventBus">
+<meta name="twitter:description" content="前言我在 轱辘UI 项目做 tabs 组件时，该组件有父子组件通讯的需求，然而多个子组件之间怎么通讯呢？我了解到可以用 EventBus 结合 依赖注入 来解决。 什么是EventBus即组件共用的事件中心，可以向该中心注册发送事件或接收事件，所以组件都可以上下平行地通知其他组件。 如何在父子组件中使用EventBus父组件：1234567891011121314151617export defa">
 
 
 
@@ -120,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/10/12/面向对象/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/11/23/Vue中的EventBus/"/>
 
 
 
 
 
-  <title>JavaScript面向对象编程（构造函数，new，this） | Allen's Blog</title>
+  <title>Vue父子组件的EventBus | Allen's Blog</title>
   
 
 
@@ -287,7 +287,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/10/12/面向对象/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/23/Vue中的EventBus/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Allen Ye">
@@ -304,7 +304,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">JavaScript面向对象编程（构造函数，new，this）</h1>
+          <h1 class="post-title" itemprop="name headline">Vue父子组件的EventBus</h1>
         
 
         <div class="post-meta">
@@ -316,8 +316,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-10-12T12:08:50+08:00">
-                2018-10-12
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-11-23T17:27:03+08:00">
+                2018-11-23
               </time>
             
 
@@ -339,8 +339,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/JavaScript/" itemprop="url" rel="index">
-                    <span itemprop="name">JavaScript</span>
+                  <a href="/categories/Vue/" itemprop="url" rel="index">
+                    <span itemprop="name">Vue</span>
                   </a>
                 </span>
 
@@ -376,74 +376,13 @@
       
 
       
-        <h2 id="什么是面向对象"><a href="#什么是面向对象" class="headerlink" title="什么是面向对象"></a>什么是面向对象</h2><p>面向对象程序设计（Object-oriented programming，简称OOP），概念如下：</p>
-<blockquote>
-<p>把一组数据结构和处理它们的方法组成对象（object），把相同行为的对象归纳为类（class），通过类的封装（encapsulation）隐藏内部细节，通过继承（inheritance）实现类的特化（specialization）／泛化（generalization），通过多态（polymorphism）实现基于对象类型的动态分派（dynamic dispatch）。</p>
-</blockquote>
-<p>上面这段话根本看不懂什么意思，还是先来理解一下面向对象的一些术语吧：</p>
+        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>我在 <a href="https://github.com/yuyuye958/GuLu-UI" target="_blank" rel="noopener"><strong>轱辘UI</strong></a> 项目做 tabs 组件时，该组件有父子组件通讯的需求，然而多个子组件之间怎么通讯呢？我了解到可以用 <strong>EventBus</strong> 结合 <a href="https://cn.vuejs.org/v2/guide/components-edge-cases.html#依赖注入" target="_blank" rel="noopener"><strong>依赖注入</strong></a> 来解决。</p>
+<h2 id="什么是EventBus"><a href="#什么是EventBus" class="headerlink" title="什么是EventBus"></a>什么是EventBus</h2><p>即组件共用的事件中心，可以向该中心注册发送事件或接收事件，所以组件都可以上下平行地通知其他组件。</p>
+<h2 id="如何在父子组件中使用EventBus"><a href="#如何在父子组件中使用EventBus" class="headerlink" title="如何在父子组件中使用EventBus"></a>如何在父子组件中使用EventBus</h2><p>父组件：<br><figure class="highlight coffeescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span><br><span class="line">    data()&#123;</span><br><span class="line">        <span class="keyword">return</span> &#123;</span><br><span class="line">            eventBus: <span class="keyword">new</span> Vue()</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    provide() &#123;</span><br><span class="line">        <span class="keyword">return</span> &#123;</span><br><span class="line">            eventBus: <span class="keyword">this</span>.eventBus</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    mounted() &#123;</span><br><span class="line">        <span class="keyword">this</span>.eventBus.$emit(<span class="string">'event'</span>, <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line"></span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <a id="more"></a>
-<blockquote>
-<p><strong>Class 类</strong><br>定义对象的特征。它是对象的属性和方法的模板定义.<br><strong>Object 对象</strong><br>类的一个实例。<br><strong>Property 属性</strong><br>对象的特征，比如颜色。<br><strong>Method 方法</strong><br>对象的能力，比如行走。<br><strong>Constructor 构造函数</strong><br>对象初始化的瞬间, 被调用的方法. 通常它的名字与包含它的类一致.<br><strong>Inheritance 继承</strong><br>一个类可以继承另一个类的特征。<br><strong>Encapsulation 封装</strong><br>一种把数据和相关的方法绑定在一起使用的方法.<br><strong>Abstraction 抽象</strong><br>结合复杂的继承，方法，属性的对象能够模拟现实的模型。<br><strong>Polymorphism 多态</strong><br>多意为‘许多’，态意为‘形态’。不同类可以定义相同的方法或属性。</p>
-</blockquote>
-<p><strong>面向对象的四个核心概念：抽象、继承、封装、多态 。</strong></p>
-<hr>
-<h2 id="命名空间"><a href="#命名空间" class="headerlink" title="命名空间"></a>命名空间</h2><p>与其他面向对象编程语言不同，Javascript中创建普通对象和命名空间在写法上没有区别。比如<code>var MySpace = {}，</code>从语言层面上，可以理解成创建了一个名为MySpace的对象，也可以理解为一个名为MySpace的命名空间，到底应该理解成哪一种主要是看你如何使用它。</p>
-<ul>
-<li><p>JavaScript命名空间：一个全局对象被创建，所有的变量，方法和功能成为该对象的属性。使用命名空间也最大程度地减少应用程序的名称冲突的可能性。</p>
-</li>
-<li><p>举例：<br>我们来创建一个全局变量叫做 example<br><code>var example = example || {};</code><br>在上面的代码示例中，我们首先检查example是否已经被定义。<br>如果是的话，那么使用现有的example全局对象；否则，创建一个名为example的空对象用来封装方法，函数，变量和对象。<br>然后我们就可以创建子命名空间：<br><code>example.event = {};</code></p>
-</li>
-</ul>
-<hr>
-<h2 id="类"><a href="#类" class="headerlink" title="类"></a>类</h2><p>JavaScript是一种基于原型的语言。JavaScript可封装一个函数作类。<br>举例：<br><figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span><span class="params">()</span> </span>&#123; &#125; </span><br><span class="line"><span class="keyword">var</span> Person = <span class="function"><span class="keyword">function</span><span class="params">()</span></span>&#123; &#125;  <span class="comment">// 也可以这么写</span></span><br></pre></td></tr></table></figure></p>
-<p><strong>对象（类的实例）</strong><br>我们使用 new obj 创建对象obj 的新实例, 将结果（obj 类型）赋值给一个变量方便稍后调用。<br>举例：我们定义了一个名为Person的类，然后我们创建了两个Person的实例(person1 和 person2).<br><figure class="highlight haxe"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span></span>() &#123; &#125;</span><br><span class="line"><span class="keyword">var</span> person1 = <span class="keyword">new</span> <span class="type">Person</span>();</span><br><span class="line"><span class="keyword">var</span> person2 = <span class="keyword">new</span> <span class="type">Person</span>();</span><br></pre></td></tr></table></figure></p>
-<hr>
-<h2 id="构造函数"><a href="#构造函数" class="headerlink" title="构造函数"></a>构造函数</h2><ol>
-<li>“类”就是对象的模板，对象就是“类”的实例。</li>
-<li>JavaScript 语言的对象体系，基于构造函数（constructor）和原型链（prototype）。</li>
-<li>JavaScript 语言使用构造函数（constructor）作为对象的模板。所谓构造函数，就是专门用来生成实例对象的函数。它就是对象的模板，描述实例对象的基本结构。一个构造函数，可以生成多个实例对象，这些实例对象都有相同的结构。<br>例如：<figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span><span class="params">(name)</span> </span>&#123;  <span class="comment">// 这就是一个构造函数</span></span><br><span class="line">    <span class="keyword">this</span>.name = name; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<p>为了与普通函数区别，<strong>构造函数名字的第一个字母通常大写</strong>。</p>
-<p><strong>构造函数的特点有两个：</strong></p>
-<ol>
-<li>函数体内部使用了this关键字，代表了所要生成的对象实例。</li>
-<li>生成对象的时候，必须使用new命令。</li>
-</ol>
-<p>下面将详细介绍一下new命令和this关键字。</p>
-<hr>
-<h2 id="new-命令"><a href="#new-命令" class="headerlink" title="new 命令"></a>new 命令</h2><p>new命令的作用，就是执行构造函数，返回一个实例对象。<br>ES6有 class 关键字，我们先用ES5使用函数来模拟类：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params">name</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.name = name; </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Person.prototype.sayHello = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log( <span class="string">'Hi, I am '</span> + <span class="keyword">this</span>.name)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> allen = <span class="keyword">new</span> Person(<span class="string">'Allen'</span>)</span><br><span class="line"></span><br><span class="line">allen.sayHello <span class="comment">// Hi, I am Allen</span></span><br></pre></td></tr></table></figure></p>
-<p>上面代码通过new命令，让构造函数Person生成一个实例对象，保存在变量allen中。这个新生成的实例对象，从构造函数Person得到了name属性和sayHello方法。</p>
-<p><strong>使用new，JS其实默默做了这些事情：</strong></p>
-<ol>
-<li><code>var 临时对象 = {}</code></li>
-<li><code>临时对象.__proto__ = Person.prototype   // 帮我绑定原型</code></li>
-<li><code>临时对象.name = name</code></li>
-<li><code>return 临时对象</code></li>
-</ol>
-<p>例子：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>)</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">new</span> fn()</span><br></pre></td></tr></table></figure></p>
-<ul>
-<li>请问这个 this 有哪些属性？这个 this 的原型有哪些属性？<br>this 有属性：<code>__proto__</code> (指向fn.prototype)<br>原型的属性有constructor: fn 和 <code>__proto__</code>(指向Object.prototype)</li>
-</ul>
-<hr>
-<h2 id="this关键字"><a href="#this关键字" class="headerlink" title="this关键字"></a>this关键字</h2><ul>
-<li>什么是this，最本质的概念是：this就是你 call 一个函数时，传入的第一个参数。</li>
-<li>如果是封装过的函数（比如onclick()、addEventListener()等），如何判断this</li>
-</ul>
-<ol>
-<li>看源码中对应的函数是怎么被 call 的（这是最靠谱的办法）</li>
-<li>看文档</li>
-<li>console.log(this)</li>
-<li><strong>不要瞎猜，很可能猜错</strong></li>
-</ol>
-<ul>
-<li>this的指向在函数定义的时候是确定不了的，只有函数执行的时候才能确定this到底指向谁，实际上<strong>this的最终指向的是那个调用它的对象</strong>。</li>
-</ul>
-<p>例子1：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">a</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> user = <span class="string">'Allen'</span>;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>.user); <span class="comment">//undefined</span></span><br><span class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>); <span class="comment">//Window</span></span><br><span class="line">&#125;</span><br><span class="line">a();</span><br></pre></td></tr></table></figure></p>
-<p>例子2：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">X</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> obj = &#123;</span><br><span class="line">    name:<span class="string">'obj'</span>,</span><br><span class="line">    fn1(x) &#123;</span><br><span class="line">        x.fn2()</span><br><span class="line">      &#125;,</span><br><span class="line">      fn2() &#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="number">1</span>)</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="keyword">this</span>)</span><br><span class="line">      &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> options = &#123;</span><br><span class="line">  name:<span class="string">'options'</span>,</span><br><span class="line">  fn1() &#123;&#125;,</span><br><span class="line">    fn2() &#123;</span><br><span class="line">      <span class="built_in">console</span>.log(<span class="number">2</span>)   <span class="comment">// 执行的是这里 打印2</span></span><br><span class="line">      <span class="built_in">console</span>.log(<span class="keyword">this</span>) <span class="comment">// 执行的是这里 打印options对象</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> x = X()</span><br><span class="line">x.fn1(options)</span><br></pre></td></tr></table></figure></p>
-<p>记住，<strong>this永远指向的是最后调用它的对象。</strong></p>
-<p>例子3：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn1</span>(<span class="params"></span>)  </span></span><br><span class="line"><span class="function"></span>&#123;  </span><br><span class="line">    <span class="keyword">this</span>.user = <span class="string">'Allen'</span>;  </span><br><span class="line">    <span class="keyword">return</span> &#123;&#125;;  </span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> a = <span class="keyword">new</span> fn1;  </span><br><span class="line"><span class="built_in">console</span>.log(a.user); <span class="comment">//undefined</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn2</span>(<span class="params"></span>)  </span></span><br><span class="line"><span class="function"></span>&#123;  </span><br><span class="line">    <span class="keyword">this</span>.user = <span class="string">'Allen'</span>;  </span><br><span class="line">    <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> a = <span class="keyword">new</span> fn2;  </span><br><span class="line"><span class="built_in">console</span>.log(a.user); <span class="comment">//Allen</span></span><br></pre></td></tr></table></figure></p>
-<p><strong>如果返回值是一个对象，那么this指向的就是那个返回的对象，如果返回值不是一个对象那么this还是指向函数的实例。</strong></p>
+<p>所有后代组件：<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">export</span> <span class="selector-tag">default</span> &#123;</span><br><span class="line">    <span class="attribute">inject</span>: [<span class="string">'eventBus'</span>],</span><br><span class="line">    <span class="built_in">mounted</span>() &#123;</span><br><span class="line">        this.eventBus.$<span class="built_in">on</span>(<span class="string">'event'</span>, () =&gt; &#123;</span><br><span class="line"></span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p><strong>其实就是用一个新的Vue实例的 $emit $on 和 $off 这三个接口来达到一个 EventBus 的效果</strong></p>
+<p>更多可见我的 <a href="https://github.com/yuyuye958/GuLu-UI/blob/master/src/tabs.vue" target="_blank" rel="noopener">tabs组件</a> 相关代码</p>
 
       
     </div>
@@ -461,7 +400,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/JavaScript/" rel="tag"># JavaScript</a>
+            <a href="/tags/Vue/" rel="tag"># Vue</a>
           
         </div>
       
@@ -474,8 +413,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/10/11/立即执行函数/" rel="next" title="立即执行函数和闭包的使用">
-                <i class="fa fa-chevron-left"></i> 立即执行函数和闭包的使用
+              <a href="/2018/11/19/Vue渲染父子元素/" rel="next" title="Vue渲染父子组件时需要注意的点">
+                <i class="fa fa-chevron-left"></i> Vue渲染父子组件时需要注意的点
               </a>
             
           </div>
@@ -483,10 +422,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/10/14/HTTP高级/" rel="prev" title="Cookie、Session、LocalStorage及HTTP缓存控制">
-                Cookie、Session、LocalStorage及HTTP缓存控制 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -638,7 +573,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#什么是面向对象"><span class="nav-number">1.</span> <span class="nav-text">什么是面向对象</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#命名空间"><span class="nav-number">2.</span> <span class="nav-text">命名空间</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#类"><span class="nav-number">3.</span> <span class="nav-text">类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#构造函数"><span class="nav-number">4.</span> <span class="nav-text">构造函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#new-命令"><span class="nav-number">5.</span> <span class="nav-text">new 命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#this关键字"><span class="nav-number">6.</span> <span class="nav-text">this关键字</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#什么是EventBus"><span class="nav-number">2.</span> <span class="nav-text">什么是EventBus</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#如何在父子组件中使用EventBus"><span class="nav-number">3.</span> <span class="nav-text">如何在父子组件中使用EventBus</span></a></li></ol></div>
             
 
           </div>

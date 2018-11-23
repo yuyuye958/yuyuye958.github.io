@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Vue父子组件的EventBus]]></title>
+    <url>%2F2018%2F11%2F23%2FVue%E4%B8%AD%E7%9A%84EventBus%2F</url>
+    <content type="text"><![CDATA[前言我在 轱辘UI 项目做 tabs 组件时，该组件有父子组件通讯的需求，然而多个子组件之间怎么通讯呢？我了解到可以用 EventBus 结合 依赖注入 来解决。 什么是EventBus即组件共用的事件中心，可以向该中心注册发送事件或接收事件，所以组件都可以上下平行地通知其他组件。 如何在父子组件中使用EventBus父组件：1234567891011121314151617export default &#123; data()&#123; return &#123; eventBus: new Vue() &#125; &#125;, provide() &#123; return &#123; eventBus: this.eventBus &#125; &#125;, mounted() &#123; this.eventBus.$emit('event', () =&gt; &#123; &#125;) &#125;&#125; 所有后代组件：12345678export default &#123; inject: ['eventBus'], mounted() &#123; this.eventBus.$on('event', () =&gt; &#123; &#125;) &#125;&#125; 其实就是用一个新的Vue实例的 $emit $on 和 $off 这三个接口来达到一个 EventBus 的效果 更多可见我的 tabs组件 相关代码]]></content>
+      <categories>
+        <category>Vue</category>
+      </categories>
+      <tags>
+        <tag>Vue</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Vue渲染父子组件时需要注意的点]]></title>
     <url>%2F2018%2F11%2F19%2FVue%E6%B8%B2%E6%9F%93%E7%88%B6%E5%AD%90%E5%85%83%E7%B4%A0%2F</url>
     <content type="text"><![CDATA[前言我在边学 Vue 边做 轱辘UI 的项目中，写 row 组件 的测试用例时碰到了一个问题。测试用例需要渲染两个组件，它们是父子关系，但测试下来子组件并没有拿到父组件的 gutter 属性，发现原来是因为 Vue 异步的渲染。之后通过 setTimeout 和 done() 解决了这一问题，之后便有了这篇博客。 分析Vue到底是怎样渲染组件到页面的？看例子来分析吧 我们自己会怎么写：123// 这是个同步的过程var div = document.createElement('div')document.body.appendChild(div) 而 Vue 不是这么简单的：12345678var div = document.createElement('div')var child = document.createElement('div')// 步骤一，会触发child的mounted事件，这是异步的div.appendChild(child)// 步骤二，会触发div的mounted事件，这也是异步的document.body.appendChild(div)// 步骤三，这行代码会先于上面两行执行，因为这是同步的，而此时div里还没有childconsole.log(div.outerHTML) 执行顺序：步骤三 → 步骤一 → 步骤二 Vue 钩子的调用并不是同步的。 假如是同步的，mounted你写了几百行代码，则需要大量的运算，那Vue岂不是要等你执行完再继续？所以 Vue 不应该等，Vue 应该优先完成元素的渲染，这是一个异步的触发 解决我预想子组件会通过 mounted 钩子拿到父组件传来的 gutter 属性，但我的测试用例执行时，实际上还没有执行 mounted 钩子，所以子组件才没有拿到这个 gutter 属性的值。 知道了原因，那么就好解决了，用 setTimeout(){} 另外由于测试框架默认都是同步的代码（这是测试框架的一个约定），所以要在参数中加上 done ，在我的测试用例执行完时调用 done()。 这样，就解决了。具体代码可在此点击 。]]></content>
