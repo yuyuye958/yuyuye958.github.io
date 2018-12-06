@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="JavaScript," />
 
 
 
@@ -79,13 +79,18 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="Allen&#39;s Blog">
-<meta property="og:url" content="http://yoursite.com/categories/git/index.html">
+<meta name="description" content="前言由于JavaScript是单线程的，当有两个任务执行时后一个必须等前一个执行完成后才能执行，所以JavaScript会将任务分为两类，同步任务 和 异步任务 。而其中异步任务其实还可以分为 宏任务 与 微任务 ，这个我之后在补上NodeJS中的Event Loop时会一起讲（挖个坑，待填）。 JavaScript 中的 Event Loop首先来讲清楚两个概念。  同步任务：指的是当前在执行栈">
+<meta name="keywords" content="JavaScript">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JS中的Event Loop">
+<meta property="og:url" content="http://yoursite.com/2018/12/06/JS-EventLoop/index.html">
 <meta property="og:site_name" content="Allen&#39;s Blog">
+<meta property="og:description" content="前言由于JavaScript是单线程的，当有两个任务执行时后一个必须等前一个执行完成后才能执行，所以JavaScript会将任务分为两类，同步任务 和 异步任务 。而其中异步任务其实还可以分为 宏任务 与 微任务 ，这个我之后在补上NodeJS中的Event Loop时会一起讲（挖个坑，待填）。 JavaScript 中的 Event Loop首先来讲清楚两个概念。  同步任务：指的是当前在执行栈">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-12-06T18:34:28.561Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Allen&#39;s Blog">
+<meta name="twitter:title" content="JS中的Event Loop">
+<meta name="twitter:description" content="前言由于JavaScript是单线程的，当有两个任务执行时后一个必须等前一个执行完成后才能执行，所以JavaScript会将任务分为两类，同步任务 和 异步任务 。而其中异步任务其实还可以分为 宏任务 与 微任务 ，这个我之后在补上NodeJS中的Event Loop时会一起讲（挖个坑，待填）。 JavaScript 中的 Event Loop首先来讲清楚两个概念。  同步任务：指的是当前在执行栈">
 
 
 
@@ -115,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/categories/git/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/12/06/JS-EventLoop/"/>
 
 
 
 
 
-  <title>分类: git | Allen's Blog</title>
+  <title>JS中的Event Loop | Allen's Blog</title>
   
 
 
@@ -140,7 +145,7 @@
     
   
 
-  <div class="container sidebar-position-left ">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -268,83 +273,184 @@
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block category">
+  <div id="posts" class="posts-expand">
+    
 
-    <div id="posts" class="posts-collapse">
-      <div class="collection-title">
-        <h1>git<small>分类</small>
-        </h1>
-      </div>
+  
 
-      
-        
+  
+  
+  
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/06/JS-EventLoop/">
 
-      <h2 class="post-title">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Allen Ye">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Allen's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
         
-            <a class="post-title-link" href="/2018/09/10/git入门/" itemprop="url">
-              
-                <span itemprop="name">git入门</span>
-              
-            </a>
         
-      </h2>
+          <h1 class="post-title" itemprop="name headline">JS中的Event Loop</h1>
+        
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-09-10T23:57:00+08:00"
-              content="2018-09-10" >
-          09-10
-        </time>
-      </div>
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-12-06T23:06:23+08:00">
+                2018-12-06
+              </time>
+            
 
-    </header>
-  </article>
+            
 
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/JavaScript/" itemprop="url" rel="index">
+                    <span itemprop="name">JavaScript</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-        
+      
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/09/10/git命令/" itemprop="url">
-              
-                <span itemprop="name">git几个常用命令和一个命令查询工具</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-09-10T23:27:29+08:00"
-              content="2018-09-10" >
-          09-10
-        </time>
-      </div>
-
-    </header>
-  </article>
-
+      
+        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>由于JavaScript是单线程的，当有两个任务执行时后一个必须等前一个执行完成后才能执行，所以JavaScript会将任务分为两类，<strong>同步任务</strong> 和 <strong>异步任务</strong> 。而其中异步任务其实还可以分为 <strong>宏任务</strong> 与 <strong>微任务</strong> ，这个我之后在补上NodeJS中的Event Loop时会一起讲（挖个坑，待填）。</p>
+<h2 id="JavaScript-中的-Event-Loop"><a href="#JavaScript-中的-Event-Loop" class="headerlink" title="JavaScript 中的 Event Loop"></a>JavaScript 中的 Event Loop</h2><p>首先来讲清楚两个概念。</p>
+<ol>
+<li>同步任务：指的是当前在执行栈（主线程）中运行的任务。只有当前一个任务执行完，下一个任务才会接着执行，<strong>不管前一个任务执行需要多久</strong>。</li>
+<li>异步任务：暂时不进入执行栈，而是先放到<strong>任务队列</strong>中。当执行栈的任务执行完并清空后，才会取出任务队列中的任务到执行栈中去执行。</li>
+</ol>
+<p>接下来看一下这段代码：</p>
+<a id="more"></a>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn1</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'in fn1...'</span>)</span><br><span class="line">  fn2()</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn2</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'in fn2...'</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">setTimeout(<span class="function"><span class="params">()</span>=&gt;</span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'setTimeout1 run...'</span>)</span><br><span class="line">&#125;, <span class="number">0</span>)</span><br><span class="line"></span><br><span class="line">setTimeout(<span class="function"><span class="params">()</span>=&gt;</span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'setTimeout2 run...'</span>)</span><br><span class="line">&#125;, <span class="number">1000</span>)</span><br><span class="line"></span><br><span class="line">fn1()</span><br></pre></td></tr></table></figure>
+<p>输出：<br><figure class="highlight gams"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="title">in</span></span> fn1...</span><br><span class="line"><span class="function"><span class="title">in</span></span> fn2...</span><br><span class="line"><span class="function"><span class="title">setTimeout1</span></span> run...</span><br><span class="line"><span class="function"><span class="title">setTimeout2</span></span> run...</span><br></pre></td></tr></table></figure></p>
+<p>执行完同步任务后，JS来看我们的任务队列。如果定时器到了，就立刻把其回调函数放到执行栈里去执行。<br>这结果在预料之中，那再来看一下另一段代码：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">execTime</span>(<span class="params">t</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> start = <span class="built_in">Date</span>.now()</span><br><span class="line">  <span class="keyword">while</span>(<span class="built_in">Date</span>.now() - start &lt; t)&#123;&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'1'</span>)</span><br><span class="line">  fn1()</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'3'</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn1</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'2'</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">setTimeout(<span class="function"><span class="params">()</span>=&gt;</span>&#123;</span><br><span class="line">  execTime(<span class="number">3000</span>)</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'setTimeout1 run1...'</span>)</span><br><span class="line">&#125;, <span class="number">0</span>)</span><br><span class="line"></span><br><span class="line">setTimeout(<span class="function"><span class="params">()</span>=&gt;</span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'setTimeout2 run2...'</span>)</span><br><span class="line">&#125;, <span class="number">1000</span>)</span><br><span class="line"></span><br><span class="line">setTimeout(<span class="function"><span class="params">()</span>=&gt;</span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'setTimeout3 run3...'</span>)</span><br><span class="line">&#125;, <span class="number">2000</span>)</span><br><span class="line"></span><br><span class="line">fn()</span><br></pre></td></tr></table></figure></p>
+<p>这次的输出为：<br><figure class="highlight gams"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span></span><br><span class="line"><span class="number">2</span></span><br><span class="line"><span class="number">3</span></span><br><span class="line"><span class="function"><span class="title">setTimeout1</span></span> run1...</span><br><span class="line"><span class="function"><span class="title">setTimeout2</span></span> run2...</span><br><span class="line"><span class="function"><span class="title">setTimeout3</span></span> run3...</span><br></pre></td></tr></table></figure></p>
+<p>这段代码需要你自己来运行一下，你会发现，<strong>后三条结果是3秒后一起出现的</strong>，你给定时器设定的时间其实并不准确。</p>
+<p><strong>原因：</strong>当同步任务执行完后，第一个setTimeout的定时器瞬间就到了，它的回调函数被放到执行栈中执行。你看了代码会知道，这个任务需要至少3秒才能执行完。<strong>而在这期间，后两个定时器的时间也到了，那么它们的回调函数也会被放到执行栈中等待执行。</strong>但是，因为第一个任务没有执行完，所以后面的任务需要等待。因此3秒后，这三条结果会同时出现。</p>
+<p>根据这个原理，可以联想到如果你滚动一个页面时经常卡顿，不流畅，那么就是你在onscroll的回调函数中写了太多代码，这些代码需要执行很长的时间。<strong>你每一次滚动就是一次触发，把回调函数放到任务队列中，然后一个个取出来放到执行栈中去执行，但是你放的太快了，每个任务执行的时间又太长了，导致后续的滚动你希望能立刻看到效果，但实际上还没有轮到它执行，所以会感觉卡顿</strong>。</p>
+<p>同理，像<strong>click事件</strong>或者<strong>AJAX中的onreadystatechange</strong>等等，它们的回调函数放到任务队列，也是一样的逻辑。</p>
 
       
     </div>
+    
+    
+    
 
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/JavaScript/" rel="tag"># JavaScript</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/12/03/Vue-router/" rel="next" title="Vue-router 检测路由变化">
+                <i class="fa fa-chevron-left"></i> Vue-router 检测路由变化
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
 
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -352,6 +458,10 @@
 
 
           
+
+  
+
+
 
         </div>
         
@@ -372,8 +482,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -453,6 +572,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JavaScript-中的-Event-Loop"><span class="nav-number">2.</span> <span class="nav-text">JavaScript 中的 Event Loop</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -593,6 +728,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 

@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="Allen&#39;s Blog">
 <meta property="og:description" content="起因在编写仿CNode社区项目中，点击router-link，地址栏中的地址已经改变了，然而并没有跳转路由，故记此博客。 原因在我的 Article 组件中，点击侧边栏的文章，却没有跳转页面。原来是因为，虽然地址栏的地址变化了，但实际上只有参数发生了改变（从/topic/a变化到/topic/b），这样的话原来的组件实例会被复用，组件的生命周期钩子不会再被调用。因为渲染的是同一个组件，比起销毁再创">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-12-03T14:31:35.052Z">
+<meta property="og:updated_time" content="2018-12-03T14:34:31.014Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Vue-router 检测路由变化">
 <meta name="twitter:description" content="起因在编写仿CNode社区项目中，点击router-link，地址栏中的地址已经改变了，然而并没有跳转路由，故记此博客。 原因在我的 Article 组件中，点击侧边栏的文章，却没有跳转页面。原来是因为，虽然地址栏的地址变化了，但实际上只有参数发生了改变（从/topic/a变化到/topic/b），这样的话原来的组件实例会被复用，组件的生命周期钩子不会再被调用。因为渲染的是同一个组件，比起销毁再创">
@@ -422,6 +422,10 @@
 
           <div class="post-nav-prev post-nav-item">
             
+              <a href="/2018/12/06/JS-EventLoop/" rel="prev" title="JS中的Event Loop">
+                JS中的Event Loop <i class="fa fa-chevron-right"></i>
+              </a>
+            
           </div>
         </div>
       
@@ -501,7 +505,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">27</span>
+                  <span class="site-state-item-count">28</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
