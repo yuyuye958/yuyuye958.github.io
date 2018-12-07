@@ -302,7 +302,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/12/06/JS-EventLoop/" itemprop="url">JS中的Event Loop</a></h1>
+                <a class="post-title-link" href="/2018/12/06/JS-EventLoop/" itemprop="url">浏览器和NodeJS中的 Event Loop 事件循环</a></h1>
         
 
         <div class="post-meta">
@@ -375,13 +375,16 @@
 
       
         
-          <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>由于JavaScript是单线程的，当有两个任务执行时后一个必须等前一个执行完成后才能执行，所以JavaScript会将任务分为两类，<strong>同步任务</strong> 和 <strong>异步任务</strong> 。而其中异步任务其实还可以分为 <strong>宏任务</strong> 与 <strong>微任务</strong> ，这个我之后在补上NodeJS中的Event Loop时会一起讲（挖个坑，待填）。</p>
-<h2 id="JavaScript-中的-Event-Loop"><a href="#JavaScript-中的-Event-Loop" class="headerlink" title="JavaScript 中的 Event Loop"></a>JavaScript 中的 Event Loop</h2><p>首先来讲清楚两个概念。</p>
+          <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>搞懂 Event Loop 花了我挺长时间的，提示本文较长，阅读需有耐心。</p>
+<p>由于JavaScript是单线程的，当有两个任务执行时后一个必须等前一个执行完成后才能执行，所以JavaScript会将任务分为两类，<strong>同步任务</strong> 和 <strong>异步任务</strong>（异步任务其实还可以分为 <strong>宏任务</strong> 与 <strong>微任务</strong>，这个后面会提）。<br>异步任务肯定是在同步任务之后的，但是异步任务之间又是怎么样的一个顺序呢，比如多个setTimeout事件又是怎么样一个执行顺序？这就涉及到<strong>事件循环：Event Loop</strong>。<br>另外，浏览器和NodeJS的事件循环是不一样的。</p>
+<h2 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h2><p>首先来讲清楚前言中的两个概念。</p>
 <ol>
-<li>同步任务：指的是当前在执行栈（主线程）中运行的任务。只有当前一个任务执行完，下一个任务才会接着执行，<strong>不管前一个任务执行需要多久</strong>。</li>
-<li>异步任务：暂时不进入执行栈，而是先放到<strong>任务队列</strong>中。当执行栈的任务执行完并清空后，才会取出任务队列中的任务到执行栈中去执行。</li>
+<li><strong>同步任务</strong>：指的是当前在执行栈（主线程）中运行的任务。只有当前一个任务执行完，下一个任务才会接着执行，<strong>不管前一个任务执行需要多久</strong>。</li>
+<li><strong>异步任务</strong>：暂时不进入执行栈，而是先放到<strong>任务队列</strong>中。当执行栈的任务执行完并清空后，才会取出任务队列中的任务到执行栈中去执行。</li>
 </ol>
-<p>接下来看一下这段代码：</p>
+<p>JavaScript是单线程的。假如一个操作需花费很长时间，那么此时浏览器就会一直等待这个操作完成，就会造成不好的体验。因此，JS里有同步任务与异步任务，这样就<strong>避免了页面堵塞</strong>。</p>
+<p>那么 JS 引擎怎么知道异步任务有没有结果，能不能进入主线程呢？答案就是<strong>引擎在不停地检查</strong>，一遍又一遍，只要同步任务执行完了，引擎就会去检查那些挂起来的异步任务，是不是可以进入执行栈了。<strong>这种循环检查的机制，就叫做事件循环（Event Loop）</strong>。</p>
+<h2 id="浏览器环境下的-Event-Loop"><a href="#浏览器环境下的-Event-Loop" class="headerlink" title="浏览器环境下的 Event Loop"></a>浏览器环境下的 Event Loop</h2><p>我们来看一下这段代码：</p>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2018/12/06/JS-EventLoop/#more" rel="contents">
@@ -1852,7 +1855,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-count">8</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -1863,7 +1866,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-count">8</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
