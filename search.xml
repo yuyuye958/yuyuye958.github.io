@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Vue 更新data选项中的数组]]></title>
+    <url>%2F2018%2F12%2F18%2FVue%E6%95%B0%E7%BB%84%2F</url>
+    <content type="text"><![CDATA[疑问最近看到一道面试题，如下：1234567var vm = new Vue(&#123; data: &#123; items: [1, 2, 3] &#125;&#125;)vm.items[1] = 'x'vm.items.length = 2 这样写有什么问题？那应该怎么写？ 我看到这道题时并不觉得有什么问题。在Vue中，一旦响应式数据发生改变，setter 不是会发通知给 watcher 吗？ 解答后来我才知道，这样子写的话 Vue 不会更新该数组数据对应的视图。 请先阅读完官方文档的 深入响应式原理，再看下面： 数据确实更新了，但视图没有更新，那就说明 Vue 并没有检测到该数据更新了 其实是数组的问题，在 Vue 中它比较特殊。 我们知道，Vue 会在初始化实例时对属性执行 getter/setter 转化过程，所以属性必须在 data 对象上存在才能让 Vue 转换它，这样才能让数据是响应式的。 往深了说，其实 Vue 在我们的data对象上都会定义一个ob属性指向新创建的Observer对象，以此对数据设置监控器。但由于现代 JavaScript 的限制（底层原理不明），Object.Observe 支持的不好，Vue 无法对数组进行Observer对象创建，因此不能检测到数组对象的变化。 不过 Vue 给我们提供了别的方法，具体见下面。 解决方法123456// Vue.setVue.set(vm.items, indexOfItem, newValue)// Array.prototype.splicevm.items.splice(indexOfItem, 1, newValue)vm.items.splice(newLength)]]></content>
+      <categories>
+        <category>Vue</category>
+      </categories>
+      <tags>
+        <tag>Vue</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[作用域插槽 slot-scope]]></title>
     <url>%2F2018%2F12%2F15%2F%E4%BD%9C%E7%94%A8%E5%9F%9F%E6%8F%92%E6%A7%BD%2F</url>
     <content type="text"><![CDATA[前言最近发现之前学的有些知识点都忘了…还是记博客吧。 作用域插槽一个组件中有一个插槽，我们在插槽里写一个div，那么这个div就会被渲染到这个组件里，但是这个div又想调用这个组件里的数据或方法，那怎么办呢？我们可以加一个变量，把它带进插槽中。简单来说：作用域插槽是一个带绑定数据的插槽。 举例1234567891011121314151617181920// 父组件&lt;template&gt; &lt;div id="app"&gt; &lt;child&gt; &lt;template slot-scope="&#123;close&#125;"&gt; // 解构 &lt;!-- 插槽获得了组件的 close 方法 --&gt; &lt;button @click="close"&gt;&lt;/button&gt; &lt;/template&gt; &lt;/child&gt; &lt;/div&gt;&lt;/template&gt;&lt;script&gt;import child from './child';export default &#123; name: 'app', components: &#123; child &#125;&#125;&lt;/script&gt; 12345678910111213141516//子组件&lt;template&gt; &lt;div class="child"&gt; &lt;!-- 将 close 方法作为一个插槽的 prop 传入 --&gt; &lt;slot :close='close'&gt;&lt;/slot&gt; &lt;/div&gt;&lt;/template&gt;&lt;script&gt;export default &#123; methods: &#123; close() &#123; console.log('close') &#125; &#125;&#125;&lt;/script&gt; 同理，如果插槽是一个组件呢？子组件就能拿到父组件的数据了。所以其实这也是 Vue 中父子组件传递数据的一种方式。]]></content>
