@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="Allen&#39;s Blog">
 <meta property="og:description" content="疑问最近看到一道面试题，如下：1234567var vm = new Vue(&amp;#123;  data: &amp;#123;    items: [1, 2, 3]  &amp;#125;&amp;#125;)vm.items[1] = &apos;x&apos;vm.items.length = 2 这样写有什么问题？那应该怎么写？ 我看到这道题时并不觉得有什么问题。在Vue中，一旦响应式数据发生改变，setter 不是会发通知给 wa">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-12-18T14:00:53.537Z">
+<meta property="og:updated_time" content="2018-12-18T14:28:11.548Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Vue 更新data选项中的数组">
 <meta name="twitter:description" content="疑问最近看到一道面试题，如下：1234567var vm = new Vue(&amp;#123;  data: &amp;#123;    items: [1, 2, 3]  &amp;#125;&amp;#125;)vm.items[1] = &apos;x&apos;vm.items.length = 2 这样写有什么问题？那应该怎么写？ 我看到这道题时并不觉得有什么问题。在Vue中，一旦响应式数据发生改变，setter 不是会发通知给 wa">
@@ -390,6 +390,10 @@
 <li>不过 Vue 给我们提供了别的方法，具体见下面。</li>
 </ol>
 <h2 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h2><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Vue.set</span></span><br><span class="line">Vue.set(vm<span class="selector-class">.items</span>, indexOfItem, newValue)</span><br><span class="line"></span><br><span class="line"><span class="comment">// Array.prototype.splice</span></span><br><span class="line">vm<span class="selector-class">.items</span><span class="selector-class">.splice</span>(indexOfItem, <span class="number">1</span>, newValue)</span><br><span class="line">vm<span class="selector-class">.items</span><span class="selector-class">.splice</span>(newLength)</span><br></pre></td></tr></table></figure>
+<ul>
+<li><a href="https://blog.csdn.net/qq_37285177/article/details/78935831" target="_blank" rel="noopener">部分参考博客</a></li>
+</ul>
+
       
     </div>
     
@@ -428,6 +432,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/01/02/Vue-key/" rel="prev" title="v-for + key 使数据改变时 DOM 重排">
+                v-for + key 使数据改变时 DOM 重排 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -508,7 +516,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">30</span>
+                  <span class="site-state-item-count">31</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -599,7 +607,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
