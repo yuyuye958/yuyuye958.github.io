@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="Node.JS," />
 
 
 
@@ -79,13 +79,18 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="Allen&#39;s Blog">
-<meta property="og:url" content="http://yoursite.com/tags/JavaScript/index.html">
+<meta name="description" content="什么是 ORM 库先说一下数据库，比如 MySQL 就是。我们可以使用现成的 MySQL 模块来操作数据库，但需要写 SQL 语句来操作数据库，比较麻烦。所以就有人封装了 ORM 库，就像一个隔离层一样，我们只需要调用某个语法比如 Note.create()，它的底层就会自动生成对应的 SQL 语句。而 Sequelize 就是一个 ORM 库。另外，像 MongoDB 和 Mongoose 也是">
+<meta name="keywords" content="Node.JS">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ORM库 Sequelize 简单使用小结">
+<meta property="og:url" content="http://yoursite.com/2019/01/21/sequelize/index.html">
 <meta property="og:site_name" content="Allen&#39;s Blog">
+<meta property="og:description" content="什么是 ORM 库先说一下数据库，比如 MySQL 就是。我们可以使用现成的 MySQL 模块来操作数据库，但需要写 SQL 语句来操作数据库，比较麻烦。所以就有人封装了 ORM 库，就像一个隔离层一样，我们只需要调用某个语法比如 Note.create()，它的底层就会自动生成对应的 SQL 语句。而 Sequelize 就是一个 ORM 库。另外，像 MongoDB 和 Mongoose 也是">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-01-22T14:12:08.236Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Allen&#39;s Blog">
+<meta name="twitter:title" content="ORM库 Sequelize 简单使用小结">
+<meta name="twitter:description" content="什么是 ORM 库先说一下数据库，比如 MySQL 就是。我们可以使用现成的 MySQL 模块来操作数据库，但需要写 SQL 语句来操作数据库，比较麻烦。所以就有人封装了 ORM 库，就像一个隔离层一样，我们只需要调用某个语法比如 Note.create()，它的底层就会自动生成对应的 SQL 语句。而 Sequelize 就是一个 ORM 库。另外，像 MongoDB 和 Mongoose 也是">
 
 
 
@@ -115,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/tags/JavaScript/"/>
+  <link rel="canonical" href="http://yoursite.com/2019/01/21/sequelize/"/>
 
 
 
 
 
-  <title>标签: JavaScript | Allen's Blog</title>
+  <title>ORM库 Sequelize 简单使用小结 | Allen's Blog</title>
   
 
 
@@ -140,7 +145,7 @@
     
   
 
-  <div class="container sidebar-position-left ">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -268,310 +273,177 @@
           <div id="content" class="content">
             
 
+  <div id="posts" class="posts-expand">
+    
+
+  
+
   
   
   
-  <div class="post-block tag">
-
-    <div id="posts" class="posts-collapse">
-      <div class="collection-title">
-        <h1>JavaScript<small>标签</small>
-        </h1>
-      </div>
-
-      
-        
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/01/21/sequelize/">
 
-      <h2 class="post-title">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Allen Ye">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Allen's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
         
-            <a class="post-title-link" href="/2018/12/06/JS-EventLoop/" itemprop="url">
-              
-                <span itemprop="name">浏览器和NodeJS中的 Event Loop 事件循环</span>
-              
-            </a>
         
-      </h2>
+          <h1 class="post-title" itemprop="name headline">ORM库 Sequelize 简单使用小结</h1>
+        
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-12-06T23:06:23+08:00"
-              content="2018-12-06" >
-          12-06
-        </time>
-      </div>
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-01-21T22:12:50+08:00">
+                2019-01-21
+              </time>
+            
 
-    </header>
-  </article>
+            
 
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Node-JS/" itemprop="url" rel="index">
+                    <span itemprop="name">Node.JS</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/11/03/web性能优化/" itemprop="url">
-              
-                <span itemprop="name">Web性能优化</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-11-03T16:46:40+08:00"
-              content="2018-11-03" >
-          11-03
-        </time>
-      </div>
-
-    </header>
-  </article>
-
+      
 
       
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/11/01/inheritance/" itemprop="url">
-              
-                <span itemprop="name">JavaScript模拟继承</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-11-01T23:05:39+08:00"
-              content="2018-11-01" >
-          11-01
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-      
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/10/30/函数节流/" itemprop="url">
-              
-                <span itemprop="name">JavaScript的函数节流</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-10-30T21:37:46+08:00"
-              content="2018-10-30" >
-          10-30
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-      
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/10/21/encodeURI/" itemprop="url">
-              
-                <span itemprop="name">encodeURI()和encodeURIComponent()的区别</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-10-21T21:50:29+08:00"
-              content="2018-10-21" >
-          10-21
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-      
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/10/20/let和const/" itemprop="url">
-              
-                <span itemprop="name">let和const声明的区别</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-10-20T18:32:15+08:00"
-              content="2018-10-20" >
-          10-20
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-      
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/10/12/面向对象/" itemprop="url">
-              
-                <span itemprop="name">JavaScript面向对象编程（构造函数，new，this）</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-10-12T12:08:50+08:00"
-              content="2018-10-12" >
-          10-12
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-      
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/10/11/立即执行函数/" itemprop="url">
-              
-                <span itemprop="name">立即执行函数和闭包的使用</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-10-11T20:34:17+08:00"
-              content="2018-10-11" >
-          10-11
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-      
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/10/10/MVC/" itemprop="url">
-              
-                <span itemprop="name">JavaScript中的MVC设计模式</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-10-10T10:46:58+08:00"
-              content="2018-10-10" >
-          10-10
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-      
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/10/08/jQuery-AJAX/" itemprop="url">
-              
-                <span itemprop="name">原生JS封装jQuery的AJAX</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-10-08T11:04:15+08:00"
-              content="2018-10-08" >
-          10-08
-        </time>
-      </div>
-
-    </header>
-  </article>
-
+        <h2 id="什么是-ORM-库"><a href="#什么是-ORM-库" class="headerlink" title="什么是 ORM 库"></a>什么是 ORM 库</h2><p>先说一下数据库，比如 MySQL 就是。我们可以使用现成的 MySQL 模块来操作数据库，但需要写 SQL 语句来操作数据库，比较麻烦。<br>所以就有人封装了 <strong>ORM 库</strong>，就像一个隔离层一样，我们只需要调用某个语法比如 <code>Note.create()</code>，<strong>它的底层就会自动生成对应的 SQL 语句</strong>。<br>而 <strong>Sequelize 就是一个 ORM 库</strong>。<br>另外，像 <strong>MongoDB</strong> 和 <strong>Mongoose</strong> 也是类似的关系。</p>
+<h2 id="安装并引入"><a href="#安装并引入" class="headerlink" title="安装并引入"></a>安装并引入</h2><p>安装<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> npm install --save sequelize</span></span><br><span class="line">// 此处也可选择安装mysql或其他，本文以sqlite为例</span><br><span class="line"><span class="meta">$</span><span class="bash"> npm install --save sqlite3</span></span><br></pre></td></tr></table></figure></p>
+<p>引入<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> Sequelize = <span class="built_in">require</span>(<span class="string">'sequelize'</span>)</span><br><span class="line"><span class="keyword">const</span> path = <span class="built_in">require</span>(<span class="string">'path'</span>)</span><br></pre></td></tr></table></figure></p>
+<h2 id="建立数据库"><a href="#建立数据库" class="headerlink" title="建立数据库"></a>建立数据库</h2><figure class="highlight processing"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> sequelize = <span class="keyword">new</span> Sequelize(<span class="string">'database'</span>, <span class="string">'username'</span>, <span class="string">'password'</span>, &#123;  <span class="comment">// 这三个参数也可填 undefined</span></span><br><span class="line">  host: <span class="string">'localhost'</span>,    <span class="comment">// 数据库地址</span></span><br><span class="line">  dialect: <span class="string">'sqlite'</span>,    <span class="comment">// 数据库类型</span></span><br><span class="line"></span><br><span class="line">  pool: &#123;</span><br><span class="line">    <span class="built_in">max</span>: <span class="number">5</span>,             <span class="comment">// 连接池最大连接数量</span></span><br><span class="line">    <span class="built_in">min</span>: <span class="number">0</span>,             <span class="comment">// 连接池最小连接数量</span></span><br><span class="line">    acquire: <span class="number">30000</span>,     <span class="comment">// 在抛出错误前尝试连接的最大时间为30秒</span></span><br><span class="line">    idle: <span class="number">10000</span>         <span class="comment">// 如果一个线程超过10秒钟没有被使用过就释放该线程</span></span><br><span class="line">  &#125;,</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 只有用 SQLite 时要配置此项</span></span><br><span class="line">  storage: path.<span class="built_in">join</span>(__dirname, <span class="string">'../database/database.sqlite'</span>)  <span class="comment">// 假如该目录下没有该文件，会自动创建</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h2 id="测试连接"><a href="#测试连接" class="headerlink" title="测试连接"></a>测试连接</h2><figure class="highlight coffeescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">sequelize</span><br><span class="line">  .authenticate()</span><br><span class="line">  .<span class="keyword">then</span>(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'Connection has been established successfully.'</span>);</span><br><span class="line">  &#125;)</span><br><span class="line">  .<span class="keyword">catch</span>(err =&gt; &#123;</span><br><span class="line">    <span class="built_in">console</span>.error(<span class="string">'Unable to connect to the database:'</span>, err);</span><br><span class="line">  &#125;);</span><br></pre></td></tr></table></figure>
+<p>运行该文件<code>node test.js</code>，连接成功则会 log 成功。</p>
+<h2 id="创建-Model"><a href="#创建-Model" class="headerlink" title="创建 Model"></a>创建 Model</h2><figure class="highlight lasso"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 创建 Model</span></span><br><span class="line">const Note = sequelize.<span class="class"><span class="keyword">define</span></span>(<span class="string">'note'</span>, &#123;  <span class="comment">// 表名为 note</span></span><br><span class="line">  text: &#123;    <span class="comment">// 字段名</span></span><br><span class="line">    <span class="keyword">type</span>: Sequelize.<span class="built_in">STRING</span>    <span class="comment">// 字段类型</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 创建或同步表</span></span><br><span class="line"><span class="comment">// User.sync() 会返回一个 Promise 对象</span></span><br><span class="line"><span class="comment">// force = true 时会把存在的表先 drop 掉再创建</span></span><br><span class="line">Note.sync(&#123;force: <span class="literal">true</span>&#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 现在就可以增删改查了</span></span><br></pre></td></tr></table></figure>
+<h2 id="增删改查"><a href="#增删改查" class="headerlink" title="增删改查"></a>增删改查</h2><figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 增</span></span><br><span class="line"><span class="selector-tag">Note</span><span class="selector-class">.create</span>(&#123;</span><br><span class="line">    <span class="attribute">text</span>: <span class="string">'hello'</span></span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 查</span></span><br><span class="line"><span class="selector-tag">Note</span><span class="selector-class">.findAll</span>(&#123;<span class="attribute">raw</span>: true, <span class="attribute">where</span>: &#123;<span class="attribute">id</span>: <span class="number">1</span>&#125;&#125;)<span class="selector-class">.then</span>(notes =&gt; &#123;</span><br><span class="line">    <span class="selector-tag">console</span><span class="selector-class">.log</span>(notes)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h2><p>至此，一个基本的数据库就完成了。更多用法还是得参考 Sequelize 的<a href="http://docs.sequelizejs.com" target="_blank" rel="noopener">官方文档</a>。</p>
 
       
     </div>
+    
+    
+    
 
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Node-JS/" rel="tag"># Node.JS</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/01/02/Vue-key/" rel="next" title="v-for + key 使数据改变时 DOM 重排">
+                <i class="fa fa-chevron-left"></i> v-for + key 使数据改变时 DOM 重排
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
-  <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/tags/JavaScript/page/2/">2</a><a class="extend next" rel="next" href="/tags/JavaScript/page/2/"><i class="fa fa-angle-right"></i></a>
-  </nav>
 
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -579,6 +451,10 @@
 
 
           
+
+  
+
+
 
         </div>
         
@@ -599,8 +475,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -680,6 +565,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#什么是-ORM-库"><span class="nav-number">1.</span> <span class="nav-text">什么是 ORM 库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装并引入"><span class="nav-number">2.</span> <span class="nav-text">安装并引入</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#建立数据库"><span class="nav-number">3.</span> <span class="nav-text">建立数据库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#测试连接"><span class="nav-number">4.</span> <span class="nav-text">测试连接</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#创建-Model"><span class="nav-number">5.</span> <span class="nav-text">创建 Model</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#增删改查"><span class="nav-number">6.</span> <span class="nav-text">增删改查</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#小结"><span class="nav-number">7.</span> <span class="nav-text">小结</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -820,6 +721,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
